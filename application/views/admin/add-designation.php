@@ -40,7 +40,11 @@
                             <select class="form-select" name="designation_status" id="exampleFormControlSelect1" aria-label="Default select example" required data-parsley-trigger="keyup">
                             <option selected="" disabled>Please select status</option>
                             <option value="1">Active</option>
+<<<<<<< HEAD
                             <option value="2">Deactivate</option>
+=======
+                            <option value="2">Inactive</option>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                             </select>
                         </div>
                         <button type="submit" class="btn btn-success">Submit</button>

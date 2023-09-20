@@ -1,7 +1,11 @@
 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold "><a href="<?php echo base_url('Employee'); ?>"><i class='bx bx-left-arrow-alt'></i> BACK</a></h4>
+<<<<<<< HEAD
     <h4 class="fw-bold py-1 mb-1"><span class="text-muted fw-light"> Dashboard / </span> Employee Performance Result</h4>
+=======
+    <h4 class="fw-bold py-1 mb-3"><span class="text-muted fw-light"> Dashboard / </span> Employee Performance Result</h4>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     
         <?php if(($empdata->employee_status)==2): ?>
             <div class="page_d_msg">
@@ -9,6 +13,7 @@
                 <a href="<?php echo base_url('Employee'); ?>">Back</a>
             </div>
         <?php else: ?>
+<<<<<<< HEAD
             <section class="color_indicators_sec">
                 <span>
                     <img src="<?php echo base_url('assets_admin/icons/danger.png'); ?>" alt=""> &nbsp;<b>ASSESSMENT < 2</b> &nbsp;&nbsp;
@@ -16,6 +21,8 @@
                     <img src="<?php echo base_url('assets_admin/icons/success.png'); ?>" alt=""> &nbsp;<b>ASSESSMENT > 3</b> &nbsp;&nbsp;
                 </span>
             </section>
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             <div class="card">
             <div class="table-responsive text-nowrap">
                 <table class="table">
@@ -53,6 +60,7 @@
                             <?php endif; ?>
                             <td>
                                 <?php 
+<<<<<<< HEAD
                                     if(($data->evaluate_date_category)==30){
                                     $period  = 'Monthly';
                                     }elseif(($data->evaluate_date_category)==90){
@@ -62,6 +70,14 @@
                                     }
                                     elseif(($data->evaluate_date_category)==365){
                                     $period  = 'Yearly';
+=======
+                                    if(($data->evaluate_date_category)==90){
+                                    $period  = 'Mid-Probation';
+                                    }elseif(($data->evaluate_date_category)==182){
+                                    $period  = 'Regularization';
+                                    }elseif(($data->evaluate_date_category)==182){
+                                    $period  = 'Bi-Annual';
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                     }else{
                                     $period = '';
                                     }
@@ -79,11 +95,50 @@
                                 ?>
                             </td>
 
+<<<<<<< HEAD
                             <?php 
                                   $sumTotal = $data->communication_emp_avg + $data->knowledge_performance_emp_avg + $data->quality_emp_avg + $data->knowledge_emp_avg + $data->software_emp_avg + $data->reliability_emp_avg + $data->time_management_emp_avg + $data->productivity_emp_avg + $data->p_initiative_proactive_emp_avg + $data->p_creativity_problem_solving_emp_avg; 
                                   $avgTotal = $sumTotal / 10;
                                   $emp_main_avg = number_format((float)$avgTotal, 2, '.', '');
                                 ?>
+=======
+
+
+                            <?php 
+
+                                $countloop = array(
+                                    "m_quality_emp_avg" => $data->quality_emp_avg,
+                                    "m_knowledge_performance_emp_avg" => $data->knowledge_performance_emp_avg,
+                                    "m_communication_emp_avg" => $data->communication_emp_avg,
+                                    "m_time_management_emp_avg" => $data->time_management_emp_avg,
+                                    "m_team_management_emp_avg" => $data->team_management_emp_avg,
+                                    "m_reliability_emp_avg" => $data->reliability_emp_avg,
+                                    "m_productivity_emp_avg" => $data->productivity_emp_avg
+                                );
+
+                                $allcounter = 1;
+                                $store_AVG = null;
+                                foreach($countloop as $run){
+
+                                    if($run == 0){
+                                        
+                                    }else{
+                                        $store_AVG = $allcounter++;
+                                    }
+                                }
+
+                                if($store_AVG){
+                                    $sumTotal = $data->communication_emp_avg + $data->knowledge_performance_emp_avg + $data->quality_emp_avg + $data->team_management_emp_avg + $data->reliability_emp_avg + $data->time_management_emp_avg + $data->productivity_emp_avg; 
+                                    $avgTotal = $sumTotal / $store_AVG;
+                                    $emp_main_avg = number_format((float)$avgTotal, 2, '.', '');
+                                }else{
+                                    $emp_main_avg = null;
+                                }
+           
+                            ?>
+
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
                             <?php if($emp_main_avg <= 1): ?>
                                 <td class="set_td_size set_bg_result_dr"><?php echo $emp_main_avg; ?></td>
@@ -102,6 +157,11 @@
                                 <td class="set_td_size set_bg_result_g"><?php echo $emp_main_avg; ?></td>
                             <?php endif; ?>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                             <?php if(($data->submit_manager_status)==2): ?>
                                 <?php $manager_main_avg = $data->total_emp_avg; ?>
                                 <?php if($manager_main_avg <= 1): ?>

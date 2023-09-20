@@ -74,7 +74,11 @@
                             alt="user-avatar"
                             class="d-block rounded img-d-emp"
                           /> 
+<<<<<<< HEAD
                         <div class="emp_info">
+=======
+                        <div class="emp_info_basic">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                             <div>
                                 <h3><?php echo $empdata->employee_first_name; ?> <?php echo $empdata->employee_last_name; ?></h3>
                             </div>
@@ -145,7 +149,11 @@
                                 <?php if(($empdata->employee_status)=='1'): ?>
                                     <span class="badge bg-label-success me-1">Active</span>
                                 <?php else: ?>
+<<<<<<< HEAD
                                     <span class="badge bg-label-danger">Deactivate</span>
+=======
+                                    <span class="badge bg-label-danger">Inactive</span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 <?php endif; ?>  
                           </div>
                         </div>
@@ -202,6 +210,20 @@
                                 </td>
                               </tr>
                               <tr>
+<<<<<<< HEAD
+=======
+                                <td class="label-gry" style="position: absolute;">Level</td>
+                                <td>
+                                    <?php if(($empdata->emp_level)==2):?>
+                                        <span>Employee</span>
+                                    <?php elseif(($empdata->emp_level)==3): ?>
+                                        <span>Manager</span>
+                                    <?php else: ?>
+                                    <?php endif; ?>
+                                </td>
+                              </tr>
+                              <tr>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 <td class="label-gry">
                                   <span>Skills&nbsp;&nbsp;&nbsp;</span>
                                 </td>
@@ -308,6 +330,7 @@
                               <tr>
                                 <td class="label-gry" style="position: absolute;">Goals</td>
                                 <td>
+<<<<<<< HEAD
                                     <?php if(($goal->goals_type)=="2023 Week 18") : ?>
                                       <span> 
                                         <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Immediate Goals" aria-label="Immediate Goals"></i>
@@ -368,6 +391,143 @@
                                         <span>Manager</span>
                                     <?php else: ?>
                                     <?php endif; ?>
+=======
+                                    <span> 
+                                        <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Immediate Goals" aria-label="Immediate Goals"></i>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#goals1">Current Goals</button>
+                                            <div class="modal fade" id="goals1" tabindex="-1" role="dialog" aria-labelledby="goals1ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="heading-model-goal">
+                                                            <h5>Current Goals</h5>
+                                                            <span>Immediate Goals</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                        ></button>
+                                                    </div>
+                                                        <div class="modal-body">
+                                                            <div class="goals-section-two">
+                                                                <div class="goal-boxes">
+                                                                    <div class="goal-box">
+                                                                        <textarea class="form-control" cols="5" rows="3" disabled><?php echo $goal->current_goals; ?></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span> 
+                                        <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Goals to be achieved within 6 months" aria-label="Goals to be achieved within 6 months"></i>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#goals2">Short-Term Goals</button>
+                                            <div class="modal fade" id="goals2" tabindex="-1" role="dialog" aria-labelledby="goals2ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="heading-model-goal">
+                                                            <h5>Short-Term Goals</h5>
+                                                            <span>Goals to be achieved within 6 months</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                        ></button>
+                                                    </div>
+                                                        <div class="modal-body">
+                                                            <div class="goals-section-two">
+                                                                <div class="goal-boxes">
+                                                                    <div class="goal-box">
+                                                                        <textarea class="form-control" cols="5" rows="3" disabled><?php echo $goal->short_term_goals; ?></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span> 
+                                        <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Goals to be achieved within 12 months" aria-label="Goals to be achieved within 12 months"></i>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#goals3">Mid-Term Goals</button>
+                                            <div class="modal fade" id="goals3" tabindex="-1" role="dialog" aria-labelledby="goals3ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="heading-model-goal">
+                                                            <h5>Mid-Term Goals</h5>
+                                                            <span>Goals to be achieved within 12 months</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                        ></button>
+                                                    </div>
+                                                        <div class="modal-body">
+                                                            <div class="goals-section-two">
+                                                                <div class="goal-boxes">
+                                                                    <div class="goal-box">
+                                                                        <textarea class="form-control" cols="5" rows="3" disabled><?php echo $goal->mid_term_goals; ?></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                    &nbsp;&nbsp;
+                                    <span> 
+                                        <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Goals to be achieved within 18 months" aria-label="Goals to be achieved within 18 months"></i>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#goals4">Long-Term Goals</button>
+                                            <div class="modal fade" id="goals4" tabindex="-1" role="dialog" aria-labelledby="goals3ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="heading-model-goal">
+                                                            <h5>Long-Term Goals</h5>
+                                                            <span>Goals to be achieved within 18 months</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                        ></button>
+                                                    </div>
+                                                        <div class="modal-body">
+                                                            <div class="goals-section-two">
+                                                                <div class="goal-boxes">
+                                                                    <div class="goal-box">
+                                                                        <textarea class="form-control" cols="5" rows="3" disabled><?php echo $goal->long_term_goals; ?></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 </td>
                               </tr>
                             </tbody>
@@ -404,12 +564,17 @@
                             <div class="col-lg-3">
                               <div class="ed-basic-mid">
                                   <div class="ed-head-t">
+<<<<<<< HEAD
                                       <label for="">Experience</label>
+=======
+                                      <label for="">Work Experience</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                   </div>
                                   <div>
                                     <textarea name="" class="form-control" cols="20" rows="10" disabled><?php echo $experience->ed_experience; ?></textarea>
                                   </div>
                                   
+<<<<<<< HEAD
                                   <?php if($salary): ?>
                                   <div class="ed-head-t">
                                       <label for="">Salary History</label>
@@ -479,6 +644,52 @@
                                       <label for="">Please Add Salary History!! <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#addSalaryEmp">Add salary</button></label>
                                     <?php endif; ?>
 
+=======
+                                  
+                                        <?php if($salary) : ?>
+                                            <div class="ed-head-t">
+                                            <label for="">Salary History</label>
+                                        </div>
+                                            <div class="row">
+                                                <div class="col-lg-6"></div>
+                                                <div class="col-lg-6">
+                                                  <span class="child-label-ed">
+                                                  <label for="">Currency</label>
+                                                  <input type="text" class="form-control" value="<?php echo $currency->salary_currency; ?>" style="width:60px;" disabled>
+                                                  </span>
+                                                </div>
+                                            </div>
+                                          <div class="row">
+                                            <div class="col-lg-6">
+                                                <label for="" class="font-s-13">Date</label>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label for="" class="font-s-13">Salary</label>
+                                            </div>
+                                          </div>
+                                          <?php foreach ($salary as $data) : ?>
+                                          <div class="row">
+                                            <div class="col-lg-6">
+                                                <span class="child-label-ed">
+                                                    <input type="date" class="form-control" value="<?php echo $data->salary_date; ?>" disabled>
+                                                </span>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <span class="child-label-ed">
+                                                <input type="text" class="form-control" value="<?php echo $this->encryption->decrypt($data->salary_amount); ?>" disabled>
+                                                </span>
+                                            </div>
+                                          </div>
+                                        <?php endforeach; ?>
+                                        <?php else: ?>
+                                          <div class="ed-head-t">
+                                            <label for="Salary">Salary</label>
+                                          </div>
+                                          <a href="<?php echo base_url('admin/add-employee-salary'); ?>" class="btn btn-sm btn-primary">Add Salary</a>                                        
+                                        <?php endif; ?>
+
+                                   
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                   <div class="ed-basic-mid">
                                       <div class="ed-head-t">
                                           <label for="">Qualification</label>
@@ -509,12 +720,20 @@
                                             </div>
                                             <div class="d-flex">
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                                 <label for="">Age</label>
+=======
+                                                <label for="">Birthday</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <input type="text" class="form-control" value="<?php echo $individual->ed_individual_profile_age; ?>" disabled>
                                               </span> 
                                               &nbsp;&nbsp;&nbsp;
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                                 <label for="">Interest</label>
+=======
+                                                <label for="">Hobby</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <input type="text" class="form-control" value="<?php echo $individual->ed_individual_profile_intrest; ?>" disabled>
                                               </span>
                                             </div>
@@ -525,13 +744,21 @@
                                               </span> 
                                               &nbsp;&nbsp;&nbsp;
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                                 <label for=""></label>
+=======
+                                                <label for="">City</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <input type="text" class="form-control" value="<?php echo $individual->ed_individual_profile_city; ?>" placeholder="City" disabled>
                                               </span>
                                             </div>
                                             <div class="d-flex">
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                                 <label for=""></label>
+=======
+                                                <label for="">Country</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <input type="text" class="form-control" value="<?php echo $individual->ed_individual_profile_country; ?>" placeholder="Country" disabled>
                                               </span> 
                                               &nbsp;&nbsp;&nbsp;
@@ -569,8 +796,13 @@
                                               </span>
                                               &nbsp;&nbsp;&nbsp;
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                                 <label for=""></label>
                                                 <input type="hidden" class="form-control" disabled>
+=======
+                                                <label for="">Sports</label>
+                                                <input type="text" class="form-control" value="<?php echo $individual->ed_individual_profile_sports; ?>" disabled>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                               </span>
                                             </div>
 
@@ -608,7 +840,11 @@
                                                 <span style="flex-basis: 260px"></span>
                                                 <span class="slider-range-value-style" id=""><?php echo $personality->max_value_mind; ?></span>%
                                             </div>
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Extroverted</span>
                                                    <span>
                                                         <div class="slider-hidden-style"></div>
@@ -622,7 +858,11 @@
                                                 <span style="flex-basis: 260px"></span>
                                                 <span class="slider-range-value-style" id=""><?php echo $personality->max_value_energy; ?></span>%
                                             </div>
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Intuitive</span>
                                                    <span>
                                                       <div class="slider-hidden-style"></div>
@@ -636,7 +876,11 @@
                                                 <span style="flex-basis: 260px"></span>
                                                 <span class="slider-range-value-style" id=""><?php echo $personality->max_value_nature; ?></span>%
                                             </div>
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Thinking</span>
                                                    <span>
                                                       <div class="slider-hidden-style"></div>
@@ -650,7 +894,11 @@
                                                 <span style="flex-basis: 260px"></span>
                                                 <span class="slider-range-value-style" id=""><?php echo $personality->max_value_tactics; ?></span>%
                                             </div>
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Judging</span>
                                                    <span>
                                                    <div class="slider-hidden-style"></div>
@@ -664,7 +912,11 @@
                                                 <span style="flex-basis: 260px"></span>
                                                 <span class="slider-range-value-style" id=""><?php echo $personality->max_value_identity; ?></span>%
                                             </div>
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Judging</span>
                                                    <span>
                                                    <div class="slider-hidden-style"></div>
@@ -680,6 +932,7 @@
                                 <div class="ed-head-t">
                                     <label for="">Software Expertise</label>
                                 </div>
+<<<<<<< HEAD
                                 <div class="range-number-style">
                                     &nbsp; &nbsp; &nbsp;
                                     <span class="slider-range-software">BASIC</span>
@@ -693,6 +946,30 @@
                                         <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+
+                                <div class="eep-status-cover software-mb-2 software-mb-2  d-flex">
+                                      <span class="ed-soft-icons"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 5) {
+                                              echo "<span class='form-check m-set-radio'>".$x++."</span>";
+                                            }
+                                        ?>
+                                        <span class="m-set-radio">N/A</span>
+                                </div>
+
+
+                                <div class="eep-status-cover software-mb-2 software-mb-2  d-flex">
+                                <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Revit">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Revit-logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_revit==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -703,13 +980,24 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/Navisworks-logo.jpg'); ?>" alt="Software Logo">
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Navisworks">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Navisworks-logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </span>
 
                                         <?php
                                             $x = 1;
+<<<<<<< HEAD
                                             while($x <= 10) {
+=======
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_navisworks==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -720,6 +1008,7 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/AutoCad-logoo.jpg'); ?>" alt="Software Logo">
                                         </span>
@@ -727,6 +1016,16 @@
                                         <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="AutoCad">
+                                                <img src="<?php echo base_url('assets_admin/img/software/AutoCad-logoo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_autocad==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -737,6 +1036,7 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/rhinoceros-3d-logo-G.jpg'); ?>" alt="Software Logo">
                                         </span>
@@ -744,6 +1044,18 @@
                                         <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Rhinoceros 3D">
+                                                <img src="<?php echo base_url('assets_admin/img/software/rhinoceros-3d-logo-G.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+
+
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_rhinoceros==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -754,13 +1066,24 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/3Ds-max-grey.jpg'); ?>" alt="Software Logo">
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="3Ds Max Grey">
+                                                <img src="<?php echo base_url('assets_admin/img/software/3Ds-max-grey.jpg'); ?>" alt="Software Logo">
+                                            </span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </span>
 
                                         <?php
                                             $x = 1;
+<<<<<<< HEAD
                                             while($x <= 10) {
+=======
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_3dsmax==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -771,6 +1094,7 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/iconoDynMad.jpg'); ?>" alt="Software Logo">
                                         </span>
@@ -778,6 +1102,18 @@
                                         <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Icono DynMad"> 
+                                                <img src="<?php echo base_url('assets_admin/img/software/iconoDynMad.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+
+
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_iconodynmad==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -788,6 +1124,7 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/Enscape-loog.jpg'); ?>" alt="Software Logo">
                                         </span>
@@ -795,6 +1132,18 @@
                                         <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Enscape Loog">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Enscape-loog.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+
+
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_enscape==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -805,13 +1154,24 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/AGACAD-icon-copy.jpg'); ?>" alt="Software Logo">
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="AGACAD">
+                                                <img src="<?php echo base_url('assets_admin/img/software/AGACAD-icon-copy.jpg'); ?>" alt="Software Logo">
+                                            </span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </span>
 
                                         <?php
                                             $x = 1;
+<<<<<<< HEAD
                                             while($x <= 10) {
+=======
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_agacad==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -822,13 +1182,24 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/SketchUp-Logo.jpg'); ?>" alt="Software Logo">
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="SketchUp">
+                                                <img src="<?php echo base_url('assets_admin/img/software/SketchUp-Logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </span>
                                         
                                         <?php
                                             $x = 1;
+<<<<<<< HEAD
                                             while($x <= 10) {
+=======
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_sketchup==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -839,6 +1210,7 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/Microsoft_Word-Logo.wine-edited.jpg'); ?>" alt="Software Logo">
                                         </span>
@@ -847,6 +1219,17 @@
                                         <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Microsoft Word">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Microsoft_Word-Logo.wine-edited.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_msword==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -857,6 +1240,7 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/Microsoft-Excel-Logo-edited.jpg'); ?>" alt="Software Logo">
                                         </span>
@@ -864,6 +1248,16 @@
                                        <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Microsoft Excel">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Microsoft-Excel-Logo-edited.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                       <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_msexcel==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -874,6 +1268,7 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/Photoshop-logo.jpg'); ?>" alt="Software Logo">
                                         </span>
@@ -881,6 +1276,18 @@
                                         <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Photoshop">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Photoshop-logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+
+
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_photoshop==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -891,14 +1298,25 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/Ai-logo.jpg'); ?>" alt="Software Logo">
+=======
+                                  <span class="ed-soft-icons">
+                                        <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Adobe Illustrator">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Ai-logo.jpg'); ?>" alt="Software Logo">
+                                            </span> 
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </span>
 
 
                                         <?php
                                             $x = 1;
+<<<<<<< HEAD
                                             while($x <= 10) {
+=======
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_ai==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -909,6 +1327,7 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/InDesign-Logo-1024x998-edited.jpg'); ?>" alt="Software Logo">
                                         </span>
@@ -917,6 +1336,17 @@
                                          <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Adobe InDesign">
+                                                <img src="<?php echo base_url('assets_admin/img/software/InDesign-Logo-1024x998-edited.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+
+                                         <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_indesign==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -927,12 +1357,23 @@
                                         ?>
                                   </div>
                                   <div class="eep-status-cover software-mb-2 d-flex">
+<<<<<<< HEAD
                                         <span class="ed-soft-icons">
                                           <img src="<?php echo base_url('assets_admin/img/software/Ae-logo.jpg'); ?>" alt="Software Logo">
                                         </span>
                                         <?php
                                             $x = 1;
                                             while($x <= 10) {
+=======
+                                  <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Adobe After Effects">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Ae-logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 6) {
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             if($software->ed_software_ae==$x){
                                                 echo "<span class='form-check'><input type='radio' class='form-check-input' value='$x' checked disabled /></span>";
                                             }else{
@@ -1410,6 +1851,7 @@
   </div>
 </form>
 
+<<<<<<< HEAD
 <!-- Start Add Signature -->
 
 <form action="<?php echo base_url('Admin/uploadManagerSignature'); ?>" method="POST" enctype="multipart/form-data">
@@ -1632,3 +2074,8 @@
         </div>
     </div>
 </form>
+=======
+
+
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)

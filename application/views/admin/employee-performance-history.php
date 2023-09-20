@@ -57,7 +57,15 @@
                                          ?>
                                     </td>
                                     <td><a class="btn btn-xs btn-success" href="<?php echo base_url('Admin/showEmployeeScoreInfo/'.$data->emp_performance_id); ?>">see more <i class="bx bx-subdirectory-left"></i></a>
+<<<<<<< HEAD
                                     <td><a href="<?php echo base_url('Admin/printEmpDetails/'.$data->emp_performance_id); ?>"><i class='bx bx-printer'></i></a></td>
+=======
+                                    <td>
+                                        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="<?php echo "#empPrintOP".$data->emp_performance_id; ?>">
+                                            <i class='bx bx-printer'></i>
+                                        </a>
+                                    </td>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 </tr>
 
                             <?php else: ?>
@@ -82,3 +90,35 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+=======
+<?php if($emp_per_list): ?>
+<?php foreach( $emp_per_list as $data ): ?>
+    <div class="modal fade" id="<?php echo "empPrintOP".$data->emp_performance_id; ?>" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">If you are having problems printing the evaluation page, apply these <a href="<?php echo base_url("assets_admin/img/illustrations/eep-print-settings.png"); ?>" target="_blank"><i class='bx bxs-cog'></i> settings.</a></h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-footer footer-flex">
+            <hr>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                Close
+                </button>
+                <a href="<?php echo base_url('Admin/printEmpDetails/'.$data->emp_performance_id); ?>" class="btn btn-primary">
+                    Print
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+<?php endforeach; ?>
+<?php endif; ?>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)

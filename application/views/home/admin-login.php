@@ -37,7 +37,11 @@
                   <div class="pt-1 mb-4">
                   <div class="mb-3"><button class="btn btn-primary d-grid w-100" type="submit">Login</button></div>
                   </div>
+<<<<<<< HEAD
                   <a class="small text-muted" href="#!">Forgot password?</a>
+=======
+                  <!-- <a class="small text-muted" href="#!">Forgot password?</a> -->
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                 </form>
               </div>
             </div>

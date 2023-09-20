@@ -91,15 +91,29 @@
                 <div class="col-md-6 col-lg-6 order-2 mb-4">
                   <div class="card h-100">
                     <div class="card-header d-flex align-items-center justify-content-between">
+<<<<<<< HEAD
                       <h5 class="card-title m-0 me-2">Top 5 Performance</h5>
                     </div>
+=======
+                      <h5 class="card-title m-0 me-2">The Best Performances</h5>
+                    </div>
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                     <div class="card-body">
                       <ul class="p-0 m-0">
 
                       <?php if($topper):?>
+<<<<<<< HEAD
                         <?php foreach($topper as $data): ?>
                         <?php if(($data->total_emp_avg) >= 3) : ?>
                                 <li class="d-flex mb-4 pb-1">
+=======
+                          <?php $count = 1; ?>
+                        <?php foreach($topper as $data): ?>
+                        <?php if(($data->total_emp_avg) >= 3) : ?>
+                                <li class="d-flex sepretor-ranking-list mb-4 pb-1">
+                                  <h6 class="color-success-num"><?php echo $count++; ?></h6>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                   <div class="avatar flex-shrink-0 me-3">
                                     <img src="<?php echo base_url($data->employee_image); ?>" alt="User" class="rounded" />
                                   </div>
@@ -109,17 +123,28 @@
                                       <h6 class="mb-0"><a href="<?php echo base_url('Admin/showEmployeeScoreInfo/'.$data->performance_id); ?>"><?php echo $data->employee_first_name; ?> <?php echo $data->employee_last_name; ?></a></h6>
                                     </div>
                                     <div class="user-progress d-flex align-items-center gap-1">
+<<<<<<< HEAD
+=======
+                                    
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                       <h6 class="mb-0">
                                         <span class="badge bg-label-success">
                                             <?php echo $data->total_emp_avg; ?>
                                         </span>
                                       </h6>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                     </div>
                                   </div>
                                 </li>
                         <?php else: ?>
                         <?php endif; ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                         <?php endforeach; ?>
                         <?php else: ?>
                       <?php endif; ?>
@@ -131,14 +156,26 @@
                 <div class="col-md-6 col-lg-6 order-2 mb-4">
                   <div class="card h-100">
                     <div class="card-header d-flex align-items-center justify-content-between">
+<<<<<<< HEAD
                       <h5 class="card-title m-0 me-2">Top 5 Low Performance</h5>
+=======
+                      <h5 class="card-title m-0 me-2">The Low Performance</h5>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                     </div>
                     <div class="card-body">
                       <ul class="p-0 m-0">
                       <?php if($lowper):?>
+<<<<<<< HEAD
                           <?php foreach($lowper as $data): ?>
                             <?php if(($data->total_emp_avg) < 3): ?>
                                 <li class="d-flex mb-4 pb-1">
+=======
+                          <?php $count = 1; ?>
+                          <?php foreach($lowper as $data): ?>
+                            <?php if(($data->total_emp_avg) < 3): ?>
+                                <li class="d-flex sepretor-ranking-list mb-4 pb-1">
+                                  <h6 class="color-danger-num"><?php echo $count++; ?></h6>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                   <div class="avatar flex-shrink-0 me-3">
                                     <img src="<?php echo base_url($data->employee_image); ?>" alt="User" class="rounded" />
                                   </div>
@@ -169,6 +206,7 @@
                 </div>
 
                 <div class="col-md-6 col-lg-6 order-2 mb-4">
+<<<<<<< HEAD
                     <div class="card h-100">
                       <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="card-title m-0 me-2">Performance Index</h5>
@@ -226,6 +264,65 @@
                             <img src="<?php echo base_url('assets_admin/icons/success.png'); ?>" alt=""> &nbsp;<b>ASSESSMENT > 3</b> &nbsp;&nbsp;
                         </span>
                     </section>
+=======
+                <div class="card h-100">
+                                <div class="card-header d-flex align-items-center justify-content-between">
+                                  <h5 class="card-title m-0 me-2">Performance Index</h5>
+                                </div>
+                                <div class="card-body">
+                                  <ul class="p-0 m-0">
+                                    <li class="d-flex mb-2 pb-1">
+                                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                      <span class="scores-title"><b>EXCEPTIONAL SCORE: 100% | GRADE: A+</b> - Leading the company's standard, exceeding expectations, takes ownership of the project delivery, <b>can train the employees.</b></span>
+                                      </div>
+                                    </li>
+                                    <li class="d-flex mb-2 pb-1">
+                                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                      <span class="scores-title"><b>GOOD SCORE: 80% | GRADE: A </b> - Quality of work is very good, performing above the set standard and have met the expectations of the company.</span>
+                                      </div>
+                                    </li>
+                                    <li class="d-flex mb-2 pb-1">
+                                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                      <span class="scores-title"><b>BIMCAP STANDARD SCORE: 70% | GRADE B+</b> - Meeting expectations, job done on time and in decent quality, reliable in getting the job done</span>
+                                      </div>
+                                    </li>
+                                    <li class="d-flex mb-2 pb-1">
+                                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                      <span class="scores-title"><b>AVERAGE SCORE 60% | GRADE B</b> - Average performance, some performance issues can be observed that require improvement to reach expected standard. </span>
+                                      </div>
+                                    </li>
+                                    <li class="d-flex mb-2 pb-1">
+                                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                      <span class="scores-title"><b>IN DEVELOPMENT SCORE:40% | GRADE: C</b> - Not meeting expectations, performance issues requiring escalation </span>
+                                      </div>
+                                    </li>
+                                    <li class="d-flex mb-2 pb-1">
+                                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                      <span class="scores-title"><b>UNACCEPTABLE SCORE: 20% | GRADE : D</b> - Failed to meet the expectations, severe performance issues in one or more critical areas, Action to be taken by the managers immediately. </span>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                        </div>
+                
+
+                <div class="col-12 col-lg-6 order-2 order-md-3 order-lg-2 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                              <div>
+                                  <div id="piechart" style="width: 100%; height: 400px;"></div>
+                              </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
+                            <div class="scores-chart">
+                              <img src="<?php echo base_url('assets_admin/img/illustrations/chart-numbers.png'); ?>" alt="">
+                            </div>
+                          </div>         
+                <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                       <div class="card">
                           <div class="table-responsive text-nowrap">
                               <table class="table">
@@ -291,8 +388,13 @@
                                         </td>
 
                                         <?php 
+<<<<<<< HEAD
                                             $sumTotal = $data->communication_emp_avg + $data->knowledge_performance_emp_avg + $data->quality_emp_avg + $data->knowledge_emp_avg + $data->software_emp_avg + $data->reliability_emp_avg + $data->time_management_emp_avg + $data->productivity_emp_avg + $data->p_initiative_proactive_emp_avg + $data->p_creativity_problem_solving_emp_avg; 
                                             $avgTotal = $sumTotal / 10;
+=======
+                                            $sumTotal = $data->communication_emp_avg + $data->knowledge_performance_emp_avg + $data->quality_emp_avg + $data->team_management_emp_avg + $data->reliability_emp_avg + $data->time_management_emp_avg + $data->productivity_emp_avg; 
+                                            $avgTotal = $sumTotal / 7;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             $emp_finalAvg = number_format((float)$avgTotal, 2, '.', '');
                                         ?>
 

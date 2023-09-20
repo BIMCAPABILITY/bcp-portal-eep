@@ -23,7 +23,11 @@
             </li>
 
             <li class="menu-header small text-uppercase">
+<<<<<<< HEAD
               <span class="menu-header-text">Pages</span>
+=======
+              <span class="menu-header-text">Account</span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             </li>
             <li class="menu-item">
               <a href="<?php echo base_url('Employee/empDetailsPage'); ?>" class="menu-link">
@@ -36,17 +40,29 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class='bx bx-bar-chart-alt' ></i> &nbsp;&nbsp;&nbsp;
+<<<<<<< HEAD
                 <div data-i18n="Basic">Performance Page</div>
+=======
+                <div data-i18n="Basic">Performance</div>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="<?php echo base_url('employee/set-employees-performance'); ?>" class="menu-link">
+<<<<<<< HEAD
                     <div data-i18n="Basic">Add Performance</div>
+=======
+                    <div data-i18n="Basic">Add Your Perfomance</div>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                   </a>
                 </li>
                 <li class="menu-item">
                   <a href="<?php echo base_url('employee/employee-performance-list'); ?>" class="menu-link">
+<<<<<<< HEAD
                     <div data-i18n="Basic">Show Performance List</div>
+=======
+                    <div data-i18n="Basic">Your Performance History</div>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                   </a>
                 </li>
               </ul>
@@ -55,6 +71,7 @@
             <?php if(($empinfo->emp_level)==3): ?>
               <li class="menu-header small text-uppercase"><span class="menu-header-text">Employee Evaluation</span></li>
               <li class="menu-item">
+<<<<<<< HEAD
                 <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class='bx bx-reset' ></i> &nbsp;&nbsp;&nbsp;
                   <div data-i18n="Basic">Evaluation Page</div>
@@ -66,6 +83,18 @@
                     </a>
                   </li>
                 </ul>
+=======
+                  <a href="<?php echo base_url('employee/profiles-employee-list'); ?>" class="menu-link">
+                  <i class='bx bxs-user-account'></i> &nbsp;&nbsp;&nbsp;
+                    <div data-i18n="Basic">Evaluation List</div>
+                  </a>
+              </li>
+                <li class="menu-item">
+                  <a href="<?php echo base_url('employee/evaluated-employee-list'); ?>" class="menu-link">
+                  <i class='bx bx-line-chart'></i> &nbsp;&nbsp;&nbsp;
+                    <div data-i18n="Basic">Employee Evaluation</div>
+                  </a>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
               </li>
             <?php else: ?>
             <?php endif; ?>
@@ -97,8 +126,14 @@
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
+<<<<<<< HEAD
                     <li>
                       <a class="dropdown-item" href="#">
+=======
+
+                    <li>
+                      <a class="dropdown-item" href="<?php echo base_url("Employee/empDetailsPage"); ?>">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
@@ -116,6 +151,15 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
+<<<<<<< HEAD
+=======
+                      <a class="dropdown-item" href="<?php echo base_url('Login/changeEmployeePassword'); ?>">
+                      <i class='bx bx-wrench me-2'></i>
+                        <span class="align-middle">Change Password</span>
+                      </a>
+                    </li>
+                    <li>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                       <a class="dropdown-item" href="<?php echo base_url('Employee/empLogout'); ?>">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>

@@ -28,10 +28,15 @@ class Employee extends CI_Controller {
        $empID = $this->session->userdata('emp_login_id');
        $data['empinfo'] = $this->em->getEmpInfo($empID);
        $data['check'] = $this->em->getVerifyAdd($empID);
+<<<<<<< HEAD
 
        $data['check2'] = $this->em->checkVerifyAllScores($empID);
        $data['check3'] = $this->em->showAVGin_EMP_Dash($empID);
 
+=======
+       $data['check2'] = $this->em->checkVerifyAllScores($empID);
+       $data['check3'] = $this->em->showAVGin_EMP_Dash($empID);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $data['topper'] = $this->am->getTopPerformance();
         $data['lowper'] = $this->am->getLowPerformance();
         $data['performancedash'] = $this->am->PerformanceResultDashboard();
@@ -60,7 +65,11 @@ class Employee extends CI_Controller {
             $data['skills'] = $this->em->getEmpSkills($id);
             $data['status'] = $this->em->getEmpStatus($id);
             $data['experience'] = $this->em->getEmpExperience($id);
+<<<<<<< HEAD
             $data['salary'] = $this->em->getEmpSalary($id);
+=======
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             $data['qualification'] = $this->em->getEmpQualification($id);
             $data['individual'] = $this->em->getEmpIndividual($id);
             $data['personality'] = $this->em->getEmpPersonality($id);
@@ -74,6 +83,11 @@ class Employee extends CI_Controller {
 
    public function empDetailsPage(){
 
+<<<<<<< HEAD
+=======
+        $this->load->library('encryption');
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $empID = $this->session->userdata('emp_login_id');
         $menu['empinfo'] = $this->em->getEmpInfo($empID);
         $data['emp_check_level'] = $this->em->getEmpInfo($empID);
@@ -124,6 +138,16 @@ class Employee extends CI_Controller {
             $data['salary'] = 0;
         }
 
+<<<<<<< HEAD
+=======
+        $currency = $this->em->getEmpCurrency($empID);
+        if($currency){
+            $data['currency'] = $currency;
+        }else{
+            $data['currency'] = 0;
+        }
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $qualification = $this->em->getEmpQualification($empID);
         if($qualification){
             $data['qualification'] = $qualification;
@@ -149,6 +173,14 @@ class Employee extends CI_Controller {
             $data['software'] = 0;
         }
 
+<<<<<<< HEAD
+=======
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     $this->load->view('employee/include/header');
     $this->load->view('employee/include/menu', $menu);
     $this->load->view('employee/employee-details-page', $data);
@@ -201,13 +233,33 @@ class Employee extends CI_Controller {
         $menu['empinfo'] = $this->em->getEmpInfo($empID);
         $data['empdata'] = $this->em->getEmpDetails($empID);
         $data['check'] = $this->em->getVerifyAdd($empID);
+<<<<<<< HEAD
+=======
+
+        $goals = $this->em->getEmpGoals($empID);
+        if($goals){
+            $data['goal'] = $goals;
+        }else{
+            $data['goal'] = 0;
+        }
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+        
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $this->load->view('employee/include/header');
         $this->load->view('employee/include/menu', $menu);
         $this->load->view('employee/set-employees-performance', $data);
         $this->load->view('employee/include/footer');
    }
 
+<<<<<<< HEAD
 //    Employee Performance List
+=======
+    // Employee Performance List
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
    // For Employee    
 
@@ -272,6 +324,16 @@ class Employee extends CI_Controller {
         $data['check'] = $this->em->getVerifyAdd($empID);
         $data['check2'] = $this->em->checkVerifyAllScores($empID);
 
+<<<<<<< HEAD
+=======
+        $data['goal'] = $this->em->getSuperEmpGoals($per_id);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $this->load->view('employee/include/header');
         $this->load->view('employee/include/menu', $menu);
         $this->load->view('employee/show-employees-performance', $data);
@@ -291,6 +353,7 @@ class Employee extends CI_Controller {
 
     if($performance_id){
 
+<<<<<<< HEAD
                 /* communication */
                 $communication_data['employee_id'] = $this->input->post('employee_id');
                 $communication_data['performance_id'] =  $performance_id;
@@ -335,12 +398,43 @@ class Employee extends CI_Controller {
                 $quality_data['employee_id'] = $this->input->post('employee_id');
                 $quality_data['performance_id'] = $performance_id;
 
+=======
+                $goals['performance_id'] = $performance_id;
+
+                if($this->input->post('current_goals')){
+                    $goals['goals_emp_words_immediate'] = $this->input->post('current_goals');
+                }else{
+                    $goals['goals_emp_words_immediate'] = null;
+                }
+
+                if($this->input->post('short_term_goals')){
+                    $goals['goals_emp_words_short_term'] = $this->input->post('short_term_goals');
+                }else{
+                    $goals['goals_emp_words_short_term'] = null;
+                }
+
+                if($this->input->post('mid_term_goals')){
+                    $goals['goals_emp_words_mid_term'] = $this->input->post('mid_term_goals');
+                }else{
+                    $goals['goals_emp_words_mid_term'] = null;
+                }
+
+                if($this->input->post('long_term_goals')){
+                    $goals['goals_emp_words_long_term'] = $this->input->post('long_term_goals');
+                }else{
+                    $goals['goals_emp_words_long_term'] = null;
+                }
+
+                /*  Quality & Organization */
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                 $quality_data['quality_question_1'] = $this->input->post('quality_question_1');
                 $quality_data['quality_question_2'] = $this->input->post('quality_question_2');
                 $quality_data['quality_question_3'] = $this->input->post('quality_question_3');
                 $quality_data['quality_question_4'] = $this->input->post('quality_question_4');
                 $quality_data['quality_question_5'] = $this->input->post('quality_question_5');
 
+<<<<<<< HEAD
                 $quality_data['quality_comments'] = $this->input->post('quality_comments');
 
                 $qualityTotal = $quality_data['quality_question_1'] + $quality_data['quality_question_2'] + $quality_data['quality_question_3'] + $quality_data['quality_question_4'] + $quality_data['quality_question_5']; 
@@ -397,6 +491,196 @@ class Employee extends CI_Controller {
                 $reliability_data['employee_id'] = $this->input->post('employee_id');
                 $reliability_data['performance_id'] = $performance_id;
 
+=======
+                $quality_counter = 1;
+                $store_quality = null;
+                foreach($quality_data as $run){
+                   
+                    if($run == 0){
+                        
+                    }else{
+                        $store_quality = $quality_counter++;
+                    }
+                }
+
+                $quality_data['employee_id'] = $this->input->post('employee_id');
+                $quality_data['performance_id'] = $performance_id;
+
+                $quality_data['quality_comments'] = $this->input->post('quality_comments');
+
+                $qualityTotal = $quality_data['quality_question_1'] + $quality_data['quality_question_2'] + $quality_data['quality_question_3'] + $quality_data['quality_question_4'] + $quality_data['quality_question_5']; 
+                
+                if($store_quality){
+                    $qualityAvgTotal = $qualityTotal / $store_quality;
+                    $quality_data['quality_emp_avg'] = number_format((float)$qualityAvgTotal, 2, '.', '');
+                }else{
+                    $quality_data['quality_emp_avg'] = null;
+                }
+
+                /* Quality & Organization */
+
+                /* Knowledge & Performance */
+
+                $knowledge_performance_data['knowledge_performance_question_1'] = $this->input->post('knowledge_performance_question_1');
+                $knowledge_performance_data['knowledge_performance_question_2'] = $this->input->post('knowledge_performance_question_2');
+                $knowledge_performance_data['knowledge_performance_question_3'] = $this->input->post('knowledge_performance_question_3');
+                $knowledge_performance_data['knowledge_performance_question_4'] = $this->input->post('knowledge_performance_question_4');
+                $knowledge_performance_data['knowledge_performance_question_5'] = $this->input->post('knowledge_performance_question_5');
+                $knowledge_performance_data['knowledge_performance_question_6'] = $this->input->post('knowledge_performance_question_6');
+                $knowledge_performance_data['knowledge_performance_question_7'] = $this->input->post('knowledge_performance_question_7');
+
+                $knowledge_performance_counter = 1;
+                $store_knowledge_performance = null;
+
+                foreach($knowledge_performance_data as $run){
+                    
+                    if($run == 0){
+                        
+                    }else{
+                        $store_knowledge_performance = $knowledge_performance_counter++;
+                    }
+                }
+
+                $knowledge_performance_data['employee_id'] = $this->input->post('employee_id');
+                $knowledge_performance_data['performance_id'] = $performance_id;
+
+                $knowledge_performance_data['knowledge_performance_comments'] = $this->input->post('knowledge_performance_comments');
+
+                $knowledge_performanceTotal = $knowledge_performance_data['knowledge_performance_question_1'] + $knowledge_performance_data['knowledge_performance_question_2'] + $knowledge_performance_data['knowledge_performance_question_3'] + $knowledge_performance_data['knowledge_performance_question_4'] + $knowledge_performance_data['knowledge_performance_question_5'] + $knowledge_performance_data['knowledge_performance_question_6'] + $knowledge_performance_data['knowledge_performance_question_7']; 
+                
+                if($store_knowledge_performance){
+                    $knowledge_performanceAvgTotal = $knowledge_performanceTotal / $store_knowledge_performance;
+                    $knowledge_performance_data['knowledge_performance_emp_avg'] = number_format((float)$knowledge_performanceAvgTotal, 2, '.', '');
+                }else{
+                    $knowledge_performance_data['knowledge_performance_emp_avg'] = null;
+                }
+
+                // echo '<pre>';
+                // print_r($knowledge_performance_data);
+                // echo '</pre>';
+                // exit;
+
+                // /* Knowledge & Performance */
+
+                /* communication */
+               
+                $communication_data['communication_question_1'] = $this->input->post('communication_question_1');
+                $communication_data['communication_question_2'] = $this->input->post('communication_question_2');
+                $communication_data['communication_question_3'] = $this->input->post('communication_question_3');
+                $communication_data['communication_question_4'] = $this->input->post('communication_question_4');
+                $communication_data['communication_question_5'] = $this->input->post('communication_question_5');
+                $communication_data['communication_question_6'] = $this->input->post('communication_question_6');
+
+
+                $communication_counter = 1;
+                $store_communication = null;
+
+                foreach($communication_data as $run){
+                    if($run == 0){
+                        
+                    }else{
+                        $store_communication = $communication_counter++;
+                    }
+                }
+
+                $communication_data['employee_id'] = $this->input->post('employee_id');
+                $communication_data['performance_id'] =  $performance_id;
+
+                $communication_data['communication_comments'] = $this->input->post('communication_comments');
+
+                $communicationTotal = $communication_data['communication_question_1'] + $communication_data['communication_question_2'] + $communication_data['communication_question_3'] + $communication_data['communication_question_4'] + $communication_data['communication_question_5'] + $communication_data['communication_question_6']; 
+
+                if($store_communication){
+                    $communicationAvgTotal = $communicationTotal / $store_communication;
+                    $communication_data['communication_emp_avg'] = number_format((float)$communicationAvgTotal, 2, '.', '');
+                }else{
+                    $communication_data['communication_emp_avg'] = null;
+                }
+
+                // echo '<pre>';
+                // print_r($communication_data);
+                // echo '</pre>';
+                // exit;
+               
+                /* communication */
+
+                /* Task & Time management */
+                
+                $time_management_data['time_management_question_1'] = $this->input->post('time_management_question_1');
+                $time_management_data['time_management_question_2'] = $this->input->post('time_management_question_2');
+                $time_management_data['time_management_question_3'] = $this->input->post('time_management_question_3');
+                $time_management_data['time_management_question_4'] = $this->input->post('time_management_question_4');
+                $time_management_data['time_management_question_5'] = $this->input->post('time_management_question_5');
+                $time_management_data['time_management_question_6'] = $this->input->post('time_management_question_6');
+
+                $time_management_counter = 1;
+                $store_time_management = null;
+
+
+                foreach($time_management_data as $run){
+                    
+                    if($run == 0){
+                        
+                    }else{
+                        $store_time_management = $time_management_counter++;
+                    }
+                }
+
+                $time_management_data['employee_id'] = $this->input->post('employee_id');
+                $time_management_data['performance_id'] = $performance_id;
+
+                $time_management_data['time_management_comments'] = $this->input->post('time_management_comments');
+
+                $time_managementTotal = $time_management_data['time_management_question_1'] + $time_management_data['time_management_question_2'] + $time_management_data['time_management_question_3'] + $time_management_data['time_management_question_4'] + $time_management_data['time_management_question_5'] + $time_management_data['time_management_question_6']; 
+                
+                if($store_time_management){
+                    $time_managementAvgTotal = $time_managementTotal / $store_time_management;
+                    $time_management_data['time_management_emp_avg'] = number_format((float)$time_managementAvgTotal, 2, '.', '');
+                }else{
+                    $time_management_data['time_management_emp_avg'] = null;
+                }
+
+                /* Task & Time management */
+
+                /* Team Management */
+
+                $team_management_data['team_management_question_1'] = $this->input->post('team_management_question_1');
+                $team_management_data['team_management_question_2'] = $this->input->post('team_management_question_2');
+                $team_management_data['team_management_question_3'] = $this->input->post('team_management_question_3');
+                $team_management_data['team_management_question_4'] = $this->input->post('team_management_question_4');
+                $team_management_data['team_management_question_5'] = $this->input->post('team_management_question_5');
+
+                $team_management_counter = 1;
+                $store_team_management = null;
+
+                foreach($team_management_data as $run){
+                    
+                    if($run == 0){
+                        
+                    }else{
+                        $store_team_management = $team_management_counter++;
+                    }
+                }
+
+                $team_management_data['employee_id'] = $this->input->post('employee_id');
+                $team_management_data['performance_id'] = $performance_id;
+                
+                $team_management_data['team_management_comments'] = $this->input->post('team_management_comments');
+
+                $team_managementTotal = $team_management_data['team_management_question_1'] + $team_management_data['team_management_question_2'] + $team_management_data['team_management_question_3'] + $team_management_data['team_management_question_4'] + $team_management_data['team_management_question_5']; 
+                
+                if($store_team_management){
+                    $team_managementAvgTotal = $team_managementTotal / $store_team_management;
+                    $team_management_data['team_management_emp_avg'] = number_format((float)$team_managementAvgTotal, 2, '.', '');
+                }else{
+                    $team_management_data['team_management_emp_avg'] = null;
+                }
+
+                /* Team Management */
+
+                /* Reliability & Professionalism */
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                 $reliability_data['reliability_question_1'] = $this->input->post('reliability_question_1');
                 $reliability_data['reliability_question_2'] = $this->input->post('reliability_question_2');
                 $reliability_data['reliability_question_3'] = $this->input->post('reliability_question_3');
@@ -404,6 +688,7 @@ class Employee extends CI_Controller {
                 $reliability_data['reliability_question_5'] = $this->input->post('reliability_question_5');
                 $reliability_data['reliability_question_6'] = $this->input->post('reliability_question_6');
 
+<<<<<<< HEAD
                 $reliability_data['reliability_comments'] = $this->input->post('reliability_comments');
 
                 $reliabilityTotal = $reliability_data['reliability_question_1'] + $reliability_data['reliability_question_2'] + $reliability_data['reliability_question_3'] + $reliability_data['reliability_question_4'] + $reliability_data['reliability_question_5'] + $reliability_data['reliability_question_6']; 
@@ -439,12 +724,46 @@ class Employee extends CI_Controller {
                 $adaptability_data['employee_id'] = $this->input->post('employee_id');
                 $adaptability_data['performance_id'] = $performance_id;
 
+=======
+
+                $reliability_counter = 1;
+                $store_reliability = null;
+
+                foreach($reliability_data as $run){
+                    
+                    if($run == 0){
+                        
+                    }else{
+                        $store_reliability = $reliability_counter++;
+                    }
+                }
+
+                $reliability_data['employee_id'] = $this->input->post('employee_id');
+                $reliability_data['performance_id'] = $performance_id;
+
+                $reliability_data['reliability_comments'] = $this->input->post('reliability_comments');
+
+                $reliabilityTotal = $reliability_data['reliability_question_1'] + $reliability_data['reliability_question_2'] + $reliability_data['reliability_question_3'] + $reliability_data['reliability_question_4'] + $reliability_data['reliability_question_5'] + $reliability_data['reliability_question_6']; 
+                
+                if($store_reliability){
+                    $reliabilityAvgTotal = $reliabilityTotal / $store_reliability;
+                    $reliability_data['reliability_emp_avg'] = number_format((float)$reliabilityAvgTotal, 2, '.', '');
+                }else{
+                    $reliability_data['reliability_emp_avg'] = null;
+                }
+
+                /* Reliability & Professionalism */
+
+                /* Adaptability & Proactivity */
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                 $adaptability_data['adaptability_productivity_question_1'] = $this->input->post('adaptability_productivity_question_1');
                 $adaptability_data['adaptability_productivity_question_2'] = $this->input->post('adaptability_productivity_question_2');
                 $adaptability_data['adaptability_productivity_question_3'] = $this->input->post('adaptability_productivity_question_3');
                 $adaptability_data['adaptability_productivity_question_4'] = $this->input->post('adaptability_productivity_question_4');
                 $adaptability_data['adaptability_productivity_question_5'] = $this->input->post('adaptability_productivity_question_5');
 
+<<<<<<< HEAD
                 $adaptability_data['productivity_comments'] = $this->input->post('productivity_comments');
 
                 $adaptabilityTotal = $adaptability_data['adaptability_productivity_question_1'] + $adaptability_data['adaptability_productivity_question_2'] + $adaptability_data['adaptability_productivity_question_3'] + $adaptability_data['adaptability_productivity_question_4'] + $adaptability_data['adaptability_productivity_question_5']; 
@@ -496,6 +815,53 @@ class Employee extends CI_Controller {
                 
                 // $main_avg['total_emp_avg'] = number_format((float)$avgTotal, 2, '.', '');
 
+=======
+                $adaptability_counter = 1;
+                $store_adaptability = null;
+
+                foreach($adaptability_data as $run){
+                    if($run == 0){
+                        
+                    }else{
+                        $store_adaptability = $adaptability_counter++;
+                    }
+                }
+
+                $adaptability_data['employee_id'] = $this->input->post('employee_id');
+                $adaptability_data['performance_id'] = $performance_id;
+
+                $adaptability_data['productivity_comments'] = $this->input->post('productivity_comments');
+
+                $adaptabilityTotal = $adaptability_data['adaptability_productivity_question_1'] + $adaptability_data['adaptability_productivity_question_2'] + $adaptability_data['adaptability_productivity_question_3'] + $adaptability_data['adaptability_productivity_question_4'] + $adaptability_data['adaptability_productivity_question_5']; 
+                
+                if($store_adaptability){
+                    $adaptabilityAvgTotal = $adaptabilityTotal / $store_adaptability;
+                    $adaptability_data['productivity_emp_avg'] = number_format((float)$adaptabilityAvgTotal, 2, '.', '');
+                }else{
+                    $adaptability_data['productivity_emp_avg'] = null;
+                }
+            
+                /* Adaptability & Proactivity */
+
+
+                // echo '<pre>';
+                // print_r($knowledge_performance_data);
+                // echo '</pre>';
+                // exit;
+
+
+                $this->em->setEmployeeGoals($goals);
+                $this->em->setEmployeeQuality($quality_data);
+                $this->em->setEmployeeKnowledgePerformance($knowledge_performance_data);
+                $this->em->setEmployeeCommunication($communication_data);
+                $this->em->setEmployeeTimeManagement($time_management_data);
+                $this->em->setEmployeeTeam_management($team_management_data);
+                $this->em->setEmployeeReliabilityProfessionalism($reliability_data);
+                $this->em->setEmployeeProductivity($adaptability_data);
+
+                $main_avg['employee_id'] = $this->input->post('employee_id');
+                $main_avg['performance_id'] =  $performance_id;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                 $main_avg['total_emp_avg'] = 0;
 
                 if($this->em->setEmpMainAvg($main_avg)){
@@ -514,21 +880,40 @@ class Employee extends CI_Controller {
 
 }
 
+<<<<<<< HEAD
     public function displayEmployeeScores($id){
 
         $empID = $this->session->userdata('emp_login_id');
         $menu['empinfo'] = $this->em->getEmpInfo($empID);
         $data['empinfo'] = $this->em->getPerformanceByEdit($id);
+=======
+    public function displayEmployeeScores($per_id){
+
+        $empID = $this->session->userdata('emp_login_id');
+        $menu['empinfo'] = $this->em->getEmpInfo($empID);
+        $data['empinfo'] = $this->em->getPerformanceByEdit($per_id);
+        $data['goal'] = $this->em->getSuperEmpGoals($per_id);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 		$this->load->view('employee/include/header');
 		$this->load->view('employee/include/menu', $menu);
 		$this->load->view('employee/employee-performance-edit', $data);
 		$this->load->view('employee/include/footer');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     }
 
     public function updateEmpPerformance(){
 
         $per_id = $this->input->post('performance_id');
+<<<<<<< HEAD
     
 		/* communication */
 
@@ -676,6 +1061,34 @@ class Employee extends CI_Controller {
 		// /* Knowledge & Performance */
 
 		/* Quality & Organization */
+=======
+
+        if($this->input->post('goals_emp_words_immediate')){
+            $goals['goals_emp_words_immediate'] = $this->input->post('goals_emp_words_immediate');
+        }else{
+            $goals['goals_emp_words_immediate'] = null;
+        }
+
+        if($this->input->post('goals_emp_words_short_term')){
+            $goals['goals_emp_words_short_term'] = $this->input->post('goals_emp_words_short_term');
+        }else{
+            $goals['goals_emp_words_short_term'] = null;
+        }
+
+        if($this->input->post('goals_emp_words_mid_term')){
+            $goals['goals_emp_words_mid_term'] = $this->input->post('goals_emp_words_mid_term');
+        }else{
+            $goals['goals_emp_words_mid_term'] = null;
+        }
+
+        if($this->input->post('goals_emp_words_long_term')){
+            $goals['goals_emp_words_long_term'] = $this->input->post('goals_emp_words_long_term');
+        }else{
+            $goals['goals_emp_words_long_term'] = null;
+        }
+        
+        /* Quality & Organization */
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 		$quality_data['employee_id'] = $this->input->post('employee_id');
 
@@ -695,45 +1108,96 @@ class Employee extends CI_Controller {
         $quality_question5_emp = $this->input->post('e_quality_question_5');
 
         if($quality_question1){
+<<<<<<< HEAD
             $quality_data['quality_question_1'] = $quality_question1;
             $avg_quality1 = intval($quality_question1);
+=======
+            if($quality_question1==6){
+                $quality_data['quality_question_1'] = 0;
+                $avg_quality1 = null;
+            }else{
+                $quality_data['quality_question_1'] = $quality_question1;
+                $avg_quality1 = intval($quality_question1);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $quality_data['quality_question_1'] = $quality_question1_emp;
             $avg_quality1 = intval($quality_question1_emp);
         }
 
         if($quality_question2){
+<<<<<<< HEAD
             $quality_data['quality_question_2'] = $quality_question2;
             $avg_quality2 = intval($quality_question2);
+=======
+            if($quality_question2 == 6){
+                $quality_data['quality_question_2'] = 0;
+                $avg_quality2 = null;
+            }else{
+                $quality_data['quality_question_2'] = $quality_question2;
+                $avg_quality2 = intval($quality_question2);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $quality_data['quality_question_2'] = $quality_question2_emp;
             $avg_quality2 = intval($quality_question2_emp);
         }
 
         if($quality_question3){
+<<<<<<< HEAD
             $quality_data['quality_question_3'] = $quality_question3;
             $avg_quality3 = intval($quality_question3);
+=======
+            if($quality_question3 == 6){
+                $quality_data['quality_question_3'] = 0;
+                $avg_quality3 = null;
+            }else{
+                $quality_data['quality_question_3'] = $quality_question3;
+                $avg_quality3 = intval($quality_question3);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $quality_data['quality_question_3'] = $quality_question3_emp;
             $avg_quality3 = intval($quality_question3_emp);
         }
 
         if($quality_question4){
+<<<<<<< HEAD
             $quality_data['quality_question_4'] = $quality_question4;
             $avg_quality4 = intval($quality_question4);
+=======
+            if($quality_question4 == 6){
+                $quality_data['quality_question_4'] = 0;
+                $avg_quality4 = null;
+            }else{
+                $quality_data['quality_question_4'] = $quality_question4;
+                $avg_quality4 = intval($quality_question4);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $quality_data['quality_question_4'] = $quality_question4_emp;
             $avg_quality4 = intval($quality_question4_emp);
         }
 
         if($quality_question5){
+<<<<<<< HEAD
             $quality_data['quality_question_5'] = $quality_question5;
             $avg_quality5 = intval($quality_question5);
+=======
+            if($quality_question5 == 6){
+                $quality_data['quality_question_5'] = 0;
+                $avg_quality5 = null;
+            }else{
+                $quality_data['quality_question_5'] = $quality_question5;
+                $avg_quality5 = intval($quality_question5);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $quality_data['quality_question_5'] = $quality_question5_emp;
             $avg_quality5 = intval($quality_question5_emp);
         }
 
+<<<<<<< HEAD
         $quality_data['quality_comments'] = $this->input->post('quality_comments');
 
         $qualityTotal = $avg_quality1 + $avg_quality2 + $avg_quality3 + $avg_quality4 + $avg_quality5; 
@@ -941,6 +1405,310 @@ class Employee extends CI_Controller {
 		/* Time Management */
 
         $time_management_data['employee_id'] = $this->input->post('employee_id');
+=======
+        $quality_counter = 1;
+        $store_quality = null;
+
+        foreach($quality_data as $run){
+            if($run == 0){
+                
+            }else{
+                $store_quality = $quality_counter++;
+            }
+        }
+
+        $qualityTotal = $avg_quality1 + $avg_quality2 + $avg_quality3 + $avg_quality4 + $avg_quality5; 
+
+        if($store_quality){
+            $qualityAvgTotal = $qualityTotal / $store_quality;
+            $quality_data['quality_emp_avg'] = number_format((float)$qualityAvgTotal, 2, '.', '');
+        }else{
+            $quality_data['quality_emp_avg'] = null;
+        }
+
+        $quality_data['quality_comments'] = $this->input->post('quality_comments');
+
+		/* Quality & Organization */
+
+        /* Knowledge & Performance */
+
+        $knowledge_performance1 = $this->input->post('knowledge_performance_question_1');
+        $knowledge_performance1_emp = $this->input->post('e_knowledge_performance_question_1');
+
+        $knowledge_performance2 = $this->input->post('knowledge_performance_question_2');
+        $knowledge_performance2_emp = $this->input->post('e_knowledge_performance_question_2');
+
+        $knowledge_performance3 = $this->input->post('knowledge_performance_question_3');
+        $knowledge_performance3_emp = $this->input->post('e_knowledge_performance_question_3');
+
+        $knowledge_performance4 = $this->input->post('knowledge_performance_question_4');
+        $knowledge_performance4_emp = $this->input->post('e_knowledge_performance_question_4');
+
+        $knowledge_performance5 = $this->input->post('knowledge_performance_question_5');
+        $knowledge_performance5_emp = $this->input->post('e_knowledge_performance_question_5');
+
+        $knowledge_performance6 = $this->input->post('knowledge_performance_question_6');
+        $knowledge_performance6_emp = $this->input->post('e_knowledge_performance_question_6');
+
+        $knowledge_performance7 = $this->input->post('knowledge_performance_question_7');
+        $knowledge_performance7_emp = $this->input->post('e_knowledge_performance_question_7');
+
+
+        if($knowledge_performance1){
+            if($knowledge_performance1 == 6){
+                $knowledge_performance_data['knowledge_performance_question_1'] = 0;
+                $avg_knowledge_performance1 = null;
+            }else{
+                $knowledge_performance_data['knowledge_performance_question_1'] = $knowledge_performance1;
+                $avg_knowledge_performance1 = intval($knowledge_performance1);
+            }
+        }
+        else{
+            $knowledge_performance_data['knowledge_performance_question_1'] = $knowledge_performance1_emp;
+            $avg_knowledge_performance1 = intval($knowledge_performance1_emp);
+        }
+
+        if($knowledge_performance2){
+            if($knowledge_performance2 == 6){
+                $knowledge_performance_data['knowledge_performance_question_2'] = 0;
+                $avg_knowledge_performance2 = null;
+            }else{
+                $knowledge_performance_data['knowledge_performance_question_2'] = $knowledge_performance2;
+                $avg_knowledge_performance2 = intval($knowledge_performance2);
+            }
+        }
+        else{
+            $knowledge_performance_data['knowledge_performance_question_2'] = $knowledge_performance2_emp;
+            $avg_knowledge_performance2 = intval($knowledge_performance2_emp);
+        }
+
+        if($knowledge_performance3){
+           if($knowledge_performance3 == 6){
+                $knowledge_performance_data['knowledge_performance_question_3'] = 0;
+                $avg_knowledge_performance3 = null;
+           }else{
+                $knowledge_performance_data['knowledge_performance_question_3'] = $knowledge_performance3;
+                $avg_knowledge_performance3 = intval($knowledge_performance3);
+           }
+        }
+        else{
+            $knowledge_performance_data['knowledge_performance_question_3'] = $knowledge_performance3_emp;
+            $avg_knowledge_performance3 = intval($knowledge_performance3_emp);
+        }
+
+        if($knowledge_performance4){
+            if($knowledge_performance4 == 6){
+                $knowledge_performance_data['knowledge_performance_question_4'] = 0;
+                $avg_knowledge_performance4 = null;
+            }else{
+                $knowledge_performance_data['knowledge_performance_question_4'] = $knowledge_performance4;
+                $avg_knowledge_performance4 = intval($knowledge_performance4);
+            }
+        }
+        else{
+            $knowledge_performance_data['knowledge_performance_question_4'] = $knowledge_performance4_emp;
+            $avg_knowledge_performance4 = intval($knowledge_performance4_emp);
+        }
+
+        if($knowledge_performance5){
+            if($knowledge_performance5 == 6){
+                $knowledge_performance_data['knowledge_performance_question_5'] = 0;
+                $avg_knowledge_performance5 = null;
+
+            }else{
+                $knowledge_performance_data['knowledge_performance_question_5'] = $knowledge_performance5;
+                $avg_knowledge_performance5 = intval($knowledge_performance5);
+            }
+        }
+        else{
+            $knowledge_performance_data['knowledge_performance_question_5'] = $knowledge_performance5_emp;
+            $avg_knowledge_performance5 = intval($knowledge_performance5_emp);
+        }
+
+        if($knowledge_performance6){
+            if($knowledge_performance6 == 6){
+                $knowledge_performance_data['knowledge_performance_question_6'] = 0;
+                $avg_knowledge_performance6 = null;
+            }else{
+                $knowledge_performance_data['knowledge_performance_question_6'] = $knowledge_performance6;
+                $avg_knowledge_performance6 = intval($knowledge_performance6);
+            }
+        }
+        else{
+            $knowledge_performance_data['knowledge_performance_question_6'] = $knowledge_performance6_emp;
+            $avg_knowledge_performance6 = intval($knowledge_performance6_emp);
+        }
+
+        if($knowledge_performance7){
+           if($knowledge_performance7 == 6){
+                $knowledge_performance_data['knowledge_performance_question_7'] = 0;
+                $avg_knowledge_performance7 = null;
+           }else{
+                $knowledge_performance_data['knowledge_performance_question_7'] = $knowledge_performance7;
+                $avg_knowledge_performance7 = intval($knowledge_performance7);
+           }
+        }
+        else{
+            $knowledge_performance_data['knowledge_performance_question_7'] = $knowledge_performance7_emp;
+            $avg_knowledge_performance7 = intval($knowledge_performance7_emp);
+        }
+
+        $knowledge_performance_counter = 1;
+        $store_knowledge_performance = null;
+
+        foreach($knowledge_performance_data as $run){
+            if($run == 0){
+                
+            }else{
+                $store_knowledge_performance = $knowledge_performance_counter++;
+            }
+        }
+
+        $knowledge_performance_data['employee_id'] = $this->input->post('employee_id');
+        $knowledge_performance_data['knowledge_performance_comments'] = $this->input->post('knowledge_performance_comments');
+        $knowledge_performanceTotal = $avg_knowledge_performance1 + $avg_knowledge_performance2 + $avg_knowledge_performance3 + $avg_knowledge_performance4 + $avg_knowledge_performance5 + $avg_knowledge_performance6 + $avg_knowledge_performance7;
+        
+        if($store_knowledge_performance){
+            $knowledge_performanceAvgTotal = $knowledge_performanceTotal / $store_knowledge_performance;
+            $knowledge_performance_data['knowledge_performance_emp_avg'] = number_format((float)$knowledge_performanceAvgTotal, 2, '.', '');
+        }else{
+            $knowledge_performance_data['knowledge_performance_emp_avg'] = null;
+        }
+
+		// /* Knowledge & Performance */
+    
+		/* Communication */
+
+        $communication1 = $this->input->post('communication_question_1');
+        $communication1_emp = $this->input->post('e_communication_question_1');
+
+        $communication2 = $this->input->post('communication_question_2');
+        $communication2_emp = $this->input->post('e_communication_question_2');
+
+        $communication3 = $this->input->post('communication_question_3');
+        $communication3_emp = $this->input->post('e_communication_question_3');
+
+        $communication4 = $this->input->post('communication_question_4');
+        $communication4_emp = $this->input->post('e_communication_question_4');
+
+        $communication5 = $this->input->post('communication_question_5');
+        $communication5_emp = $this->input->post('e_communication_question_5');
+
+        $communication6 = $this->input->post('communication_question_6');
+        $communication6_emp = $this->input->post('e_communication_question_6');
+
+        if($communication1){
+           if($communication1 == 6){
+                $communication_data['communication_question_1'] = 0;
+                $avg_communication1 = null;
+           }else{
+                $communication_data['communication_question_1'] = $communication1;
+                $avg_communication1 = intval($communication1);
+           }
+        }
+        else{
+            $communication_data['communication_question_1'] = $communication1_emp;
+            $avg_communication1 = intval($communication1_emp);
+        }
+
+        if($communication2){
+           if($communication2 ==6){
+                $communication_data['communication_question_2'] = 0;
+                $avg_communication2 = null;
+           }else{
+                $communication_data['communication_question_2'] = $communication2;
+                $avg_communication2 = intval($communication2);
+           }
+        }
+        else{
+            $communication_data['communication_question_2'] = $communication2_emp;
+            $avg_communication2 = intval($communication2_emp);
+        }
+
+        if($communication3){
+            if($communication3 == 6){
+                $communication_data['communication_question_3'] = 0;
+                $avg_communication3 = null;
+            }else{
+                $communication_data['communication_question_3'] = $communication3;
+                $avg_communication3 = intval($communication3);
+            }
+        }
+        else{
+            $communication_data['communication_question_3'] = $communication3_emp;
+            $avg_communication3 = intval($communication3_emp);
+        }
+
+        if($communication4){
+           if($communication4 == 6){
+            $communication_data['communication_question_4'] = 0;
+            $avg_communication4 = null;
+           }else{
+            $communication_data['communication_question_4'] = $communication4;
+            $avg_communication4 = intval($communication4);
+           }
+        }
+        else{
+            $communication_data['communication_question_4'] = $communication4_emp;
+            $avg_communication4 = intval($communication4_emp);
+        }
+
+        if($communication5){
+            if($communication5 == 6){
+                $communication_data['communication_question_5'] = 0;
+                $avg_communication5 = null;
+            }else{
+                $communication_data['communication_question_5'] = $communication5;
+                $avg_communication5 = intval($communication5);
+            }
+        }
+        else{
+            $communication_data['communication_question_5'] = $communication5_emp;
+            $avg_communication5 = intval($communication5_emp);
+        }
+
+        if($communication6){
+            if($communication6 == 6){
+                $communication_data['communication_question_6'] = 0;
+                $avg_communication6 = null;
+            }else{
+                $communication_data['communication_question_6'] = $communication6;
+                $avg_communication6 = intval($communication6);
+            }
+        }
+        else{
+            $communication_data['communication_question_6'] = $communication6_emp;
+            $avg_communication6 = intval($communication6_emp);
+        }
+
+        $communication_counter = 1;
+        $store_communication = null;
+
+        foreach($communication_data as $run){
+            if($run == 0){
+                
+            }else{
+                $store_communication = $communication_counter++;
+            }
+        }
+
+        $communication_data['employee_id'] = $this->input->post('main_employee_id');
+
+		$communication_data['communication_comments'] = $this->input->post('communication_comments');
+
+		$communicationTotal = $avg_communication1 + $avg_communication2 + $avg_communication3 + $avg_communication4 + $avg_communication5 + $avg_communication6;
+		
+        if($store_communication){
+            $communicationAvgTotal = $communicationTotal / $store_communication;
+		    $communication_data['communication_emp_avg'] = number_format((float)$communicationAvgTotal, 2, '.', '');
+        }else{
+            $communication_data['communication_emp_avg'] = null;
+        }
+        
+		/* Communication */
+
+        /* Task & Time Management */
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         $time_management_data1 = $this->input->post('time_management_question_1');
         $time_management_data1_emp = $this->input->post('e_time_management_question_1');
@@ -957,46 +1725,102 @@ class Employee extends CI_Controller {
         $time_management_data5 = $this->input->post('time_management_question_5');
         $time_management_data5_emp = $this->input->post('e_time_management_question_5');
 
+<<<<<<< HEAD
         if($time_management_data1){
             $time_management_data['time_management_question_1'] = $time_management_data1;
             $avg_time_management1 = intval($time_management_data1);
+=======
+        $time_management_data6 = $this->input->post('time_management_question_6');
+        $time_management_data6_emp = $this->input->post('e_time_management_question_6');
+
+
+        if($time_management_data1){
+            if($time_management_data1 == 6){
+                $time_management_data['time_management_question_1'] = 0;
+                $avg_time_management1 = null;
+            }else{
+                $time_management_data['time_management_question_1'] = $time_management_data1;
+                $avg_time_management1 = intval($time_management_data1);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $time_management_data['time_management_question_1'] = $time_management_data1_emp;
             $avg_time_management1 = intval($time_management_data1_emp);
         }
 
         if($time_management_data2){
+<<<<<<< HEAD
             $time_management_data['time_management_question_2'] = $time_management_data2;
             $avg_time_management2 = intval($time_management_data2);
+=======
+            if($time_management_data2 == 6){
+                $time_management_data['time_management_question_2'] = 0;
+                $avg_time_management = null;
+            }else{
+                $time_management_data['time_management_question_2'] = $time_management_data2;
+                $avg_time_management2 = intval($time_management_data2);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $time_management_data['time_management_question_2'] = $time_management_data2_emp;
             $avg_time_management2 = intval($time_management_data2_emp);
         }
 
         if($time_management_data3){
+<<<<<<< HEAD
             $time_management_data['time_management_question_3'] = $time_management_data3;
             $avg_time_management3 = intval($time_management_data3);
+=======
+            if($time_management_data3 == 6){
+                $time_management_data['time_management_question_3'] = 0;
+                $avg_time_management3 = null;
+            }else{
+                $time_management_data['time_management_question_3'] = $time_management_data3;
+                $avg_time_management3 = intval($time_management_data3);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $time_management_data['time_management_question_3'] = $time_management_data3_emp;
             $avg_time_management3 = intval($time_management_data3_emp);
         }
 
         if($time_management_data4){
+<<<<<<< HEAD
             $time_management_data['time_management_question_4'] = $time_management_data4;
             $avg_time_management4 = intval($time_management_data4);
+=======
+           if($time_management_data4 == 6){
+            $time_management_data['time_management_question_4'] = 0;
+            $avg_time_management4 = null;
+           }else{
+            $time_management_data['time_management_question_4'] = $time_management_data4;
+            $avg_time_management4 = intval($time_management_data4);
+           }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $time_management_data['time_management_question_4'] = $time_management_data4_emp;
             $avg_time_management4 = intval($time_management_data4_emp);
         }
 
         if($time_management_data5){
+<<<<<<< HEAD
             $time_management_data['time_management_question_5'] = $time_management_data5;
             $avg_time_management5 = intval($time_management_data5);
+=======
+           if($time_management_data5 == 6){
+            $time_management_data['time_management_question_5'] = 0;
+            $avg_time_management5 = null;
+           }else{
+            $time_management_data['time_management_question_5'] = $time_management_data5;
+            $avg_time_management5 = intval($time_management_data5);
+           }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $time_management_data['time_management_question_5'] = $time_management_data5_emp;
             $avg_time_management5 = intval($time_management_data5_emp);
         }
 
+<<<<<<< HEAD
 
         $time_management_data['time_management_comments'] = $this->input->post('time_management_comments');
 
@@ -1010,6 +1834,280 @@ class Employee extends CI_Controller {
 		/* Adaptability & Proactivity */
 
 		$adaptability_data['employee_id'] = $this->input->post('employee_id');
+=======
+        if($time_management_data6){
+            if($time_management_data6 == 6){
+            $time_management_data['time_management_question_6'] = 0;
+            $avg_time_management6 = null;
+            }else{
+            $time_management_data['time_management_question_6'] = $time_management_data6;
+            $avg_time_management6 = intval($time_management_data6);
+            }
+        }else{
+            $time_management_data['time_management_question_6'] = $time_management_data6_emp;
+            $avg_time_management6 = intval($time_management_data6_emp);
+        }
+
+        $time_management_counter = 1;
+        $store_time_management = null;
+
+
+        foreach($time_management_data as $run){
+            if($run == 0){
+                
+            }else{
+                $store_time_management = $time_management_counter++;
+            }
+        }
+
+        $time_management_data['employee_id'] = $this->input->post('employee_id');
+        $time_management_data['time_management_comments'] = $this->input->post('time_management_comments');
+
+        $time_managementTotal = $avg_time_management1 + $avg_time_management2 + $avg_time_management3 + $avg_time_management4 + $avg_time_management5 + $avg_time_management6; 
+        
+        if($store_time_management){
+            $time_managementAvgTotal = $time_managementTotal / $store_time_management;
+            $time_management_data['time_management_emp_avg'] = number_format((float)$time_managementAvgTotal, 2, '.', '');
+        }else{
+            $time_management_data['time_management_emp_avg'] = null;
+        }
+
+		/* Time Management */
+
+		/* Team Management */
+
+        $team_management_data1 = $this->input->post('team_management_question_1');
+        $team_management_data1_emp = $this->input->post('e_team_management_question_1');
+
+        $team_management_data2 = $this->input->post('team_management_question_2');
+        $team_management_data2_emp = $this->input->post('e_team_management_question_2');
+
+        $team_management_data3 = $this->input->post('team_management_question_3');
+        $team_management_data3_emp = $this->input->post('e_team_management_question_3');
+
+        $team_management_data4 = $this->input->post('team_management_question_4');
+        $team_management_data4_emp = $this->input->post('e_team_management_question_4');
+
+        $team_management_data5 = $this->input->post('team_management_question_5');
+        $team_management_data5_emp = $this->input->post('e_team_management_question_5');
+
+        if($team_management_data1){
+           if($team_management_data1 == 6){
+            $team_management_data['team_management_question_1'] = 0;
+            $avg_team_management1 = null;
+           }else{
+            $team_management_data['team_management_question_1'] = $team_management_data1;
+            $avg_team_management1 = intval($team_management_data1);
+           }
+        }else{
+            $team_management_data['team_management_question_1'] = $team_management_data1_emp;
+            $avg_team_management1 = intval($team_management_data1_emp);
+        }
+
+        if($team_management_data2){
+           if($team_management_data2 == 6){
+            $team_management_data['team_management_question_2'] = 0;
+            $avg_team_management2 = null;
+           }else{
+            $team_management_data['team_management_question_2'] = $team_management_data2;
+            $avg_team_management2 = intval($team_management_data2);
+           }
+        }else{
+            $team_management_data['team_management_question_2'] = $team_management_data2_emp;
+            $avg_team_management2 = intval($team_management_data2_emp);
+        }
+
+        if($team_management_data3){
+            if($team_management_data3 == 6){
+            $team_management_data['team_management_question_3'] = 0;
+            $avg_team_management3 = null;
+            }else{
+            $team_management_data['team_management_question_3'] = $team_management_data3;
+            $avg_team_management3 = intval($team_management_data3);
+            }
+        }else{
+            $team_management_data['team_management_question_3'] = $team_management_data3_emp;
+            $avg_team_management3 = intval($team_management_data3_emp);
+        }
+
+        if($team_management_data4){
+            if($team_management_data4 == 6){
+                $team_management_data['team_management_question_4'] = 0;
+                $avg_team_management4 = null;
+            }else{
+                $team_management_data['team_management_question_4'] = $team_management_data4;
+                $avg_team_management4 = intval($team_management_data4);
+            }
+        }else{
+            $team_management_data['team_management_question_4'] = $team_management_data4_emp;
+            $avg_team_management4 = intval($team_management_data4_emp);
+        }
+
+        if($team_management_data5){
+            if($team_management_data5 == 6){
+                $team_management_data['team_management_question_5'] = 0;
+                $avg_team_management5 = null;
+            }else{
+                $team_management_data['team_management_question_5'] = $team_management_data5;
+                $avg_team_management5 = intval($team_management_data5);
+            }
+        }else{
+            $team_management_data['team_management_question_5'] = $team_management_data5_emp;
+            $avg_team_management5 = intval($team_management_data5_emp);
+        }
+
+        $team_management_counter = 1;
+        $store_team_management = null;
+
+        foreach($team_management_data as $run){
+            if($run == 0){
+                
+            }else{
+                $store_team_management = $team_management_counter++;
+            }
+        }
+
+        $team_management_data['employee_id'] = $this->input->post('employee_id');
+        
+        $team_management_data['team_management_comments'] = $this->input->post('team_management_comments');
+
+        $team_managementTotal = $avg_team_management1 + $avg_team_management2 + $avg_team_management3 + $avg_team_management4 + $avg_team_management5; 
+        
+        if($store_team_management){
+            $team_managementAvgTotal = $team_managementTotal / $store_team_management;
+            $team_management_data['team_management_emp_avg'] = number_format((float)$team_managementAvgTotal, 2, '.', '');    
+        }else{
+            $team_management_data['team_management_emp_avg'] = null;
+        }       
+
+		/* Team Management */
+
+         /* Reliability & Professionalism */
+
+         $reliability_data1 = $this->input->post('reliability_question_1');
+         $reliability_data1_emp = $this->input->post('e_reliability_question_1');
+ 
+         $reliability_data2 = $this->input->post('reliability_question_2');
+         $reliability_data2_emp = $this->input->post('e_reliability_question_2');
+ 
+         $reliability_data3 = $this->input->post('reliability_question_3');
+         $reliability_data3_emp = $this->input->post('e_reliability_question_3');
+ 
+         $reliability_data4 = $this->input->post('reliability_question_4');
+         $reliability_data4_emp = $this->input->post('e_reliability_question_4');
+ 
+         $reliability_data5 = $this->input->post('reliability_question_5');
+         $reliability_data5_emp = $this->input->post('e_reliability_question_5');
+ 
+         $reliability_data6 = $this->input->post('reliability_question_6');
+         $reliability_data6_emp = $this->input->post('e_reliability_question_6');
+ 
+         if($reliability_data1){
+             if($reliability_data1 == 6){
+                $reliability_data['reliability_question_1'] = 0;
+                $avg_reliability1 = null;
+             }else{
+                $reliability_data['reliability_question_1'] = $reliability_data1;
+                $avg_reliability1 = intval($reliability_data1);
+             }
+         }else{
+             $reliability_data['reliability_question_1'] = $reliability_data1_emp;
+             $avg_reliability1 = intval($reliability_data1_emp);
+         }
+ 
+         if($reliability_data2){
+             if($reliability_data2 == 6){
+                $reliability_data['reliability_question_2'] = 0;
+                $avg_reliability2 = null;
+             }else{
+                $reliability_data['reliability_question_2'] = $reliability_data2;
+                $avg_reliability2 = intval($reliability_data2);
+             }
+         }else{
+             $reliability_data['reliability_question_2'] = $reliability_data2_emp;
+             $avg_reliability2 = intval($reliability_data2_emp);
+         }
+ 
+         if($reliability_data3){
+            if($reliability_data3 == 6){
+                $reliability_data['reliability_question_3'] = 0;
+                $avg_reliability3 = null;
+            }else{
+                $reliability_data['reliability_question_3'] = $reliability_data3;
+                $avg_reliability3 = intval($reliability_data3);
+            }
+         }else{
+             $reliability_data['reliability_question_3'] = $reliability_data3_emp;
+             $avg_reliability3 = intval($reliability_data3_emp);
+         }
+ 
+         if($reliability_data4){
+             if($reliability_data4 == 6){
+                $reliability_data['reliability_question_4'] = 0;
+                $avg_reliability4 = null;
+             }else{
+                $reliability_data['reliability_question_4'] = $reliability_data4;
+                $avg_reliability4 = intval($reliability_data4);
+             }
+         }else{
+             $reliability_data['reliability_question_4'] = $reliability_data4_emp;
+             $avg_reliability4 = intval($reliability_data4_emp);
+         }
+ 
+         if($reliability_data5){
+             if($reliability_data5 == 6){
+                $reliability_data['reliability_question_5'] = 0;
+                $avg_reliability5 = null;
+             }else{
+                $reliability_data['reliability_question_5'] = $reliability_data5;
+                $avg_reliability5 = intval($reliability_data5);
+             }
+         }else{
+             $reliability_data['reliability_question_5'] = $reliability_data5_emp;
+             $avg_reliability5 = intval($reliability_data5_emp);
+         }
+ 
+         if($reliability_data6){
+             if($reliability_data6 == 6){
+                $reliability_data['reliability_question_6'] = 0;
+                $avg_reliability6 = null;
+             }else{
+                $reliability_data['reliability_question_6'] = $reliability_data6;
+                $avg_reliability6 = intval($reliability_data6);
+             }
+         }else{
+             $reliability_data['reliability_question_6'] = $reliability_data6_emp;
+             $avg_reliability6 = intval($reliability_data6_emp);
+         }
+ 
+         $reliability_counter = 1;
+         $store_reliability = null;
+
+         foreach($reliability_data as $run){
+             if($run == 0){
+                 
+             }else{
+                 $store_reliability = $reliability_counter++;
+             }
+         }
+ 
+         $reliability_data['employee_id'] = $this->input->post('employee_id');
+ 
+         $reliability_data['reliability_comments'] = $this->input->post('reliability_comments');
+ 
+         $reliabilityTotal = $avg_reliability1 + $avg_reliability2 + $avg_reliability3 + $avg_reliability4 + $avg_reliability5 + $avg_reliability6; 
+         
+         if($store_reliability){
+            $reliabilityAvgTotal = $reliabilityTotal / $store_reliability;
+            $reliability_data['reliability_emp_avg'] = number_format((float)$reliabilityAvgTotal, 2, '.', '');
+        }else{
+            $reliability_data['reliability_emp_avg'] = null;
+        }
+ 
+        /* Reliability & Professionalism */
+
+		/* Adaptability & Proactivity */
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         $adaptability_productivity_data1 = $this->input->post('adaptability_productivity_question_1_new');
         $adaptability_productivity_data1_emp = $this->input->post('e_adaptability_productivity_question_1');
@@ -1066,10 +2164,27 @@ class Employee extends CI_Controller {
             $avg_adaptability_productivity5 = intval($adaptability_productivity_data5_emp);
         }
 
+<<<<<<< HEAD
+=======
+        $adaptability_productivity_counter = 1;
+        $store_adaptability_productivity = null;
+
+
+        foreach($adaptability_productivity_data as $run){
+            if($run == 0){
+                
+            }else{
+                $store_adaptability_productivity = $adaptability_productivity_counter++;
+            }
+        }
+
+        $adaptability_data['employee_id'] = $this->input->post('employee_id');
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         $adaptability_productivity_data['productivity_comments'] = $this->input->post('productivity_comments');
 
         $adaptabilityTotal = $avg_adaptability_productivity1 + $avg_adaptability_productivity2 + $avg_adaptability_productivity3 + $avg_adaptability_productivity4 + $avg_adaptability_productivity5; 
+<<<<<<< HEAD
         $adaptabilityAvgTotal = $adaptabilityTotal / 5;
         $adaptability_productivity_data['productivity_emp_avg'] = number_format((float)$adaptabilityAvgTotal, 2, '.', '');
 
@@ -1187,6 +2302,38 @@ class Employee extends CI_Controller {
      
 
 		if($res1||$res2||$res3||$res4||$res5||$res6||$res7||$res8||$res9||$res10||$res11){
+=======
+        
+        if($store_adaptability_productivity){
+            $adaptabilityAvgTotal = $adaptabilityTotal / $store_adaptability_productivity;
+            $adaptability_productivity_data['productivity_emp_avg'] = number_format((float)$adaptabilityAvgTotal, 2, '.', '');
+        }else{
+            $adaptability_productivity_data['productivity_emp_avg'] = null;
+        }
+
+		/* Adaptability & Proactivity */
+
+        $performance_data['evaluate_date_category'] = $this->input->post('evaluate_date_category');
+        $performance_data['emp_performance_start_date'] = $this->input->post('emp_performance_start_date');
+        if($this->input->post('emp_performance_end_date')){
+            $performance_data['emp_performance_end_date'] = $this->input->post('emp_performance_end_date');
+        }else{
+            $performance_data['emp_performance_end_date'] = $this->input->post('old_performance_end_date');
+        }
+
+        $res1 = $this->em->updateEmployeeQuality($quality_data, $per_id);
+        $res2 = $this->em->updateEmployeeKnowledgePerformance($knowledge_performance_data, $per_id);
+        $res3 = $this->em->updateEmployeeCommunication($communication_data, $per_id);
+        $res4 = $this->em->updateEmployeeTimeManagement($time_management_data, $per_id);
+        $res5 = $this->em->updateEmployeeTeamManagement($team_management_data, $per_id);
+        $res6 = $this->em->updateEmployeeReliabilityProfessionalism($reliability_data, $per_id);
+        $res7 = $this->em->updateEmployeeAdaptabilityProactivity($adaptability_productivity_data, $per_id);
+        $res8 = $this->em->updateSEPerformance($performance_data, $per_id);
+        $res9 = $this->em->updateEMPGoalsEvalu($goals, $per_id);
+     
+
+		if($res1||$res2||$res3||$res4||$res5||$res6||$res7||$res8||$res9){
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 			$this->session->set_flashdata('emp_update_score_success', 'Your Score Updated Successfully!!!');
 			return redirect('Employee/showEmpPerformance/'.$per_id);
 		}else{
@@ -1226,6 +2373,131 @@ class Employee extends CI_Controller {
 
     }
 
+<<<<<<< HEAD
+=======
+    public function empProfileList(){
+
+            $empID = $this->session->userdata('emp_login_id');
+            $menu['empinfo'] = $this->em->getEmpInfo($empID);
+
+            $config=[
+                'base_url' => base_url('Admin/empProfileList'),
+                'per_page' =>25,
+                'total_rows' => $this->em->num_rows_ProfileList(),
+                'full_tag_open'=>"<ul class='pagination'>",
+                'full_tag_close'=>"</ul>",
+                'next_tag_open' =>"<li>",
+                'next_tag_close' =>"</li>",
+                'prev_tag_open' =>"<li>",
+                'prev_tag_close' =>"</li>",
+                'num_tag_open' =>"<li>",
+                'num_tag_close' =>"<li>",
+                'cur_tag_open' =>"<li class='active'><a>",
+                'cur_tag_close' =>"</a></li>"
+              ];
+        
+            $this->pagination->initialize($config);
+            $data['empdata'] = $this->em->employeesProfileListData($config['per_page'],$this->uri->segment(3));
+
+			$this->load->view('employee/include/header');
+			$this->load->view('employee/include/menu', $menu);
+			$this->load->view('employee/profiles-employee-list', $data);
+			$this->load->view('employee/include/footer');
+
+    }
+
+    public function showEmployeeProfile($id){
+
+            $this->load->library('encryption');
+
+            $empID = $this->session->userdata('emp_login_id');
+            $menu['empinfo'] = $this->em->getEmpInfo($empID);
+            $data['empdata'] = $this->am->getEmpDetails($id);
+			$data['departments'] = $this->am->getEmpDepartment();
+			$data['per_history_check'] = $this->am->getCheckHistory($id);
+			$data['emp_avg'] = $this->am->getEmployeesAVG($id);
+            $skills = $this->em->getEmpSkills($id);
+
+            if($skills){
+                $data['skills'] = $skills;
+            }else{
+                $data['skills'] = 0;
+            }
+            $status = $this->em->getEmpStatus($id);
+            if($status){
+                $data['status'] = $status;
+            }else{
+                $data['status'] = 0;
+            }
+
+			$goals = $this->em->getEmpGoals($id);
+            if($goals){
+                $data['goal'] = $goals;
+            }else{
+                $data['goal'] = 0;
+            }
+
+            $experience = $this->em->getEmpExperience($id);
+            if($experience){
+                $data['experience'] = $experience;
+            }else{
+                $data['experience'] = 0;
+            }
+
+            $salary = $this->em->getEmpSalary($id);
+            if($salary){
+                $data['salary'] = $salary;
+            }else{
+                $data['salary'] = 0;
+            }
+
+            $currency = $this->am->getEmpCurrency($id);
+			if($currency){
+				$data['currency'] = $currency;
+			}else{
+				$data['currency'] = 0;
+			}
+            
+            $qualification = $this->em->getEmpQualification($id);
+            if($qualification){
+                $data['qualification'] = $qualification;
+            }else{
+                $data['qualification'] = 0;
+            }
+            $individual = $this->em->getEmpIndividual($id);
+            if($individual){
+                $data['individual'] = $individual;
+            }else{
+                $data['individual'] = 0;
+            }
+            $personality = $this->em->getEmpPersonality($id);
+            if($personality){
+                $data['personality'] = $personality;
+            }else{
+                $data['personality'] = 0;
+            }
+            $software = $this->em->getEmpSoftware($id);
+            if($software){
+                $data['software'] = $software;
+            }else{
+                $data['software'] = 0;
+            }
+
+			$ManagerSignature = $this->am->getManagerSignature($id);
+
+			if($ManagerSignature){
+				$data['signature_img'] = $this->am->getManagerSignature($id);
+			}else{
+				$data['signature_img'] = 0;
+			}
+
+			$this->load->view('employee/include/header');
+			$this->load->view('employee/include/menu', $menu);
+			$this->load->view('employee/show-employee-profile-details', $data);
+			$this->load->view('employee/include/footer');
+    }
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     public function ReEvaluateForm($id){
 
             $empID = $this->session->userdata('emp_login_id');
@@ -1233,6 +2505,18 @@ class Employee extends CI_Controller {
 			$data['re_evaluate'] = $this->em->ReEvaluatePerformanceInfo($id);
             $data['emp_avg'] = $this->am->getEmployeesAVG($id);
 
+<<<<<<< HEAD
+=======
+            $goalsID = $this->em->findEMPID($id);
+            $data['goals'] = $this->em->getSuperEmpGoals($id);
+
+            
+            // echo '<pre>';
+            // print_r($data);
+            // echo '</pre>';
+            // exit;
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 			$this->load->view('employee/include/header');
 			$this->load->view('employee/include/menu', $menu);
 			$this->load->view('employee/re-evaluate-details', $data);
@@ -1243,6 +2527,13 @@ class Employee extends CI_Controller {
         $empID = $this->session->userdata('emp_login_id');
         $menu['empinfo'] = $this->em->getEmpInfo($empID);
         $data['empinfo'] = $this->em->ReEvaluatePerformanceInfo($id);
+<<<<<<< HEAD
+=======
+
+        $goalsID = $this->em->findEMPID($id);
+        $data['goals'] = $this->em->getSuperEmpGoals($id);
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 		$this->load->view('employee/include/header');
 		$this->load->view('employee/include/menu', $menu);
 		$this->load->view('employee/re-evaluate-update', $data);
@@ -1278,6 +2569,7 @@ class Employee extends CI_Controller {
     public function submitReEvaluateEmp(){
 
         $per_id = $this->input->post('performance_id');
+<<<<<<< HEAD
         $emp_id = $this->input->post('employee_id');
 
 		/* communication */
@@ -1368,6 +2660,169 @@ class Employee extends CI_Controller {
 		$this->em->updateEmployeeCommunication($communication_data, $per_id);
 
 		/* communication */
+=======
+        $emp_id = $this->em->findEMPID($per_id);
+
+        // Goals
+
+        $goals['performance_id'] = $this->input->post('performance_id');
+
+        if($this->input->post('goals_supervisor_words_immediate')){
+            $goals['goals_supervisor_words_immediate'] = $this->input->post('goals_supervisor_words_immediate');
+        }else{
+            $goals['goals_supervisor_words_immediate'] = null;
+        }   
+
+        if($this->input->post('goals_supervisor_words_short_term')){
+            $goals['goals_supervisor_words_short_term'] = $this->input->post('goals_supervisor_words_short_term');
+        }else{
+            $goals['goals_supervisor_words_short_term'] = null;
+        }
+
+        if( $this->input->post('goals_supervisor_words_mid_term')){
+            $goals['goals_supervisor_words_mid_term'] = $this->input->post('goals_supervisor_words_mid_term');
+        }else{
+            $goals['goals_supervisor_words_mid_term'] = null;
+        }
+
+        if($this->input->post('goals_supervisor_words_long_term')){
+            $goals['goals_supervisor_words_long_term'] = $this->input->post('goals_supervisor_words_long_term');
+        }else{
+            $goals['goals_supervisor_words_long_term'] = null;
+        }
+
+        if($this->input->post('supervisor_summary')){
+            $goals['supervisor_summary'] = $this->input->post('supervisor_summary');
+        }else{
+            $goals['supervisor_summary'] = null;
+        }
+
+        $this->em->updateSupervisorGoals($goals, $per_id);
+
+        /* Quality & Organization */
+
+		$quality_data['performance_id'] = $this->input->post('performance_id');
+
+        $quality_question1 = $this->input->post('quality_question_1_new');
+        $quality_question1_mgr = $this->input->post('m_quality_question_1');
+        // $quality_question1_emp = $this->input->post('e_quality_question_1');
+
+        $quality_question2 = $this->input->post('quality_question_2_new');
+        $quality_question2_mgr = $this->input->post('m_quality_question_2');
+        // $quality_question2_emp = $this->input->post('e_quality_question_2');
+
+        $quality_question3 = $this->input->post('quality_question_3_new');
+        $quality_question3_mgr = $this->input->post('m_quality_question_3');
+        // $quality_question3_emp = $this->input->post('e_quality_question_3');
+
+        $quality_question4 = $this->input->post('quality_question_4_new');
+        $quality_question4_mgr = $this->input->post('m_quality_question_4');
+        // $quality_question4_emp = $this->input->post('e_quality_question_4');
+
+        $quality_question5 = $this->input->post('quality_question_5_new');
+        $quality_question5_mgr = $this->input->post('m_quality_question_5');
+        // $quality_question5_emp = $this->input->post('e_quality_question_5');
+
+        $quality_comments = $this->input->post('quality_comments');
+        $quality_comments_old = $this->input->post('quality_comments_old');
+        $quality_comments_manager = $this->input->post('m_quality_comments');
+
+        if($quality_question1){
+
+            if($quality_question1 == 6){
+                $quality_data['m_quality_question_1'] = 0;
+                $avg_quality1 = null;
+               }else{
+                $quality_data['m_quality_question_1'] = $quality_question1;
+                $avg_quality1 = intval($quality_question1);
+            }
+
+        }else{
+            $quality_data['m_quality_question_1'] = $quality_question1_mgr;
+            $avg_quality1 = intval($quality_question1_mgr);
+        }
+
+        if($quality_question2){
+            if($quality_question2 == 6){
+                $quality_data['m_quality_question_2'] = 0;
+                $avg_quality2 = null;
+               }else{
+                $quality_data['m_quality_question_2'] = $quality_question2;
+                $avg_quality2 = intval($quality_question2);
+            }
+        }else{
+            $quality_data['m_quality_question_2'] = $quality_question2_mgr;
+            $avg_quality2 = intval($quality_question2_mgr);
+        }
+
+
+       if($quality_question3){
+            if($quality_question3 == 6){
+                $quality_data['m_quality_question_3'] = 0;
+                $avg_quality3 = null;
+            }else{
+                $quality_data['m_quality_question_3'] = $quality_question3;
+                $avg_quality3 = intval($quality_question3);
+            }
+       }else{
+        $quality_data['m_quality_question_3'] = $quality_question3_mgr;
+        $avg_quality3 = intval($quality_question3_mgr);
+       }
+
+        if($quality_question4){
+            if($quality_question4 == 6){
+                $quality_data['m_quality_question_4'] = 0;
+                $avg_quality4 = null;
+               }else{
+                $quality_data['m_quality_question_4'] = $quality_question4;
+                $avg_quality4 = intval($quality_question4);
+            }
+        }else{
+            $quality_data['m_quality_question_4'] = $quality_question4_mgr;
+            $avg_quality4 = intval($quality_question4_mgr);
+        }
+
+
+        if($quality_question5){
+            if($quality_question5 == 6){
+                $quality_data['m_quality_question_5'] = 0;
+                $avg_quality5 = null;
+               }else{
+                $quality_data['m_quality_question_5'] = $quality_question5;
+                $avg_quality5 = intval($quality_question5);
+            }
+        }else{
+            $quality_data['m_quality_question_5'] = $quality_question5_mgr;
+            $avg_quality5 = intval($quality_question5_mgr);
+        }
+
+        $quality_counter = 0;
+        $store_quality = null;
+        foreach($quality_data as $run){
+            
+            if($run == 0){
+                
+            }else{
+                $store_quality = $quality_counter++;
+            }
+        }
+
+        if($quality_comments_manager){
+            $quality_data['m_quality_comments'] = $quality_comments_manager;
+        }else{
+            $quality_data['m_quality_comments'] = $quality_comments_old;
+        }
+
+        if($store_quality){
+            $qualityTotal = $avg_quality1 + $avg_quality2 + $avg_quality3 + $avg_quality4 + $avg_quality5;
+            $qualityAvgTotal = $qualityTotal / $store_quality;
+            $quality_data['m_quality_emp_avg'] = number_format((float)$qualityAvgTotal, 2, '.', '');
+        }else{
+            $quality_data['m_quality_emp_avg'] = null;
+        }
+
+		/* Quality & Organization */
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         // /* Knowledge & Performance */
 
@@ -1393,10 +2848,22 @@ class Employee extends CI_Controller {
         $knowledge_performance5_mgr = $this->input->post('m_knowledge_performance_question_5');
         $knowledge_performance5_emp = $this->input->post('e_knowledge_performance_question_5');
 
+<<<<<<< HEAD
+=======
+        $knowledge_performance6 = $this->input->post('knowledge_performance_question_6_new');
+        $knowledge_performance6_mgr = $this->input->post('m_knowledge_performance_question_6');
+        $knowledge_performance6_emp = $this->input->post('e_knowledge_performance_question_6');
+
+        $knowledge_performance7 = $this->input->post('knowledge_performance_question_7_new');
+        $knowledge_performance7_mgr = $this->input->post('m_knowledge_performance_question_7');
+        $knowledge_performance7_emp = $this->input->post('e_knowledge_performance_question_7');
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $knowledge_performance_comments = $this->input->post('knowledge_performance_comments');
         $knowledge_performance_comments_old = $this->input->post('knowledge_performance_comments_old');
         $knowledge_performance_comments_manager = $this->input->post('m_knowledge_performance_comments');
 
+<<<<<<< HEAD
 
         if($knowledge_performance1){
             $knowledge_performance_data['m_knowledge_performance_question_1'] = $knowledge_performance1;
@@ -1410,38 +2877,139 @@ class Employee extends CI_Controller {
         if($knowledge_performance2){
             $knowledge_performance_data['m_knowledge_performance_question_2'] = $knowledge_performance2;
             $avg_knowledge_performance2 = intval($knowledge_performance2);
+=======
+        if($knowledge_performance1){
+            if($knowledge_performance1 == 6){
+                $knowledge_performance_data['m_knowledge_performance_question_1'] = 0;
+                $avg_knowledge_performance1 = null;
+            }else{
+                $knowledge_performance_data['m_knowledge_performance_question_1'] = $knowledge_performance1;
+                $avg_knowledge_performance1 = intval($knowledge_performance1);
+        }
+        }else{
+            $knowledge_performance_data['m_knowledge_performance_question_1'] = $knowledge_performance1_mgr;
+            $avg_knowledge_performance1 = intval($knowledge_performance1_mgr);
+        }
+       
+        if($knowledge_performance2){
+            if($knowledge_performance2 == 6){    
+                $knowledge_performance_data['m_knowledge_performance_question_2'] = 0;
+                $avg_knowledge_performance2 = null;
+               }else{
+                $knowledge_performance_data['m_knowledge_performance_question_2'] = $knowledge_performance2;
+                $avg_knowledge_performance2 = intval($knowledge_performance2);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $knowledge_performance_data['m_knowledge_performance_question_2'] = $knowledge_performance2_mgr;
             $avg_knowledge_performance2 = intval($knowledge_performance2_mgr);
         }
+<<<<<<< HEAD
 
 
         if($knowledge_performance3){
             $knowledge_performance_data['m_knowledge_performance_question_3'] = $knowledge_performance3;
             $avg_knowledge_performance3 = intval($knowledge_performance3);
+=======
+        
+        if($knowledge_performance3){
+            if($knowledge_performance3 == 6){
+                $knowledge_performance_data['m_knowledge_performance_question_3'] = 0;
+                $avg_knowledge_performance3 = null;
+            }else{
+                $knowledge_performance_data['m_knowledge_performance_question_3'] = $knowledge_performance3;
+                $avg_knowledge_performance3 = intval($knowledge_performance3);
+        }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $knowledge_performance_data['m_knowledge_performance_question_3'] = $knowledge_performance3_mgr;
             $avg_knowledge_performance3 = intval($knowledge_performance3_mgr);
         }
+<<<<<<< HEAD
 
 
         if($knowledge_performance4){
             $knowledge_performance_data['m_knowledge_performance_question_4'] = $knowledge_performance4;
             $avg_knowledge_performance4 = intval($knowledge_performance4);
+=======
+        
+        if($knowledge_performance4){
+            if($knowledge_performance4 == 6){
+                $knowledge_performance_data['m_knowledge_performance_question_4'] = 0;
+                $avg_knowledge_performance4 = null;
+               }else{
+                $knowledge_performance_data['m_knowledge_performance_question_4'] = $knowledge_performance4;
+                $avg_knowledge_performance4 = intval($knowledge_performance4);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $knowledge_performance_data['m_knowledge_performance_question_4'] = $knowledge_performance4_mgr;
             $avg_knowledge_performance4 = intval($knowledge_performance4_mgr);
         }
+<<<<<<< HEAD
 
 
         if($knowledge_performance5){
             $knowledge_performance_data['m_knowledge_performance_question_5'] = $knowledge_performance5;
             $avg_knowledge_performance5 = intval($knowledge_performance5);
+=======
+        
+
+        if($knowledge_performance5){
+            if($knowledge_performance5 == 6){
+                $knowledge_performance_data['m_knowledge_performance_question_5'] = 0;
+                $avg_knowledge_performance5 = null;
+            }else{
+                $knowledge_performance_data['m_knowledge_performance_question_5'] = $knowledge_performance5;
+                $avg_knowledge_performance5 = intval($knowledge_performance5);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $knowledge_performance_data['m_knowledge_performance_question_5'] = $knowledge_performance5_mgr;
             $avg_knowledge_performance5 = intval($knowledge_performance5_mgr);
         }
+<<<<<<< HEAD
 
+=======
+        
+       if($knowledge_performance6){
+            if($knowledge_performance6 == 6){
+                $knowledge_performance_data['m_knowledge_performance_question_6'] = 0;
+                $avg_knowledge_performance6 = null;
+            }else{
+                $knowledge_performance_data['m_knowledge_performance_question_6'] = $knowledge_performance6;
+                $avg_knowledge_performance6 = intval($knowledge_performance6);
+            }
+       }else{
+            $knowledge_performance_data['m_knowledge_performance_question_6'] = $knowledge_performance6_mgr;
+            $avg_knowledge_performance6 = intval($knowledge_performance6_mgr);
+       }
+      
+       if($knowledge_performance7){
+        if($knowledge_performance7 == 6){
+            $knowledge_performance_data['m_knowledge_performance_question_7'] = 0;
+            $avg_knowledge_performance7 = null;
+           }else{
+            $knowledge_performance_data['m_knowledge_performance_question_7'] = $knowledge_performance7;
+            $avg_knowledge_performance7 = intval($knowledge_performance7);
+        }
+       }else{
+        $knowledge_performance_data['m_knowledge_performance_question_7'] = $knowledge_performance7_mgr;
+        $avg_knowledge_performance7 = intval($knowledge_performance7_mgr);
+       }
+        
+
+        $knowledge_performance_counter = 0;
+        $store_knowledge_performance = null;
+        foreach($knowledge_performance_data as $run){
+            
+            if($run == 0){
+                
+            }else{
+                $store_knowledge_performance = $knowledge_performance_counter++;
+            }
+        }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         if($knowledge_performance_comments_manager){
             $knowledge_performance_data['m_knowledge_performance_comments'] = $knowledge_performance_comments_manager;
@@ -1449,6 +3017,7 @@ class Employee extends CI_Controller {
             $knowledge_performance_data['m_knowledge_performance_comments'] = $knowledge_performance_comments_old;
         }
 
+<<<<<<< HEAD
 
         if($avg_knowledge_performance1||$avg_knowledge_performance2||$avg_knowledge_performance3||$avg_knowledge_performance4||$avg_knowledge_performance5){
             $knowledge_performanceTotal = $avg_knowledge_performance1 + $avg_knowledge_performance2 + $avg_knowledge_performance3 + $avg_knowledge_performance4 + $avg_knowledge_performance5;
@@ -1705,6 +3274,433 @@ class Employee extends CI_Controller {
         /* Reliability & Professionalism */
 
 
+=======
+        if($store_knowledge_performance){
+            $knowledge_performanceTotal = $avg_knowledge_performance1 + $avg_knowledge_performance2 + $avg_knowledge_performance3 + $avg_knowledge_performance4 + $avg_knowledge_performance5 + $avg_knowledge_performance6 + $avg_knowledge_performance7;
+            $knowledge_performanceAvgTotal = $knowledge_performanceTotal / $store_knowledge_performance;
+            $knowledge_performance_data['m_knowledge_performance_emp_avg'] = number_format((float)$knowledge_performanceAvgTotal, 2, '.', '');
+        }else{
+            $knowledge_performance_data['m_knowledge_performance_emp_avg'] = null;
+        }
+
+        // /* End Knowledge & Performance */
+
+		/* Communication */
+
+		$communication_data['performance_id'] = $this->input->post('performance_id');
+
+        $communication1 = $this->input->post('communication_question_1_new');
+        $communication1_mgr = $this->input->post('m_communication_question_1');
+        $communication1_emp = $this->input->post('e_communication_question_1');
+
+        $communication2 = $this->input->post('communication_question_2_new');
+        $communication2_mgr = $this->input->post('m_communication_question_2');
+        $communication2_emp = $this->input->post('e_communication_question_2');
+
+        $communication3 = $this->input->post('communication_question_3_new');
+        $communication3_mgr = $this->input->post('m_communication_question_3');
+        $communication3_emp = $this->input->post('e_communication_question_3');
+        
+        $communication4 = $this->input->post('communication_question_4_new');
+        $communication4_mgr = $this->input->post('m_communication_question_4');
+        $communication4_emp = $this->input->post('e_communication_question_4');
+
+        $communication5 = $this->input->post('communication_question_5_new');
+        $communication5_mgr = $this->input->post('m_communication_question_5');
+        $communication5_emp = $this->input->post('e_communication_question_5');
+
+        $communication6 = $this->input->post('communication_question_6_new');
+        $communication6_mgr = $this->input->post('m_communication_question_6');
+        $communication6_emp = $this->input->post('e_communication_question_6');
+
+        $communication_comments = $this->input->post('communication_comments');
+        $communication_comments_old = $this->input->post('communication_comments_old');
+        $communication_comments_manager = $this->input->post('m_communication_comments');
+        
+
+        if($communication1){
+            if($communication1 == 6){
+                $communication_data['m_communication_question_1'] = 0;
+                $avg_communication1 = null;
+            }else{
+                $communication_data['m_communication_question_1'] = $communication1;
+                $avg_communication1 = intval($communication1);
+            }
+        }else{
+            $communication_data['m_communication_question_1'] = $communication1_mgr;
+            $avg_communication1 = intval($communication1_mgr);
+        }
+        
+
+        if($communication2){
+            if($communication2 == 6){
+                $communication_data['m_communication_question_2'] = 0;
+                $avg_communication2 = null;
+           }else{
+            $communication_data['m_communication_question_2'] = $communication2;
+            $avg_communication2 = intval($communication2);
+            }
+        }else{
+            $communication_data['m_communication_question_2'] = $communication2_mgr;
+            $avg_communication2 = intval($communication2_mgr);
+        }   
+       
+
+        if($communication3){
+            if($communication3 == 6){
+                $communication_data['m_communication_question_3'] = 0;
+                $avg_communication3 = null;
+               }else{
+                $communication_data['m_communication_question_3'] = $communication3;
+                $avg_communication3 = intval($communication3);
+            }
+        }else{
+            $communication_data['m_communication_question_3'] = $communication3_mgr;
+            $avg_communication3 = intval($communication3_mgr);
+        }   
+        
+        if($communication4){
+            if($communication4 == 6){
+                $communication_data['m_communication_question_4'] = 0;
+                $avg_communication4 = null;
+            }else{
+                $communication_data['m_communication_question_4'] = $communication4;
+                $avg_communication4 = intval($communication4);
+            }
+        }else{
+            $communication_data['m_communication_question_4'] = $communication4_mgr;
+            $avg_communication4 = intval($communication4_mgr);
+        }   
+        
+
+        if($communication5){
+            if($communication5 == 6){
+                $communication_data['m_communication_question_5'] = 0;
+                $avg_communication5 = null;
+               }else{
+                $communication_data['m_communication_question_5'] = $communication5;
+                $avg_communication5 = intval($communication5);
+            }
+        }else{
+            $communication_data['m_communication_question_5'] = $communication5_mgr;
+            $avg_communication5 = intval($communication5_mgr);
+        }
+        
+
+        if($communication6){
+            if($communication6 == 6){
+                $communication_data['m_communication_question_6'] = 0;
+                $avg_communication6 = null;
+            }else{
+                $communication_data['m_communication_question_6'] = $communication6;
+                $avg_communication6 = intval($communication6);
+            }
+        }else{
+            $communication_data['m_communication_question_6'] = $communication6_mgr;
+            $avg_communication6 = intval($communication6_mgr);
+        }
+      
+
+        $communication_counter = 0;
+        $store_communication = null;
+        foreach($communication_data as $run){
+            
+            if($run == 0){
+                
+            }else{
+                $store_communication = $communication_counter++;
+            }
+        }
+
+        if($communication_comments_manager){
+            $communication_data['m_communication_comments'] = $communication_comments_manager;
+        }else{
+            $communication_data['m_communication_comments'] = $communication_comments_old;
+        }
+
+        if($store_communication){
+            $communicationTotal = $avg_communication1 + $avg_communication2 + $avg_communication3 + $avg_communication4 + $avg_communication5+ $avg_communication6;
+            $communicationAvgTotal = $communicationTotal / $store_communication;
+            $communication_data['m_communication_emp_avg'] = number_format((float)$communicationAvgTotal, 2, '.', '');
+        }else{
+            $communication_data['m_communication_emp_avg'] = null;
+        }
+       
+		/* communication */
+
+        /* Task & Time Management */
+
+		$time_management_data['performance_id'] = $this->input->post('performance_id');
+
+        $time_management_question_1 = $this->input->post('time_management_question_1_new');
+        $time_management_question_1_mgr = $this->input->post('m_time_management_question_1');
+        $time_management_question_1_emp = $this->input->post('e_time_management_question_1');
+
+        $time_management_question_2 = $this->input->post('time_management_question_2_new');
+        $time_management_question_2_mgr = $this->input->post('m_time_management_question_2');
+        $time_management_question_2_emp = $this->input->post('e_time_management_question_2');
+
+        $time_management_question_3 = $this->input->post('time_management_question_3_new');
+        $time_management_question_3_mgr = $this->input->post('m_time_management_question_3');
+        $time_management_question_3_emp = $this->input->post('e_time_management_question_3');
+
+        $time_management_question_4 = $this->input->post('time_management_question_4_new');
+        $time_management_question_4_mgr = $this->input->post('m_time_management_question_4');
+        $time_management_question_4_emp = $this->input->post('e_time_management_question_4');
+
+        $time_management_question_5 = $this->input->post('time_management_question_5_new');
+        $time_management_question_5_mgr = $this->input->post('m_time_management_question_5');
+        $time_management_question_5_emp = $this->input->post('e_time_management_question_5');
+
+        $time_management_question_6 = $this->input->post('time_management_question_6_new');
+        $time_management_question_6_mgr = $this->input->post('m_time_management_question_6');
+        $time_management_question_6_emp = $this->input->post('e_time_management_question_6');
+
+        $time_management_comments = $this->input->post('time_management_comments');
+        $time_management_comments_old = $this->input->post('time_management_comments_old');
+        $time_management_comments_manager = $this->input->post('m_time_management_comments');
+        
+
+       if($time_management_question_1){
+            if($time_management_question_1 == 6){
+                $time_management_data['m_time_management_question_1'] = 0;
+                $avg_time_management1 = null;
+            }else{
+                $time_management_data['m_time_management_question_1'] = $time_management_question_1;
+                $avg_time_management1 = intval($time_management_question_1);
+            }
+       }else{
+            $time_management_data['m_time_management_question_1'] = $time_management_question_1_mgr;
+            $avg_time_management1 = intval($time_management_question_1_mgr);
+       }
+        
+
+        if($time_management_question_2){
+            if($time_management_question_2 == 6){
+                $time_management_data['m_time_management_question_2'] = 0;
+                $avg_time_management2 = null;
+            }else{
+                $time_management_data['m_time_management_question_2'] = $time_management_question_2;
+                $avg_time_management2 = intval($time_management_question_2);
+            }
+        }else{
+            $time_management_data['m_time_management_question_2'] = $time_management_question_2_mgr;
+                $avg_time_management2 = intval($time_management_question_2_mgr);
+        }
+        
+        if($time_management_question_3){
+            if($time_management_question_3 == 6){
+                $time_management_data['m_time_management_question_3'] = 0;
+                $avg_time_management3 = null;
+            }else{
+                $time_management_data['m_time_management_question_3'] = $time_management_question_3;
+                $avg_time_management3 = intval($time_management_question_3);
+            }
+        }else{
+            $time_management_data['m_time_management_question_3'] = $time_management_question_3_mgr;
+            $avg_time_management3 = intval($time_management_question_3_mgr);
+        }
+       
+
+        if($time_management_question_4){
+            if($time_management_question_4 == 6){
+                $time_management_data['m_time_management_question_4'] = 0;
+                $avg_time_management4 = null;
+            }else{
+                $time_management_data['m_time_management_question_4'] = $time_management_question_4;
+                $avg_time_management4 = intval($time_management_question_4);
+            }
+        }else{
+            $time_management_data['m_time_management_question_4'] = $time_management_question_4_mgr;
+            $avg_time_management4 = intval($time_management_question_4_mgr);
+        }
+
+        if($time_management_question_5){
+            if($time_management_question_5 == 6){
+                $time_management_data['m_time_management_question_5'] = 0;
+                $avg_time_management5 = null;
+            }else{
+                $time_management_data['m_time_management_question_5'] = $time_management_question_5;
+                $avg_time_management5 = intval($time_management_question_5);
+            }
+        }else{
+            $time_management_data['m_time_management_question_5'] = $time_management_question_5_mgr;
+            $avg_time_management5 = intval($time_management_question_5_mgr);
+        }
+        
+
+       if($time_management_question_6){
+            if($time_management_question_6 == 6){
+                $time_management_data['m_time_management_question_6'] = 0;
+                $avg_time_management6 = null;
+            }else{
+                $time_management_data['m_time_management_question_6'] = $time_management_question_6;
+                $avg_time_management6 = intval($time_management_question_6);
+            }
+       }else{
+            $time_management_data['m_time_management_question_6'] = $time_management_question_6_mgr;
+            $avg_time_management6 = intval($time_management_question_6_mgr);
+       }
+       
+
+        $time_management_counter = 0;
+        $store_time_management = null;
+        foreach($time_management_data as $run){
+            
+            if($run == 0){
+                
+            }else{
+                $store_time_management = $time_management_counter++;
+            }
+        }
+        
+        if($time_management_comments_manager){
+            $time_management_data['m_time_management_comments'] = $time_management_comments_manager;
+        }else{
+            $time_management_data['m_time_management_comments'] = $time_management_comments_old;
+        }
+        
+        if($store_time_management){
+            $time_managementTotal = $avg_time_management1 + $avg_time_management2 + $avg_time_management3 + $avg_time_management4 + $avg_time_management5+ $avg_time_management6;
+            $time_managementAvgTotal = $time_managementTotal / $store_time_management;
+            $time_management_data['m_time_management_emp_avg'] = number_format((float)$time_managementAvgTotal, 2, '.', '');
+        }else{
+            $time_management_data['m_time_management_emp_avg'] = null;
+        }
+
+		/* Task & Time Management */
+
+		/* Team Management */
+
+		$team_management_data['performance_id'] = $this->input->post('performance_id');
+
+        $team_management_question_1 = $this->input->post('team_management_question_1_new');
+        $team_management_question_1_mgr = $this->input->post('m_team_management_question_1');
+        $team_management_question_1_emp = $this->input->post('team_management_question_1');
+
+        $team_management_question_2 = $this->input->post('team_management_question_2_new');
+        $team_management_question_2_mgr = $this->input->post('m_team_management_question_2');
+        $team_management_question_2_emp = $this->input->post('e_team_management_question_2');
+
+        $team_management_question_3 = $this->input->post('team_management_question_3_new');
+        $team_management_question_3_mgr = $this->input->post('m_team_management_question_3');
+        $team_management_question_3_emp = $this->input->post('e_team_management_question_3');
+
+        $team_management_question_4 = $this->input->post('team_management_question_4_new');
+        $team_management_question_4_mgr = $this->input->post('m_team_management_question_4');
+        $team_management_question_4_emp = $this->input->post('e_team_management_question_4');
+
+        $team_management_question_5 = $this->input->post('team_management_question_5_new');
+        $team_management_question_5_mgr = $this->input->post('m_team_management_question_5');
+        $team_management_question_5_emp = $this->input->post('e_team_management_question_5');
+
+        $team_management_comments = $this->input->post('team_management_comments');
+        $team_management_comments_old = $this->input->post('team_management_comments_old');
+        $team_management_comments_manager = $this->input->post('m_team_management_comments');
+
+           
+            if($team_management_question_1){
+                if($team_management_question_1 == 6){
+                    $team_management_data['m_team_management_question_1'] = 0;
+                    $avg_team_management1 = null;
+                }else{
+                    $team_management_data['m_team_management_question_1'] = $team_management_question_1;
+                    $avg_team_management1 = intval($team_management_question_1);
+                }
+            }else{
+                $team_management_data['m_team_management_question_1'] = $team_management_question_1_mgr;
+                $avg_team_management1 = intval($team_management_question_1_mgr);
+            }
+
+            if($team_management_question_2){
+                if($team_management_question_2 == 6){
+                    $team_management_data['m_team_management_question_2'] = 0;
+                    $avg_team_management2 = null;
+                }else{
+                    $team_management_data['m_team_management_question_2'] = $team_management_question_2;
+                    $avg_team_management2 = intval($team_management_question_2);
+                }
+
+            }else{
+                $team_management_data['m_team_management_question_2'] = $team_management_question_2_mgr;
+                $avg_team_management2 = intval($team_management_question_2_mgr);
+            }
+
+           if($team_management_question_3){
+               if($team_management_question_3 == 6){
+                $team_management_data['m_team_management_question_3'] = 0;
+                $avg_team_management3 = null;
+               }else{
+                $team_management_data['m_team_management_question_3'] = $team_management_question_3;
+                $avg_team_management3 = intval($team_management_question_3);
+               }
+           }else{
+                $team_management_data['m_team_management_question_3'] = $team_management_question_3_mgr;
+                $avg_team_management3 = intval($team_management_question_3_mgr);
+           }
+
+
+           if($team_management_question_4){
+
+               if($team_management_question_4 == 6){
+                $team_management_data['m_team_management_question_4'] = 0;
+                $avg_team_management4 = null;
+               }else{
+                $team_management_data['m_team_management_question_4'] = $team_management_question_4;
+                $avg_team_management4 = intval($team_management_question_4);
+               }
+
+           }else{
+                $team_management_data['m_team_management_question_4'] = $team_management_question_4_mgr;
+                $avg_team_management4 = intval($team_management_question_4_mgr);
+           }
+
+
+          if($team_management_question_5){
+            if($team_management_question_5 == 6){
+                $team_management_data['m_team_management_question_5'] = 0;
+                $avg_team_management5 = null;
+            }else{
+                $team_management_data['m_team_management_question_5'] = $team_management_question_5;
+                $avg_team_management5 = intval($team_management_question_5);
+            }
+          }else{
+                $team_management_data['m_team_management_question_5'] = $team_management_question_5_mgr;
+                $avg_team_management5 = intval($team_management_question_5_mgr);
+          }
+
+
+       
+        $team_management_counter = 0;
+        $store_team_management = null;
+        foreach($team_management_data as $run){
+            
+            if($run == 0){
+                
+            }else{
+                $store_team_management = $team_management_counter++;
+            }
+        }
+
+        if($team_management_comments_manager){
+            $team_management_data['m_team_management_comments'] = $team_management_comments_manager;
+        }else{
+            $team_management_data['m_team_management_comments'] = $team_management_comments_old;
+        }
+
+        if($store_team_management){
+            $team_managementTotal = $avg_team_management1 + $avg_team_management2 + $avg_team_management3 + $avg_team_management4 + $avg_team_management5;
+            $team_managementAvgTotal = $team_managementTotal / $store_team_management;
+            $team_management_data['m_team_management_emp_avg'] = number_format((float)$team_managementAvgTotal, 2, '.', '');
+        }else{
+            $team_management_data['m_team_management_emp_avg'] = null;
+        }     
+      
+		/* Team Management */
+
+        /* Reliability & Professionalism */
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $reliability_data['performance_id'] = $this->input->post('performance_id');
 
         $reliability_question_1 = $this->input->post('reliability_question_1_new');
@@ -1735,6 +3731,7 @@ class Employee extends CI_Controller {
         $reliability_comments_old = $this->input->post('reliability_comments_old');
         $reliability_comments_manager = $this->input->post('m_reliability_comments');   
 
+<<<<<<< HEAD
         
         if($reliability_question_1){
             $reliability_data['m_reliability_question_1'] = $reliability_question_1;
@@ -1755,11 +3752,48 @@ class Employee extends CI_Controller {
         if($reliability_question_3){
             $reliability_data['m_reliability_question_3'] = $reliability_question_3;
             $avg_reliability3 = intval($reliability_question_3);
+=======
+       if($reliability_question_1){
+            if($reliability_question_1 == 6){
+                $reliability_data['m_reliability_question_1'] = 0;
+                $avg_reliability1 = null;
+            }else{
+                $reliability_data['m_reliability_question_1'] = $reliability_question_1;
+                $avg_reliability1 = intval($reliability_question_1);
+            }
+       }else{
+            $reliability_data['m_reliability_question_1'] = $reliability_question_1_mgr;
+            $avg_reliability1 = intval($reliability_question_1_mgr);
+       }
+
+       if($reliability_question_2){
+            if($reliability_question_2 == 6){
+                $reliability_data['m_reliability_question_2'] = 0;
+                $avg_reliability2 = null;
+            }else{
+                $reliability_data['m_reliability_question_2'] = $reliability_question_2;
+                $avg_reliability2 = intval($reliability_question_2);
+            }
+       }else{
+            $reliability_data['m_reliability_question_2'] = $reliability_question_2_mgr;
+            $avg_reliability2 = intval($reliability_question_2_mgr);
+       }
+        
+        if($reliability_question_3){
+            if($reliability_question_3 == 6){
+                $reliability_data['m_reliability_question_3'] = 0;
+                $avg_reliability3 = null;
+               }else{
+                $reliability_data['m_reliability_question_3'] = $reliability_question_3;
+                $avg_reliability3 = intval($reliability_question_3);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $reliability_data['m_reliability_question_3'] = $reliability_question_3_mgr;
             $avg_reliability3 = intval($reliability_question_3_mgr);
         }
 
+<<<<<<< HEAD
         if($reliability_question_4){
             $reliability_data['m_reliability_question_4'] = $reliability_question_4;
             $avg_reliability4 = intval($reliability_question_4);
@@ -1771,25 +3805,79 @@ class Employee extends CI_Controller {
         if($reliability_question_5){
             $reliability_data['m_reliability_question_5'] = $reliability_question_5;
             $avg_reliability5 = intval($reliability_question_5);
+=======
+       if($reliability_question_4){
+        if($reliability_question_4 == 6){
+            $reliability_data['m_reliability_question_4'] = 0;
+            $avg_reliability4 = null;
+           }else{
+            $reliability_data['m_reliability_question_4'] = $reliability_question_4;
+            $avg_reliability4 = intval($reliability_question_4);
+        }
+       }else{
+            $reliability_data['m_reliability_question_4'] = $reliability_question_4_mgr;
+            $avg_reliability4 = intval($reliability_question_4_mgr);
+       }
+       
+
+        if($reliability_question_5){
+            if($reliability_question_5 == 6){
+                $reliability_data['m_reliability_question_5'] = 0;
+                $avg_reliability5 = null;
+               }else{
+                $reliability_data['m_reliability_question_5'] = $reliability_question_5;
+                $avg_reliability5 = intval($reliability_question_5);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $reliability_data['m_reliability_question_5'] = $reliability_question_5_mgr;
             $avg_reliability5 = intval($reliability_question_5_mgr);
         }
+<<<<<<< HEAD
 
         if($reliability_question_6){
             $reliability_data['m_reliability_question_6'] = $reliability_question_6;
             $avg_reliability6 = intval($reliability_question_6);
+=======
+       
+
+        if($reliability_question_6){
+            if($reliability_question_6 == 6){
+            $reliability_data['m_reliability_question_6'] = 0;
+            $avg_reliability6 = null;
+          }else{
+            $reliability_data['m_reliability_question_6'] = $reliability_question_6;
+            $avg_reliability6 = intval($reliability_question_6);
+        }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $reliability_data['m_reliability_question_6'] = $reliability_question_6_mgr;
             $avg_reliability6 = intval($reliability_question_6_mgr);
         }
+<<<<<<< HEAD
 
+=======
+        
+
+        $reliability_counter = 0;
+        $store_reliability = null;
+        foreach($reliability_data as $run){
+            
+            if($run == 0){
+                
+            }else{
+                $store_reliability = $reliability_counter++;
+            }
+        }
+        
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         if($reliability_comments_manager){
             $reliability_data['m_reliability_comments'] = $reliability_comments_manager;
         }else{
             $reliability_data['m_reliability_comments'] = $reliability_comments_old;
         }
 
+<<<<<<< HEAD
 
         if($avg_reliability1||$avg_reliability2||$avg_reliability3||$avg_reliability4||$avg_reliability5||$avg_reliability6 ){
             $reliabilityTotal = $avg_reliability1 + $avg_reliability2 + $avg_reliability3 + $avg_reliability4 + $avg_reliability5 + $avg_reliability6;
@@ -1800,10 +3888,27 @@ class Employee extends CI_Controller {
         }
 
         $this->em->updateEmployeeReliabilityProfessionalism($reliability_data, $per_id);
+=======
+        if($store_reliability){
+        $reliabilityTotal = $avg_reliability1 + $avg_reliability2 + $avg_reliability3 + $avg_reliability4 + $avg_reliability5 + $avg_reliability6;
+        $reliabilityAvgTotal = $reliabilityTotal / $store_reliability;
+        $reliability_data['m_reliability_emp_avg'] = number_format((float)$reliabilityAvgTotal, 2, '.', '');
+        }else{
+        $reliability_data['m_reliability_emp_avg'] = null;
+        }
+       
+
+
+        // echo '<pre>';
+        // print_r($reliability_data);
+        // echo '</pre>';
+        // exit;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 
         /* Reliability & Professionalism */
 
+<<<<<<< HEAD
 
 		/* Task & Time Management */
 
@@ -1895,37 +4000,58 @@ class Employee extends CI_Controller {
 		/*  Adaptability & Proactivity */
 
 		$adaptability_data['performance_id'] = $this->input->post('performance_id');
+=======
+		/*  Adaptability & Proactivity */
+
+		$productivity_data['performance_id'] = $this->input->post('performance_id');
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         $adaptability_productivity_question_1 = $this->input->post('adaptability_productivity_question_1_new');
         $adaptability_productivity_question_1_mgr = $this->input->post('m_adaptability_productivity_question_1');
         $adaptability_productivity_question_1_emp = $this->input->post('e_adaptability_productivity_question_1');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $adaptability_productivity_question_2 = $this->input->post('adaptability_productivity_question_2_new');
         $adaptability_productivity_question_2_mgr = $this->input->post('m_adaptability_productivity_question_2');
         $adaptability_productivity_question_2_emp = $this->input->post('e_adaptability_productivity_question_2');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $adaptability_productivity_question_3 = $this->input->post('adaptability_productivity_question_3_new');
         $adaptability_productivity_question_3_mgr = $this->input->post('m_adaptability_productivity_question_3');
         $adaptability_productivity_question_3_emp = $this->input->post('e_adaptability_productivity_question_3');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $adaptability_productivity_question_4 = $this->input->post('adaptability_productivity_question_4_new');
         $adaptability_productivity_question_4_mgr = $this->input->post('m_adaptability_productivity_question_4');
         $adaptability_productivity_question_4_emp = $this->input->post('e_adaptability_productivity_question_4');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $adaptability_productivity_question_5 = $this->input->post('adaptability_productivity_question_5_new');
         $adaptability_productivity_question_5_mgr = $this->input->post('m_adaptability_productivity_question_5');
         $adaptability_productivity_question_5_emp = $this->input->post('e_adaptability_productivity_question_5');
         
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $adaptability_productivity_comments = $this->input->post('productivity_comments');
         $adaptability_productivity_comments_old = $this->input->post('productivity_comments_old');
         $adaptability_productivity_comments_manager = $this->input->post('m_productivity_comments');
 
 
+<<<<<<< HEAD
         if($adaptability_productivity_question_1){
             $productivity_data['m_adaptability_productivity_question_1'] = $adaptability_productivity_question_1;
             $avg_productivity1 = intval($adaptability_productivity_question_1);
@@ -1937,10 +4063,34 @@ class Employee extends CI_Controller {
         if($adaptability_productivity_question_2){
             $productivity_data['m_adaptability_productivity_question_2'] = $adaptability_productivity_question_2;
             $avg_productivity2 = intval($adaptability_productivity_question_2);
+=======
+         if($adaptability_productivity_question_1){
+            if($adaptability_productivity_question_1 == 6){
+                $productivity_data['m_adaptability_productivity_question_1'] = 0;
+                $avg_productivity1 = null;
+               }else{
+                $productivity_data['m_adaptability_productivity_question_1'] = $adaptability_productivity_question_1;
+                $avg_productivity1 = intval($adaptability_productivity_question_1);
+            }
+         }else{
+            $productivity_data['m_adaptability_productivity_question_1'] = $adaptability_productivity_question_1_mgr;
+            $avg_productivity1 = intval($adaptability_productivity_question_1_mgr);
+         }
+
+        if($adaptability_productivity_question_2){
+            if($adaptability_productivity_question_2 == 6){
+                $productivity_data['m_adaptability_productivity_question_2'] = 0;
+                $avg_productivity2 = null;
+               }else{
+                $productivity_data['m_adaptability_productivity_question_2'] = $adaptability_productivity_question_2;
+                $avg_productivity2 = intval($adaptability_productivity_question_2);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $productivity_data['m_adaptability_productivity_question_2'] = $adaptability_productivity_question_2_mgr;
             $avg_productivity2 = intval($adaptability_productivity_question_2_mgr);
         }
+<<<<<<< HEAD
 
         if($adaptability_productivity_question_3){
             $productivity_data['m_adaptability_productivity_question_3'] = $adaptability_productivity_question_3;
@@ -1953,18 +4103,66 @@ class Employee extends CI_Controller {
         if($adaptability_productivity_question_4){
             $productivity_data['m_adaptability_productivity_question_4'] = $adaptability_productivity_question_4;
             $avg_productivity4 = intval($adaptability_productivity_question_4);
+=======
+       
+       if($adaptability_productivity_question_3){
+            if($adaptability_productivity_question_3 == 6){
+                $productivity_data['m_adaptability_productivity_question_3'] = 0;
+                $avg_productivity3 = null;
+            }else{
+                $productivity_data['m_adaptability_productivity_question_3'] = $adaptability_productivity_question_3;
+                $avg_productivity3 = intval($adaptability_productivity_question_3);
+            }
+       }else{
+            $productivity_data['m_adaptability_productivity_question_3'] = $adaptability_productivity_question_3_mgr;
+            $avg_productivity3 = intval($adaptability_productivity_question_3_mgr);
+       }
+       
+        if($adaptability_productivity_question_4){
+            if($adaptability_productivity_question_4 == 6){
+                $productivity_data['m_adaptability_productivity_question_4'] = 0;
+                $avg_productivity4 = null;
+            }else{
+                $productivity_data['m_adaptability_productivity_question_4'] = $adaptability_productivity_question_4;
+                $avg_productivity4 = intval($adaptability_productivity_question_4);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $productivity_data['m_adaptability_productivity_question_4'] = $adaptability_productivity_question_4_mgr;
             $avg_productivity4 = intval($adaptability_productivity_question_4_mgr);
         }
 
         if($adaptability_productivity_question_5){
+<<<<<<< HEAD
             $productivity_data['m_adaptability_productivity_question_5'] = $adaptability_productivity_question_5;
             $avg_productivity5 = intval($adaptability_productivity_question_5);
+=======
+            if($adaptability_productivity_question_5 == 6){
+                $productivity_data['m_adaptability_productivity_question_5'] = 0;
+                $avg_productivity5 = null;
+               }else{
+                $productivity_data['m_adaptability_productivity_question_5'] = $adaptability_productivity_question_5;
+                $avg_productivity5 = intval($adaptability_productivity_question_5);
+            }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }else{
             $productivity_data['m_adaptability_productivity_question_5'] = $adaptability_productivity_question_5_mgr;
             $avg_productivity5 = intval($adaptability_productivity_question_5_mgr);
         }
+<<<<<<< HEAD
+=======
+       
+        $productivity_counter = 0;
+        $store_productivity = null;
+        foreach($productivity_data as $run){
+            
+            if($run == 0){
+                
+            }else{
+                $store_productivity = $productivity_counter++;
+            }
+        }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         if($adaptability_productivity_comments_manager){
             $productivity_data['m_productivity_comments'] = $adaptability_productivity_comments_manager;
@@ -1972,6 +4170,7 @@ class Employee extends CI_Controller {
             $productivity_data['m_productivity_comments'] = $adaptability_productivity_comments_old;
         }
 
+<<<<<<< HEAD
         if($avg_productivity1||$avg_productivity2||$avg_productivity3||$avg_productivity4||$avg_productivity5){
             $productivityTotal = $avg_productivity1 + $avg_productivity2 + $avg_productivity3 + $avg_productivity4 + $avg_productivity5;
 		    $productivityAvgTotal = $productivityTotal / 5;
@@ -2113,6 +4312,63 @@ class Employee extends CI_Controller {
 		$sumTotal = $communication_data['m_communication_emp_avg'] + $knowledge_performance_data['m_knowledge_performance_emp_avg'] + $quality_data['m_quality_emp_avg'] + $knowledge_data['m_knowledge_emp_avg'] + $software_data['m_software_emp_avg'] +  $reliability_data['m_reliability_emp_avg'] + $time_management_data['m_time_management_emp_avg'] + $productivity_data['m_productivity_emp_avg'] + $initiative_proactive_data['m_p_initiative_proactive_emp_avg'] + $creativity_problem_data['m_p_creativity_problem_solving_emp_avg']; 
 		$avgTotal = $sumTotal / 10;
 		$data['total_emp_avg'] = number_format((float)$avgTotal, 2, '.', '');
+=======
+        if($store_productivity){
+            $productivityTotal = $avg_productivity1 + $avg_productivity2 + $avg_productivity3 + $avg_productivity4 + $avg_productivity5;
+            $productivityAvgTotal = $productivityTotal / $store_productivity;
+            $productivity_data['m_productivity_emp_avg'] = number_format((float)$productivityAvgTotal, 2, '.', '');
+        }else{
+            $productivity_data['m_productivity_emp_avg'] = null;
+        }
+
+        // echo '<pre>';
+        // print_r($productivity_data);
+        // echo '</pre>';
+        // exit;
+
+		/*  Adaptability & Proactivity */
+
+		$sumTotal = (float)$quality_data['m_quality_emp_avg'] + (float)$knowledge_performance_data['m_knowledge_performance_emp_avg'] + (float)$communication_data['m_communication_emp_avg'] + (float)$time_management_data['m_time_management_emp_avg'] + (float)$team_management_data['m_team_management_emp_avg'] + (float)$reliability_data['m_reliability_emp_avg'] + (float)$productivity_data['m_productivity_emp_avg'];
+		
+        $countloop = array(
+            "m_quality_emp_avg" => $quality_data['m_quality_emp_avg'],
+            "m_knowledge_performance_emp_avg" => $knowledge_performance_data['m_knowledge_performance_emp_avg'],
+            "m_communication_emp_avg" => $communication_data['m_communication_emp_avg'],
+            "m_time_management_emp_avg" => $time_management_data['m_time_management_emp_avg'],
+            "m_team_management_emp_avg" => $team_management_data['m_team_management_emp_avg'],
+            "m_reliability_emp_avg" => $reliability_data['m_reliability_emp_avg'],
+            "m_productivity_emp_avg" => $productivity_data['m_productivity_emp_avg']
+        );
+
+        $allcounter_avg = 1;
+        $store_superAvg = null;
+        foreach($countloop as $count){
+            
+            if($count == ""){
+                
+            }else{
+                $store_superAvg = $allcounter_avg++;
+            }
+
+        }
+        
+        // Update this section for Avraging
+
+        if($store_superAvg){
+            $avgTotal = $sumTotal / $store_superAvg;
+            $data['total_emp_avg'] = number_format((float)$avgTotal, 2, '.', '');
+        }else{
+            $data['total_emp_avg'] = null;
+        }
+
+		$this->em->updateEmployeeQuality($quality_data, $per_id);
+        $this->em->updateEmployeeKnowledgePerformance($knowledge_performance_data, $per_id);
+        $this->em->updateEmployeeCommunication($communication_data, $per_id);
+        $this->em->updateEmployeeTimeManagement($time_management_data, $per_id);
+        $this->em->updateEmployeeTeamManagement($team_management_data, $per_id);
+        $this->em->updateEmployeeReliabilityProfessionalism($reliability_data, $per_id);
+        $this->em->updateEmployeeAdaptabilityProactivity($productivity_data, $per_id);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 		$res = $this->em->updateEmpMainAvg($data, $per_id);
 
@@ -2170,10 +4426,39 @@ class Employee extends CI_Controller {
 
         // End Employee Part / Full
 
+<<<<<<< HEAD
         $goals['employee_id'] = $this->input->post('employee_id');
         $goals['goals_type'] = $this->input->post('goals_type');
         $goals['goals_description'] = $this->input->post('goals_description');
 
+=======
+
+        $goals['employee_id'] = $this->input->post('employee_id');
+
+        if($this->input->post('goals_emp_words_immediate')){
+            $goals['current_goals'] = $this->input->post('goals_emp_words_immediate');
+        }else{
+            $goals['current_goals'] = null;
+        }
+
+        if($this->input->post('goals_emp_words_short_term')){
+            $goals['short_term_goals'] = $this->input->post('goals_emp_words_short_term');
+        }else{
+            $goals['short_term_goals'] = null;
+        }
+
+        if($this->input->post('goals_emp_words_mid_term')){
+            $goals['mid_term_goals'] = $this->input->post('goals_emp_words_mid_term');
+        }else{
+            $goals['mid_term_goals'] = null;
+        }
+
+        if($this->input->post('goals_emp_words_long_term')){
+            $goals['long_term_goals'] = $this->input->post('goals_emp_words_long_term');
+        }else{
+            $goals['long_term_goals'] = null;
+        }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         // Employee Experience
 
@@ -2211,6 +4496,10 @@ class Employee extends CI_Controller {
         $ipdata['ed_individual_profile_color'] = $this->input->post('ed_individual_profile_color');
         $ipdata['ed_individual_profile_music'] = $this->input->post('ed_individual_profile_music');
         $ipdata['ed_individual_profile_food'] = $this->input->post('ed_individual_profile_food');
+<<<<<<< HEAD
+=======
+        $ipdata['ed_individual_profile_sports'] = $this->input->post('ed_individual_profile_sports');
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $ipdata['ed_individual_profile_date'] = $this->input->post('ed_individual_profile_date');
 
         $ipdata['ed_submit_status'] = 2;
@@ -2265,10 +4554,16 @@ class Employee extends CI_Controller {
         $software['ed_software_indesign'] = $this->input->post('ed_software_indesign');
         $software['ed_software_ae'] = $this->input->post('ed_software_ae');
 
+<<<<<<< HEAD
         echo '<pre>';
         print_r($ipdata);
         echo '</pre>';
         exit;
+=======
+
+
+  
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         $this->em->postEMPSkills($skills);
         $this->em->postEMPStatus($status);
@@ -2355,7 +4650,10 @@ class Employee extends CI_Controller {
             }
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $this->em->updateEMPPersonal($personal, $id);
 
         // Skills
@@ -2383,6 +4681,7 @@ class Employee extends CI_Controller {
 
         //End Status
 
+<<<<<<< HEAD
 
          // Goals
 
@@ -2391,6 +4690,35 @@ class Employee extends CI_Controller {
             $goals['goals_description'] = $this->input->post('goals_description');
             $this->em->updateEMPGoals($goals, $id);
          }
+=======
+        // Goals
+
+        if($this->input->post('current_goals')){
+            $goals['current_goals'] = $this->input->post('current_goals');
+        }else{
+            $goals['current_goals'] = null;
+        }
+
+        if($this->input->post('short_term_goals')){
+            $goals['short_term_goals'] = $this->input->post('short_term_goals');
+        }else{
+            $goals['short_term_goals'] = null;
+        }
+
+        if($this->input->post('mid_term_goals')){
+            $goals['mid_term_goals'] = $this->input->post('mid_term_goals');
+        }else{
+            $goals['mid_term_goals'] = null;
+        }
+
+        if($this->input->post('long_term_goals')){
+            $goals['long_term_goals'] = $this->input->post('long_term_goals');
+        }else{
+            $goals['long_term_goals'] = null;
+        }
+
+        $this->em->updateEMPGoals($goals, $id);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         //End Goals
 
@@ -2403,7 +4731,11 @@ class Employee extends CI_Controller {
 
         //Salary
 
+<<<<<<< HEAD
             // Onlye Admin Access
+=======
+        // Onlye Admin Access
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         //End Salary
 
@@ -2434,7 +4766,12 @@ class Employee extends CI_Controller {
 
          $individual['ed_individual_profile_music'] = $this->input->post('ed_individual_profile_music');
          $individual['ed_individual_profile_food'] = $this->input->post('ed_individual_profile_food');
+<<<<<<< HEAD
 
+=======
+         $individual['ed_individual_profile_sports'] = $this->input->post('ed_individual_profile_sports');
+         
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
          $emp_data['employee_email'] = $this->input->post('ed_individual_profile_email');
          $emp_data['employee_number'] = $this->input->post('ed_individual_profile_contact');
@@ -2449,6 +4786,10 @@ class Employee extends CI_Controller {
 
          $this->em->updateEMPIndividualProfile($individual, $id);
          $this->em->updateEMPProfileSet($emp_data, $id);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         // End Individual Profile
 
         // Personality
@@ -2480,6 +4821,7 @@ class Employee extends CI_Controller {
 
         // Software 
 
+<<<<<<< HEAD
         $software['ed_software_revit'] = $this->input->post('ed_software_revit');
         $software['ed_software_navisworks'] = $this->input->post('ed_software_navisworks');
         $software['ed_software_autocad'] = $this->input->post('ed_software_autocad');
@@ -2496,6 +4838,104 @@ class Employee extends CI_Controller {
         $software['ed_software_ai'] = $this->input->post('ed_software_ai');
         $software['ed_software_indesign'] = $this->input->post('ed_software_indesign');
         $software['ed_software_ae'] = $this->input->post('ed_software_ae');
+=======
+       
+        if($this->input->post('ed_software_revit')){
+            $software['ed_software_revit'] = $this->input->post('ed_software_revit');
+        }else{
+            $software['ed_software_revit'] = $this->input->post('ed_software_revit_old');
+        }
+
+        if($this->input->post('ed_software_navisworks')){
+            $software['ed_software_navisworks'] = $this->input->post('ed_software_navisworks');
+        }else{
+            $software['ed_software_navisworks'] = $this->input->post('ed_software_navisworks_old');
+        }
+
+        if($this->input->post('ed_software_autocad')){
+            $software['ed_software_autocad'] = $this->input->post('ed_software_autocad');
+        }else{
+            $software['ed_software_autocad'] = $this->input->post('ed_software_autocad_old');
+        }
+
+        if($this->input->post('ed_software_rhinoceros')){
+            $software['ed_software_rhinoceros'] = $this->input->post('ed_software_rhinoceros');
+        }else{
+            $software['ed_software_rhinoceros'] = $this->input->post('ed_software_rhinoceros_old');
+        }
+
+        if($this->input->post('ed_software_3dsmax')){
+            $software['ed_software_3dsmax'] = $this->input->post('ed_software_3dsmax');
+        }else{
+            $software['ed_software_3dsmax'] = $this->input->post('ed_software_3dsmax_old');
+        }
+
+        if($this->input->post('ed_software_iconodynmad')){
+            $software['ed_software_iconodynmad'] = $this->input->post('ed_software_iconodynmad');
+        }else{
+            $software['ed_software_iconodynmad'] = $this->input->post('ed_software_iconodynmad_old');
+        }
+
+        if($this->input->post('ed_software_enscape')){
+            $software['ed_software_enscape'] = $this->input->post('ed_software_enscape');
+        }else{
+            $software['ed_software_enscape'] = $this->input->post('ed_software_enscape_old');
+        }
+
+        if($this->input->post('ed_software_agacad')){
+            $software['ed_software_agacad'] = $this->input->post('ed_software_agacad');
+        }else{
+            $software['ed_software_agacad'] = $this->input->post('ed_software_agacad_old');
+        }
+
+        if($this->input->post('ed_software_sketchup')){
+            $software['ed_software_sketchup'] = $this->input->post('ed_software_sketchup');
+        }else{
+            $software['ed_software_sketchup'] = $this->input->post('ed_software_sketchup_old');
+        }
+
+        if($this->input->post('ed_software_msword')){
+            $software['ed_software_msword'] = $this->input->post('ed_software_msword');
+        }else{
+            $software['ed_software_msword'] = $this->input->post('ed_software_msword_old');
+        }
+
+        if($this->input->post('ed_software_msexcel')){
+            $software['ed_software_msexcel'] = $this->input->post('ed_software_msexcel');
+        }else{
+            $software['ed_software_msexcel'] = $this->input->post('ed_software_msexcel_old');
+        }
+
+        if($this->input->post('ed_software_photoshop')){
+            $software['ed_software_photoshop'] = $this->input->post('ed_software_photoshop');
+        }else{
+            $software['ed_software_photoshop'] = $this->input->post('ed_software_photoshop_old');
+        }
+
+        if($this->input->post('ed_software_ai')){
+            $software['ed_software_ai'] = $this->input->post('ed_software_ai');
+        }else{
+            $software['ed_software_ai'] = $this->input->post('ed_software_ai_old');
+        }
+
+        if($this->input->post('ed_software_indesign')){
+            $software['ed_software_indesign'] = $this->input->post('ed_software_indesign');
+        }else{
+            $software['ed_software_indesign'] = $this->input->post('ed_software_indesign_old');
+        }
+
+        if($this->input->post('ed_software_ae')){
+            $software['ed_software_ae'] = $this->input->post('ed_software_ae');
+        }else{
+            $software['ed_software_ae'] = $this->input->post('ed_software_ae_old');
+        }
+
+
+        // echo '<pre>';
+        // print_r($software);
+        // echo '</pre>';
+        // exit;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         $this->em->updateEMPSoftware($software, $id);
 
@@ -2511,8 +4951,16 @@ class Employee extends CI_Controller {
 	public function printEmpDetails($per_id){
 
         $data['avg_data'] = $this->em->getEMPDataPrint($per_id);
+<<<<<<< HEAD
         $emp_id = $this->am->getEMPID($per_id);
         $review['last_review_count'] = $this->em->countLastReview($emp_id);
+=======
+
+        $emp_id = $this->am->getEMPID($per_id);
+
+        $review['last_review_count'] = $this->em->countLastReview($emp_id);
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 		if(($review['last_review_count'])==1){
 			$data['last_reviews'] = false;
 		}else{
@@ -2521,7 +4969,20 @@ class Employee extends CI_Controller {
             $data['last_reviews'] = $this->em->getLastReview($lastReviewID);
 		}
 
+<<<<<<< HEAD
 		$data['perf_data'] = $this->am->getEmployeesPerformanceInfo($per_id);
+=======
+		$data['perf_data'] = $this->em->getEmployeesPerformanceInfo($per_id);
+
+        $goalsID = $this->em->findEMPID($per_id);
+
+		$data['goals'] = $this->em->getSuperEmpGoals($per_id);
+
+        // echo '<pre>';
+        // print_r($data);
+        // echo '</pre>';
+        // exit;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 		$this->load->view('employee/include/header');
 		$this->load->view('employee/print-employee-details', $data);
@@ -2590,6 +5051,7 @@ class Employee extends CI_Controller {
 
     }
 
+<<<<<<< HEAD
 
     public function fetchGoal1(){
         $employee_id = $this->input->post('employee_id');
@@ -2619,5 +5081,7 @@ class Employee extends CI_Controller {
         echo json_encode($res);
     }
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 ?>

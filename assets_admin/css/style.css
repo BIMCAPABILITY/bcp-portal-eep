@@ -3,6 +3,28 @@
     margin: 0px;
     box-sizing: border-box;
 }
+<<<<<<< HEAD
+=======
+.alert-success {
+    color: #375429;
+}
+.alert-info {
+    color: #2a616c;
+}
+.alert-danger {
+    color: #792416;
+}
+span.badge.bg-label-success {
+    color: #276904 !important;
+    font-weight: 800;
+    width: 80px;
+}
+span.badge.bg-label-danger {
+    color: #601306 !important;
+    font-weight: 800;
+    width: 80px;
+}
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 .bg-primary-b{
     background-color: #cbd8f1;
     border-radius: 5px;
@@ -326,8 +348,13 @@ span.radio-inline-num {
     object-fit: cover;
 }
 .img-d-emp {
+<<<<<<< HEAD
     width: 115px;
     height: 130px;
+=======
+    width: 200px;
+    height: 200px;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     object-fit: cover;
 }
 .emp_info h3 {
@@ -491,11 +518,18 @@ tr.padd_bb td {
     align-items: center;
     color: #404040;
     line-height: 38px;
+<<<<<<< HEAD
     justify-content: center;
 }
 .form-check {
     text-align: center;
     padding-left: 0px;
+=======
+}
+.form-check {
+    text-align: center;
+    padding-left: 15px;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     padding-right: 10px;
     display: flex;
     flex-direction: column;
@@ -531,7 +565,11 @@ span.form-check label {
     padding: 10px 40px;
 }
 .label-gry{
+<<<<<<< HEAD
     color: #a3a3a3;
+=======
+    color: #727272;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 
 .ed-basic-mid textarea {
@@ -992,6 +1030,7 @@ section.ui-card-info-sec {
     text-align: center;
 }
 .btn-justi-ed .btn-re-justi a {
+<<<<<<< HEAD
     width: 280px !important;
 }
 .btn-justi-ed .btn-re-justi button {
@@ -999,20 +1038,47 @@ section.ui-card-info-sec {
 }
 
 /* Print CSS */
+=======
+    width: 210px !important;
+}
+.btn-justi-ed .btn-re-justi button {
+    width: 210px !important;
+}
+
+/* Print CSS */
+.performance-evaluation-metrics-img h6 {
+    padding: 25px;
+}
+.performance-evaluation-metrics-img img{
+    width: 100%;
+    max-width: 900px;
+    margin-top: 5px;
+}
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 .frame_main_one{
     display: flex;
     width: 1920px;
+<<<<<<< HEAD
     height: 430px;
+=======
+    height: 310px;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     background: #D6E0F5;
     padding: 20px;
 }
 .frame_one {
     padding: 30px;
+<<<<<<< HEAD
     width: 820px;
     height: 405px;
     background-color: #A9BFED;
     border-radius: 10px;
+=======
+    width: 630px;
+    height: 270px;
+    border-right: 2px solid #bfd1f8;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 .emp_info_img img {
     width: 140px;
@@ -1025,13 +1091,27 @@ section.ui-card-info-sec {
     display: flex;
     align-items: center;
 }
+<<<<<<< HEAD
+=======
+.emp_info_basic{
+    display: flex;
+    flex-direction: column;
+}
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 .frame_one_data {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
 }
 .emp_review {
+<<<<<<< HEAD
     width: 200px;
+=======
+    width: 430px;
+    display: flex;
+    margin-top: 20px;
+    margin-right: 15px;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 .heading-text h4 {
     text-align: center;
@@ -1048,6 +1128,11 @@ section.ui-card-info-sec {
     background-color: #d6e0f5;
     border-radius: 10px;
     margin-bottom: 5px;
+<<<<<<< HEAD
+=======
+    border: 1px solid #a9bfed;
+    margin-right: 15px;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 .emp_review_block1 {
     margin-bottom: 2px;
@@ -1062,6 +1147,7 @@ section.ui-card-info-sec {
     margin-left: 10px;
     padding: 5px;
     width: 1100px;
+<<<<<<< HEAD
     background-color: #A9BFED;
     border-radius: 10px;
     height: 405px;
@@ -1071,6 +1157,17 @@ section.ui-card-info-sec {
     height: 195px;
     padding: 10px;
     background-color: #d6e0f5;
+=======
+    background-color: #d6e0f5;
+    border-radius: 10px;
+    height: 270px;
+}
+.goals-section-one {
+    width: 360px;
+    height: 330px;
+    padding: 10px;
+    border: 1px solid #a9bfed;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     border-radius: 10px;
     margin-bottom: 5px;
     margin-right: 5px;
@@ -1157,6 +1254,10 @@ section.frame_thrid {
     display: flex;
     justify-content: space-around;
     width: 100%;
+<<<<<<< HEAD
+=======
+    padding: 5px;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 .frame_five_cover{
     display: flex;
@@ -1183,7 +1284,14 @@ section.frame_thrid {
     display: block;
     font-size: 12px;
     color: #5f5f5f;
+<<<<<<< HEAD
     margin-bottom: 7px;
+=======
+    margin-bottom: 15px;
+}
+.gray-font-subtitle{
+    display: inline-block !important;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 .evaluation_quation_cover i{
     font-size: 12px;
@@ -1207,6 +1315,10 @@ td.quation_radio .form-check-input:disabled {
 }
 .legends_info_box {
     width: 755px;
+<<<<<<< HEAD
+=======
+    padding: 15px;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 .print_index_comm_sec {
     display: flex;
@@ -1241,4 +1353,136 @@ td.quation_radio .form-check-input:disabled {
 }
 .signature_box span b {
     border-top: 2px solid #000;
+<<<<<<< HEAD
+=======
+}
+ul.software-rating-no {
+    display: flex;
+    padding-left: 0px;
+}
+ul.software-rating-no li {
+    list-style: none;
+    margin-left: 24px;
+}
+.m-set-radio {
+    padding-left: 19px;
+    padding-right: 19px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #3264c8;
+}
+.dash-head-user-name{
+    font-weight: 600;
+    font-size: 20px;
+    color: #3264c8;
+}
+.goals-section-two {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background-color: #d6e0f5;
+    border-radius: 10px;
+    margin-top: -30px;
+}
+.goals-section-two label {
+    display: block;
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+}
+.goals-section-two span {
+    display: block;
+    font-size: 12px;
+    color: #5f5f5f;
+}
+.heading-model-goal h5 {
+    margin-bottom: 0;
+}
+.heading-model-goal span {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+.d-flex-center{
+    justify-content: center;
+}
+.supervisor-goals-section .goals-section-one{
+    height: auto;
+    width: 560px;
+}
+.supervisor-goals-flex{
+    display: flex;
+    justify-content: center;
+}
+.eep-status-cover.set-width-check {
+    margin-left: -15px !important;
+}
+.salary-model-box .modal-content{
+    background-color: #d6e0f5;
+}
+.salary-model-box .modal-content .child-label-ed label{
+    width: 70px;
+    font-weight: 600;
+    color: #0e0e0e;
+}
+.check-email-box {
+    display: flex;
+    justify-content: center;
+}
+.check-email-box h4 {
+    color: #dae7ff;
+    font-size: 20px;
+}
+button.add-salary-btn {
+    text-align: right;
+    border: none;
+    padding: 6px 30px;
+    border-radius: 3px;
+    background-color: #3264c8;
+    color: #fff;
+    font-weight: 600;
+}
+.add-salary-btn-flex{
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.seprator-hr {
+    width: 100%;
+    height: 2px;
+    background-color: #d1d1d1;
+    margin: 10px 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.select-emp-salary {
+    margin-bottom: 20px;
+}
+.sepretor-ranking-list{
+
+}
+.color-success-num {
+    color: #276904;
+    margin-right: 15px;
+    margin-top: 8px;
+    position: relative;
+}
+.color-danger-num{
+    color: #601306;
+    margin-right: 15px;
+    margin-top: 8px;
+    position: relative;
+}
+.sepretor-ranking-list {
+    border-bottom: 1px solid #f0f0f0;
+}
+.goals-sec-main{
+    display: flex;
+}
+.line-clamp3 textarea{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }

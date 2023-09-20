@@ -67,6 +67,10 @@ $route['admin/add-employees-performance'] = 'Admin/addEmployeesPerformance';
 $route['admin/employees-performance-result-list'] = 'Admin/employeesPerformanceResultList';
 $route['admin/print-employee-details'] = 'Admin/printEmpDetails';
 $route['admin/employee-performance-history'] = 'Admin/seeEmpPerList';
+<<<<<<< HEAD
+=======
+$route['admin/add-employee-salary'] = 'Admin/addEmployeeSalary';
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 
 
@@ -87,3 +91,7 @@ $route['employee/edit-employee-profile'] = 'Employee/updateProfileEMP';
 
 $route['employee/feedback-form'] = 'Employee/feedBackForm';
 $route['employee/employee-performance-list'] = 'Employee/showEmpPerformanceList';
+<<<<<<< HEAD
+=======
+$route['employee/profiles-employee-list'] = 'Employee/empProfileList';
+>>>>>>> 8ce454d (new update employee portal v1.1.0)

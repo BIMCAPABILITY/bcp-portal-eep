@@ -9,10 +9,16 @@
                                     <label for="designation" class="form-label">EVALUATION Period </label>
                                     <select name="evaluate_date_category" id="evaluate_date_category" class="form-control" required>
                                         <option selected disabled>Select Period</option>
+<<<<<<< HEAD
                                         <option value="30">Monthly</option>
                                         <option value="90">Quarterly</option>
                                         <option value="182">Half Yearly</option>
                                         <option value="365">Yearly</option>
+=======
+                                        <option value="90">Mid-Probation</option>
+                                        <option value="182">Regularization</option>
+                                        <option value="182">Bi-Annual</option>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                     </select>
                                 </div>
                                 <div class="mb-3 col-md-6">

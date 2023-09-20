@@ -10,6 +10,12 @@
                               <div class="col-sm-7">
                               <div class="card-body">
                                   <h2 class="card-title text-primary welcome-bimcap-head">Welcome to BIMCAP Employee Evaluation Portal</h2>
+<<<<<<< HEAD
+=======
+                                  <strong>
+                                    <h4 class="dash-head-user-name"><?php echo $empinfo->employee_first_name; ?> <?php echo $empinfo->employee_last_name; ?></h4>
+                                  </strong>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                   <p class="mb-4">
                                     Did you see your performance score?
                                   </p>
@@ -29,6 +35,10 @@
                             <div class="col-sm-7">
                             <div class="card-body">
                                 <h2 class="card-title text-primary welcome-bimcap-head">Welcome to BIMCAP Employee Evaluation Portal</h2>
+<<<<<<< HEAD
+=======
+                                
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 <p class="mb-4">
                                     Would you like to fill in your performance score?
                                 </p>
@@ -51,15 +61,27 @@
                         <div class="col-md-6 col-lg-6 order-2 mt-2 mb-4">
                             <div class="card h-100">
                               <div class="card-header d-flex align-items-center justify-content-between">
+<<<<<<< HEAD
                                 <h5 class="card-title m-0 me-2">Top 5 Performance</h5>
+=======
+                                <h5 class="card-title m-0 me-2">The Best Performances</h5>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                               </div>
                               <div class="card-body">
                                 <ul class="p-0 m-0">
                                   <?php if($topper):?>
+<<<<<<< HEAD
                                     <?php foreach($topper as $data): ?>
 
                                       <?php if(($data->total_emp_avg >= 3)) : ?>
                                           <li class="d-flex mb-4 pb-1">
+=======
+                                    <?php $count = 1; ?>
+                                    <?php foreach($topper as $data): ?>
+                                      <?php if(($data->total_emp_avg >= 3)) : ?>
+                                          <li class="d-flex sepretor-ranking-list mb-4 pb-1">
+                                          <h6 class="color-success-num"><?php echo $count++; ?></h6>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             <div class="avatar flex-shrink-0 me-3">
                                               <img src="<?php echo base_url($data->employee_image); ?>" alt="User" class="rounded" />
                                             </div>
@@ -90,14 +112,26 @@
                           <div class="col-md-6 col-lg-6 order-2 mt-2 mb-4">
                             <div class="card h-100">
                               <div class="card-header d-flex align-items-center justify-content-between">
+<<<<<<< HEAD
                                 <h5 class="card-title m-0 me-2">Top 5 Low Performance</h5>
+=======
+                                <h5 class="card-title m-0 me-2">The Low Performance</h5>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                               </div>
                               <div class="card-body">
                                 <ul class="p-0 m-0">
                                 <?php if($lowper):?>
+<<<<<<< HEAD
                                     <?php foreach($lowper as $data): ?>
                                       <?php if(($data->total_emp_avg < 3) ): ?>
                                           <li class="d-flex mb-4 pb-1">
+=======
+                                  <?php $count = 1; ?>
+                                    <?php foreach($lowper as $data): ?>
+                                      <?php if(($data->total_emp_avg < 3) ): ?>
+                                          <li class="d-flex sepretor-ranking-list mb-4 pb-1">
+                                          <h6 class="color-danger-num"><?php echo $count++; ?></h6>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             <div class="avatar flex-shrink-0 me-3">
                                               <img src="<?php echo base_url($data->employee_image); ?>" alt="User" class="rounded" />
                                             </div>
@@ -134,26 +168,43 @@
                                   <ul class="p-0 m-0">
                                     <li class="d-flex mb-2 pb-1">
                                       <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+<<<<<<< HEAD
                                       <span class="scores-title"><b>Exceptional (4.50 - 5.00)</b> - The employee has exceeded performance criteria by a wide margin in all key objective areas; and clearly and measurably achieved all objectives set for the review period</span>
+=======
+                                      <span class="scores-title"><b>EXCEPTIONAL SCORE: 100% | GRADE: A+</b> - Leading the company's standard, exceeding expectations, takes ownership of the project delivery, <b>can train the employees.</b></span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                       </div>
                                     </li>
                                     <li class="d-flex mb-2 pb-1">
                                       <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+<<<<<<< HEAD
                                       <span class="scores-title"><b>Above Target (3.50 - 4.49)</b> - The employee has either achieved expected performance criteria in respect to all objectives, or has exceeded in one or two critical objectives areas while meeting expectations in lesser priority objective areas</span>
+=======
+                                      <span class="scores-title"><b>GOOD SCORE: 80% | GRADE: A </b> - Quality of work is very good, performing above the set standard and have met the expectations of the company.</span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                       </div>
                                     </li>
                                     <li class="d-flex mb-2 pb-1">
                                       <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+<<<<<<< HEAD
                                       <span class="scores-title"><b>On Target (3.00 - 3.49)</b> - The employee has either achieved the expected performance criteria in all key objective areas or, has exceeded performance in a critical objectives area with the result that a lesser priority objective area may have underachieved. </span>
+=======
+                                      <span class="scores-title"><b>BIMCAP STANDARD SCORE: 70% | GRADE B+</b> - Meeting expectations, job done on time and in decent quality, reliable in getting the job done</span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                       </div>
                                     </li>
                                     <li class="d-flex mb-2 pb-1">
                                       <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+<<<<<<< HEAD
                                       <span class="scores-title"><b>In Development (2.00 - 2.99)</b> - The employee has generally met the performance criteria for assigned objectives with the exception of one or two areas. </span>
+=======
+                                      <span class="scores-title"><b>AVERAGE SCORE 60% | GRADE B</b> - Average performance, some performance issues can be observed that require improvement to reach expected standard. </span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                       </div>
                                     </li>
                                     <li class="d-flex mb-2 pb-1">
                                       <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+<<<<<<< HEAD
                                       <span class="scores-title"><b>Unacceptable Performance (1.00 - 1.99)</b> - The employee has failed to meet the performance criteria in critical objectives areas. </span>
                                       </div>
                                     </li>
@@ -162,15 +213,39 @@
                                   <div class="scores-chart">
                                     <img src="<?php echo base_url('assets_admin/img/illustrations/chart-numbers.png'); ?>" alt="">
                                   </div>
+=======
+                                      <span class="scores-title"><b>IN DEVELOPMENT SCORE:40% | GRADE: C</b> - Not meeting expectations, performance issues requiring escalation </span>
+                                      </div>
+                                    </li>
+                                    <li class="d-flex mb-2 pb-1">
+                                      <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                      <span class="scores-title"><b>UNACCEPTABLE SCORE: 20% | GRADE : D</b> - Failed to meet the expectations, severe performance issues in one or more critical areas, Action to be taken by the managers immediately. </span>
+                                      </div>
+                                    </li>
+                                  </ul>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 </div>
                               </div>
                           </div>
 
                           <div class="col-12 col-lg-6 order-2 order-md-3 order-lg-2 mb-4">
+<<<<<<< HEAD
                           <div class="card h-100">
                               <div class="card-body">
                                   <div id="piechart" style="width: 100%; height: 400px;"></div>
                               </div>
+=======
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div id="piechart" style="width: 100%; height: 400px;"></div>
+                                </div>
+                              </div>
+                          </div>
+
+                          <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
+                            <div class="scores-chart">
+                              <img src="<?php echo base_url('assets_admin/img/illustrations/chart-numbers.png'); ?>" alt="">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                             </div>
                           </div>
 
@@ -183,6 +258,7 @@
                   <?php if(($empinfo->emp_level)==3): ?>
 
                   <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
+<<<<<<< HEAD
                     <section class="color_indicators_sec">
                         <span>
                             <img src="<?php echo base_url('assets_admin/icons/danger.png'); ?>" alt=""> &nbsp;<b>ASSESSMENT < 2</b> &nbsp;&nbsp;
@@ -190,6 +266,8 @@
                             <img src="<?php echo base_url('assets_admin/icons/success.png'); ?>" alt=""> &nbsp;<b>ASSESSMENT > 3</b> &nbsp;&nbsp;
                         </span>
                     </section>
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                     <div class="card">
                         <div class="table-responsive text-nowrap">
                             <table class="table">
@@ -256,9 +334,42 @@
                                         </td>
 
                                         <?php 
+<<<<<<< HEAD
                                           $sumTotal = $data->communication_emp_avg + $data->knowledge_performance_emp_avg + $data->quality_emp_avg + $data->knowledge_emp_avg + $data->software_emp_avg + $data->reliability_emp_avg + $data->time_management_emp_avg + $data->productivity_emp_avg + $data->p_initiative_proactive_emp_avg + $data->p_creativity_problem_solving_emp_avg; 
                                           $avgTotal = $sumTotal / 10;
                                           $emp_finalAvg = number_format((float)$avgTotal, 2, '.', '');
+=======
+
+                                            $countloop = array(
+                                              "quality_emp_avg" => $data->quality_emp_avg,
+                                              "knowledge_performance_emp_avg" => $data->knowledge_performance_emp_avg,
+                                              "communication_emp_avg" => $data->communication_emp_avg,
+                                              "time_management_emp_avg" => $data->time_management_emp_avg,
+                                              "team_management_emp_avg" => $data->team_management_emp_avg,
+                                              "reliability_emp_avg" => $data->reliability_emp_avg,
+                                              "productivity_emp_avg" => $data->productivity_emp_avg
+                                            );
+
+                                            $allcounter = 1;
+                                            $store_AVG = null;
+                                            foreach($countloop as $run){
+
+                                              if($run == 0){
+                                                  
+                                              }else{
+                                                  $store_AVG = $allcounter++;
+                                              }
+                                            }
+
+                                            if($store_AVG){
+                                              $sumTotal = $data->communication_emp_avg + $data->knowledge_performance_emp_avg + $data->quality_emp_avg + $data->team_management_emp_avg + $data->reliability_emp_avg + $data->time_management_emp_avg + $data->productivity_emp_avg; 
+                                              $avgTotal = $sumTotal / $store_AVG;
+                                              $emp_finalAvg = number_format((float)$avgTotal, 2, '.', '');
+                                            }else{
+                                              $emp_finalAvg = null;
+                                            }    
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         ?>
 
                                         <?php if($emp_finalAvg <= 1): ?>
@@ -320,10 +431,44 @@
                         <div class="card-body">
                            <div class="row">
                               <div class="col-lg-4 col-md-4">
+<<<<<<< HEAD
                                 <?php 
                                   $sumTotal = $check2->communication_emp_avg + $check2->knowledge_performance_emp_avg + $check2->quality_emp_avg + $check2->knowledge_emp_avg + $check2->software_emp_avg + $check2->reliability_emp_avg + $check2->time_management_emp_avg + $check2->productivity_emp_avg + $check2->p_initiative_proactive_emp_avg + $check2->p_creativity_problem_solving_emp_avg; 
                                   $avgTotal = $sumTotal / 10;
                                   $main_avg = number_format((float)$avgTotal, 2, '.', '');
+=======
+                                <?php
+
+                                  $countloop = array(
+                                    "quality_emp_avg" => $check2->quality_emp_avg,
+                                    "knowledge_performance_emp_avg" => $check2->knowledge_performance_emp_avg,
+                                    "communication_emp_avg" => $check2->communication_emp_avg,
+                                    "time_management_emp_avg" => $check2->time_management_emp_avg,
+                                    "team_management_emp_avg" => $check2->team_management_emp_avg,
+                                    "reliability_emp_avg" => $check2->reliability_emp_avg,
+                                    "productivity_emp_avg" => $check2->productivity_emp_avg
+                                  );
+
+                                  $allcounter = 1;
+                                  $store_AVG = null;
+                                  foreach($countloop as $run){
+
+                                    if($run == 0){
+                                        
+                                    }else{
+                                        $store_AVG = $allcounter++;
+                                    }
+                                  }
+
+                                  if($store_AVG){
+                                    $sumTotal = $check2->communication_emp_avg + $check2->knowledge_performance_emp_avg + $check2->quality_emp_avg + $check2->team_management_emp_avg + $check2->reliability_emp_avg + $check2->time_management_emp_avg + $check2->productivity_emp_avg; 
+                                    $avgTotal = $sumTotal / $store_AVG;
+                                    $main_avg = number_format((float)$avgTotal, 2, '.', '');
+                                  }else{
+                                    $main_avg = null;
+                                  }
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 ?>
                                 <?php if($main_avg <= 1): ?>
                                   <div class="alert alert-danger" role="alert"><strong>Evaluated by employee :</strong> Not sufficient <?php echo $main_avg; ?> <i class='bx bx-tachometer' ></i></div>

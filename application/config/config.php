@@ -23,7 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 $config['base_url'] = 'https://codiz.in/eep/';
+=======
+$config['base_url'] = 'http://localhost/projects/EEP/eep_setup2/';
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 /*
 |--------------------------------------------------------------------------
@@ -326,7 +330,11 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/userguide3/libraries/encryption.html
 |
 */
+<<<<<<< HEAD
 $config['encryption_key'] = '';
+=======
+$config['encryption_key'] = '1234567890bimcap%$%^%$$#$#';
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 /*
 |--------------------------------------------------------------------------

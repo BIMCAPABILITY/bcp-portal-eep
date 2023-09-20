@@ -52,7 +52,11 @@
                             <?php if(($data->department_status)=='1'): ?>
                                 <td><span class="badge bg-label-success me-1">Active</span></td>
                             <?php else: ?>
+<<<<<<< HEAD
                                 <td><span class="badge bg-label-danger">Deactivate</span></td>
+=======
+                                <td><span class="badge bg-label-danger">Inactive</span></td>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                             <?php endif; ?>  
                             <td>
                                 <div class="dropdown">
@@ -119,7 +123,11 @@
                                 <select class="form-select" name="department_status">
                                 <option selected="" disabled>Please select status</option>
                                 <option value="1">Active</option>
+<<<<<<< HEAD
                                 <option value="2">Deactivate</option>
+=======
+                                <option value="2">Inactive</option>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 </select>
                         </div>
                     <div class="modal-footer">

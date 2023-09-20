@@ -25,9 +25,15 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <section class="copyright-section">
           <div class="version-sec">
             <label for="">version 1.0.0</label>
+=======
+      <section class="copyright-section copyright-url">
+          <div class="version-sec">
+            <label for="">version <a href="https://github.com/BIMCAPABILITY/eep" target="_blank">1.1.0</a></label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
           </div>
           <div class="copyright-url">
             &#169;<a href="https://www.bimcap.com/" target="_blank">BIMCAP</a>

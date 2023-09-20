@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+error_reporting(E_ALL ^ E_DEPRECATED);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 /**
  * CodeIgniter
  *

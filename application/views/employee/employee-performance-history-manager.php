@@ -31,6 +31,7 @@
                                         <?php endif; ?>
                                         <td>
                                             <?php 
+<<<<<<< HEAD
                                                 if(($data->evaluate_date_category)==30){
                                                 $period  = 'Monthly';
                                                 }elseif(($data->evaluate_date_category)==90){
@@ -40,6 +41,14 @@
                                                 }
                                                 elseif(($data->evaluate_date_category)==365){
                                                 $period  = 'Yearly';
+=======
+                                                if(($data->evaluate_date_category)==90){
+                                                $period  = 'Mid-Probation';
+                                                }elseif(($data->evaluate_date_category)==182){
+                                                $period  = 'Regularization';
+                                                }elseif(($data->evaluate_date_category)==182){
+                                                $period  = 'Bi-Annual';
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 }else{
                                                 $period = '';
                                                 }
@@ -61,7 +70,13 @@
                                             <a class="btn btn-xs btn-success" href="<?php echo base_url('Employee/ReEvaluateForm/'.$data->emp_performance_id); ?>">see more <i class="bx bx-subdirectory-left"></i></a>
                                         </td>
                                         <td>
+<<<<<<< HEAD
                                             <a href="<?php echo base_url('Employee/printEmpDetails/'.$data->emp_performance_id); ?>"><i class='bx bx-printer'></i></a>
+=======
+                                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="<?php echo "#empPrintOP".$data->emp_performance_id; ?>">
+                                                <i class='bx bx-printer'></i>
+                                            </a>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </td>
                                         </tr>
                             <?php else: ?>
@@ -85,3 +100,37 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+=======
+
+<?php if($emp_per_list): ?>
+    <?php foreach( $emp_per_list as $data ): ?>
+    <div class="modal fade" id="<?php echo "empPrintOP".$data->emp_performance_id; ?>" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">If you are having problems printing the evaluation page, apply these <a href="<?php echo base_url("assets_admin/img/illustrations/eep-print-settings.png"); ?>" target="_blank"><i class='bx bxs-cog'></i> settings.</a></h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-footer footer-flex">
+            <hr>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                Close
+                </button>
+                <a href="<?php echo base_url('Employee/printEmpDetails/'.$data->emp_performance_id); ?>" class="btn btn-primary">
+                    Print
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <?php endforeach; ?>
+    <?php endif; ?>
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)

@@ -73,6 +73,7 @@ $(document).ready(function () {
 
     // start productivity
 
+<<<<<<< HEAD
     $(".productivity_checkSelect1").attr('disabled', true);
     $(".productivity_checkSelect2").attr('disabled', true);
     $(".productivity_checkSelect3").attr('disabled', true);
@@ -133,6 +134,69 @@ $(document).ready(function () {
         $(".productivity_checkSelect3").attr('disabled', false);
         $(".productivity_checkSelect4").attr('disabled', false);
         $(".productivity_checkSelect5").attr('disabled', false);
+=======
+    $(".knowledge_performance_checkSelect1").attr('disabled', true);
+    $(".knowledge_performance_checkSelect2").attr('disabled', true);
+    $(".knowledge_performance_checkSelect3").attr('disabled', true);
+    $(".knowledge_performance_checkSelect4").attr('disabled', true);
+    $(".knowledge_performance_checkSelect5").attr('disabled', true);
+
+    $(".checkSelect_knowledge_performance").change(function() {
+
+      if ($(this).val() == "1") {
+
+        $('.knowledge_performance_checkSelect2').prop('checked', false);
+        $('.knowledge_performance_checkSelect3').prop('checked', false);
+        $('.knowledge_performance_checkSelect4').prop('checked', false);
+        $('.knowledge_performance_checkSelect5').prop('checked', false);
+        
+        $(".knowledge_performance_checkSelect1").attr('disabled', false);
+        $(".knowledge_performance_checkSelect2").attr('disabled', true);
+        $(".knowledge_performance_checkSelect3").attr('disabled', true);
+        $(".knowledge_performance_checkSelect4").attr('disabled', true);
+        $(".knowledge_performance_checkSelect5").attr('disabled', true);
+
+      }if ($(this).val() == "2") {
+
+        $('.knowledge_performance_checkSelect3').prop('checked', false);
+        $('.knowledge_performance_checkSelect4').prop('checked', false);
+        $('.knowledge_performance_checkSelect5').prop('checked', false);
+
+        $(".knowledge_performance_checkSelect1").attr('disabled', false);
+        $(".knowledge_performance_checkSelect2").attr('disabled', false);
+        $(".knowledge_performance_checkSelect3").attr('disabled', true);
+        $(".knowledge_performance_checkSelect4").attr('disabled', true);
+        $(".knowledge_performance_checkSelect5").attr('disabled', true);
+
+      }if ($(this).val() == "3") {
+
+        $('.knowledge_performance_checkSelect4').prop('checked', false);
+        $('.knowledge_performance_checkSelect5').prop('checked', false);
+
+        $(".knowledge_performance_checkSelect1").attr('disabled', false);
+        $(".knowledge_performance_checkSelect2").attr('disabled', false);
+        $(".knowledge_performance_checkSelect3").attr('disabled', false);
+        $(".knowledge_performance_checkSelect4").attr('disabled', true);
+        $(".knowledge_performance_checkSelect5").attr('disabled', true);
+
+      }if ($(this).val() == "4") {
+
+        $('.knowledge_performance_checkSelect5').prop('checked', false);
+
+        $(".knowledge_performance_checkSelect1").attr('disabled', false);
+        $(".knowledge_performance_checkSelect2").attr('disabled', false);
+        $(".knowledge_performance_checkSelect3").attr('disabled', false);
+        $(".knowledge_performance_checkSelect4").attr('disabled', false);
+        $(".knowledge_performance_checkSelect5").attr('disabled', true);
+
+      }
+      if ($(this).val() == "5") {
+        $(".knowledge_performance_checkSelect1").attr('disabled', false);
+        $(".knowledge_performance_checkSelect2").attr('disabled', false);
+        $(".knowledge_performance_checkSelect3").attr('disabled', false);
+        $(".knowledge_performance_checkSelect4").attr('disabled', false);
+        $(".knowledge_performance_checkSelect5").attr('disabled', false);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
       }
       else {
        
@@ -283,6 +347,7 @@ $(document).ready(function () {
 
     // start Knowledge of Software
 
+<<<<<<< HEAD
     $(".software_checkSelect1").attr('disabled', true);
     $(".software_checkSelect2").attr('disabled', true);
     $(".software_checkSelect3").attr('disabled', true);
@@ -343,6 +408,68 @@ $(document).ready(function () {
         $(".software_checkSelect3").attr('disabled', false);
         $(".software_checkSelect4").attr('disabled', false);
         $(".software_checkSelect5").attr('disabled', false);
+=======
+    $(".team_management_checkSelect1").attr('disabled', true);
+    $(".team_management_checkSelect2").attr('disabled', true);
+    $(".team_management_checkSelect3").attr('disabled', true);
+    $(".team_management_checkSelect4").attr('disabled', true);
+    $(".team_management_checkSelect5").attr('disabled', true);
+
+    $(".checkSelect_team_management").change(function() {
+
+      if ($(this).val() == "1") {
+
+        $('.team_management_checkSelect2').prop('checked', false);
+        $('.team_management_checkSelect3').prop('checked', false);
+        $('.team_management_checkSelect4').prop('checked', false);
+        $('.team_management_checkSelect5').prop('checked', false);
+        
+        $(".team_management_checkSelect1").attr('disabled', false);
+        $(".team_management_checkSelect2").attr('disabled', true);
+        $(".team_management_checkSelect3").attr('disabled', true);
+        $(".team_management_checkSelect4").attr('disabled', true);
+        $(".team_management_checkSelect5").attr('disabled', true);
+
+      }if ($(this).val() == "2") {
+
+        $('.team_management_checkSelect3').prop('checked', false);
+        $('.team_management_checkSelect4').prop('checked', false);
+        $('.team_management_checkSelect5').prop('checked', false);
+
+        $(".team_management_checkSelect1").attr('disabled', false);
+        $(".team_management_checkSelect2").attr('disabled', false);
+        $(".team_management_checkSelect3").attr('disabled', true);
+        $(".team_management_checkSelect4").attr('disabled', true);
+        $(".team_management_checkSelect5").attr('disabled', true);
+
+      }if ($(this).val() == "3") {
+
+        $('.team_management_checkSelect4').prop('checked', false);
+        $('.team_management_checkSelect5').prop('checked', false);
+
+        $(".team_management_checkSelect1").attr('disabled', false);
+        $(".team_management_checkSelect2").attr('disabled', false);
+        $(".team_management_checkSelect3").attr('disabled', false);
+        $(".team_management_checkSelect4").attr('disabled', true);
+        $(".team_management_checkSelect5").attr('disabled', true);
+
+      }if ($(this).val() == "4") {
+
+        $('.team_management_checkSelect5').prop('checked', false);
+
+        $(".team_management_checkSelect1").attr('disabled', false);
+        $(".team_management_checkSelect2").attr('disabled', false);
+        $(".team_management_checkSelect3").attr('disabled', false);
+        $(".team_management_checkSelect4").attr('disabled', false);
+        $(".team_management_checkSelect5").attr('disabled', true);
+
+      }if ($(this).val() == "5") {
+        $(".team_management_checkSelect1").attr('disabled', false);
+        $(".team_management_checkSelect2").attr('disabled', false);
+        $(".team_management_checkSelect3").attr('disabled', false);
+        $(".team_management_checkSelect4").attr('disabled', false);
+        $(".team_management_checkSelect5").attr('disabled', false);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
       }
       else {
        

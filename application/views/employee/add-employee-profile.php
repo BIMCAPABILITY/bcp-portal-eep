@@ -72,6 +72,28 @@
                                     </span>
                                 </td>
                               </tr>
+<<<<<<< HEAD
+=======
+                              <tr class="mb-5-emp-edit">
+                                    <td class="label-gry" style="position: absolute;">Level</td>
+                                    <td>
+                                        <div>
+                                            <?php
+
+                                                if(($empdata->emp_level)==2){
+                                                $level = 'Employee';
+                                                }elseif(($empdata->emp_level)==3){
+                                                $level = 'Manager';
+                                                }else{
+                                                $level = '';
+                                                }
+
+                                            ?>
+                                            <?php echo $level; ?>
+                                        </div>
+                                    </td>
+                                </tr>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                               <tr>
                                 <td class="label-gry">
                                   <span>Skills&nbsp;&nbsp;&nbsp;</span>
@@ -132,15 +154,55 @@
                                     <span> 
                                         <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Immediate Goals" aria-label="Immediate Goals"></i>
                                         <div class="btn-group">
+<<<<<<< HEAD
                                             <button type="button" id="goals1" class="btn btn-xs btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">2023 Week 18</button>
                                             <span class="dropdown-menu" style="">
                                                 <input type="hidden" name="goals_type" id="goals_hidden1" class="form-control" value="2023 Week 18">
                                                 <input type="text" name="goals_description" id="goals_input1" name="" class="form-control" value="">
                                             </span>
+=======
+                                            <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#goals1">Current Goals</button>
+                                            <div class="modal fade" id="goals1" tabindex="-1" role="dialog" aria-labelledby="goals1ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="heading-model-goal">
+                                                            <h5>Current Goals</h5>
+                                                            <span>Immediate Goals</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                        ></button>
+                                                    </div>
+                                                        <div class="modal-body">
+                                                            <div class="goals-section-two">
+                                                                <div class="goal-boxes">
+                                                                    <div class="goal-box">
+                                                                        <textarea name="goals_emp_words_immediate" class="form-control" cols="5" rows="3"></textarea>
+                                                                        <label for="">Evaluatee to write goals</label>
+                                                                    </div>
+                                                                    <div class="goal-box">
+                                                                        <textarea name="goals_supervisor_words_immediate" class="form-control" cols="5" rows="3" disabled></textarea>
+                                                                        <label for="">Supervisor to review goals</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Set & Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </div>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span> 
+<<<<<<< HEAD
                                         <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Short term goals to be achieved within 6 months" aria-label="Short term goals to be achieved within 6 months"></i>
                                         <div class="btn-group">
                                             <button type="button" id="goals2" class="btn btn-xs btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">2023 Week 45</button>
@@ -148,10 +210,51 @@
                                                 <input type="hidden" name="goals_type" id="goals_hidden2" class="form-control" value="2023 Week 45">
                                                 <input type="text" name="goals_description" id="goals_input2" class="form-control">
                                             </span>
+=======
+                                        <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Goals to be achieved within 6 months" aria-label="Goals to be achieved within 6 months"></i>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#goals2">Short-Term Goals</button>
+                                            <div class="modal fade" id="goals2" tabindex="-1" role="dialog" aria-labelledby="goals2ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="heading-model-goal">
+                                                            <h5>Short-Term Goals</h5>
+                                                            <span>Goals to be achieved within 6 months</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                        ></button>
+                                                    </div>
+                                                        <div class="modal-body">
+                                                            <div class="goals-section-two">
+                                                                <div class="goal-boxes">
+                                                                    <div class="goal-box">
+                                                                        <textarea name="goals_emp_words_short_term" class="form-control" cols="5" rows="3"></textarea>
+                                                                        <label for="">Evaluatee to write goals</label>
+                                                                    </div>
+                                                                    <div class="goal-box">
+                                                                        <textarea name="goals_supervisor_words_short_term" class="form-control" cols="5" rows="3" disabled></textarea>
+                                                                        <label for="">Supervisor to review goals</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Set & Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </div>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span> 
+<<<<<<< HEAD
                                         <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Mid term goals to be achieved within 12 months" aria-label="Mid term goals to be achieved within 12 months"></i>
                                         <div class="btn-group">
                                             <button type="button" id="goals3" class="btn btn-xs btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">2024 Week 18</button>
@@ -159,10 +262,51 @@
                                                 <input type="hidden" name="goals_type" id="goals_hidden3" class="form-control" value="2024 Week 18">
                                                 <input type="text" name="goals_description" id="goals_input3" class="form-control">
                                             </span>
+=======
+                                        <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Goals to be achieved within 12 months" aria-label="Goals to be achieved within 12 months"></i>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#goals3">Mid-Term Goals</button>
+                                            <div class="modal fade" id="goals3" tabindex="-1" role="dialog" aria-labelledby="goals3ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="heading-model-goal">
+                                                            <h5>Mid-Term Goals</h5>
+                                                            <span>Goals to be achieved within 12 months</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                        ></button>
+                                                    </div>
+                                                        <div class="modal-body">
+                                                            <div class="goals-section-two">
+                                                                <div class="goal-boxes">
+                                                                    <div class="goal-box">
+                                                                        <textarea name="goals_emp_words_mid_term" class="form-control" cols="5" rows="3"></textarea>
+                                                                        <label for="">Evaluatee to write goals</label>
+                                                                    </div>
+                                                                    <div class="goal-box">
+                                                                        <textarea name="goals_supervisor_words_mid_term" class="form-control" cols="5" rows="3" disabled></textarea>
+                                                                        <label for="">Supervisor to review goals</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Set & Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                         </div>
                                     </span>
                                     &nbsp;&nbsp;
                                     <span> 
+<<<<<<< HEAD
                                         <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Long term goals to be achieved within 18 months" aria-label="Long term goals to be achieved within 18 months"></i>
                                         <div class="btn-group">
                                             <button type="button" id="goals4" class="btn btn-xs btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">2024 Week 45</button>
@@ -196,6 +340,50 @@
                                         </div>
                                     </td>
                                 </tr>
+=======
+                                        <i class="bx bx-info-circle" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="Goals to be achieved within 18 months" aria-label="Goals to be achieved within 18 months"></i>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-xs btn-primary" data-bs-toggle="modal" data-bs-target="#goals4">Long-Term Goals</button>
+                                            <div class="modal fade" id="goals4" tabindex="-1" role="dialog" aria-labelledby="goals3ModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="heading-model-goal">
+                                                            <h5>Long-Term Goals</h5>
+                                                            <span>Goals to be achieved within 18 months</span>
+                                                        </div>
+                                                        <button
+                                                            type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"
+                                                        ></button>
+                                                    </div>
+                                                        <div class="modal-body">
+                                                            <div class="goals-section-two">
+                                                                <div class="goal-boxes">
+                                                                    <div class="goal-box">
+                                                                        <textarea name="goals_emp_words_long_term" class="form-control" cols="5" rows="3"></textarea>
+                                                                        <label for="">Evaluatee to write goals</label>
+                                                                    </div>
+                                                                    <div class="goal-box">
+                                                                        <textarea name="goals_supervisor_words_long_term" class="form-control" cols="5" rows="3" disabled></textarea>
+                                                                        <label for="">Supervisor to review goals</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Set & Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </td>
+                              </tr>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 <input type="hidden" name="old_emp_level" value="<?php echo $empdata->emp_level; ?>">
                             </tbody>
                           </table>
@@ -222,11 +410,16 @@
                             <div class="col-lg-3">
                               <div class="ed-basic-mid">
                                   <div class="ed-head-t">
+<<<<<<< HEAD
                                       <label for="">Experience</label>
+=======
+                                      <label for="">Work Experience</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                   </div>
                                   <div>
                                     <textarea name="ed_experience" class="form-control" cols="20" rows="10" placeholder="Enter your experience"></textarea>
                                   </div>
+<<<<<<< HEAD
                                 <?php if($salary): ?>
                                   <div class="ed-head-t">
                                       <label for="">Salary History</label>
@@ -295,6 +488,9 @@
                                       
                                     <?php endif; ?>
                                     
+=======
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                   <div class="ed-basic-mid">
                                       <div class="ed-head-t">
                                           <label for="">Qualification</label>
@@ -325,12 +521,20 @@
                                             </div>
                                             <div class="d-flex">
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                                 <label for="">Age</label>
+=======
+                                                <label for="">Birthday</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <input type="text" name="ed_individual_profile_age" class="form-control" value="">
                                               </span> 
                                               &nbsp;&nbsp;&nbsp;
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                                 <label for="">Interest</label>
+=======
+                                                <label for="">Hobby</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <input type="text" name="ed_individual_profile_intrest" class="form-control" value="">
                                               </span>
                                             </div>
@@ -341,13 +545,21 @@
                                               </span> 
                                               &nbsp;&nbsp;&nbsp;
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                               <label for=""></label>
+=======
+                                              <label for="">City</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <input type="text" name="ed_individual_profile_city" class="form-control" value="<?php echo $empdata->employee_city; ?>" placeholder="City">
                                               </span>
                                             </div>
                                             <div class="d-flex">
                                               <span class="child-label-ed w-100-d">
+<<<<<<< HEAD
                                                 <label for=""></label>
+=======
+                                                <label for="">Country</label>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <select name="employee_country" id="address-country" class="select2 form-select form-control address-country2">
                                                 <option value="" selected=""><?php echo $empdata->employee_country; ?></option>
                                                   <option value="Afghanistan">Afghanistan</option>
@@ -620,6 +832,7 @@
                                               </span> 
                                             </div>
                                             <div class="d-flex">
+<<<<<<< HEAD
                                             <span class="child-label-ed w-100-d">
                                                 <label for="">Food</label>
                                                 <input type="text" name="ed_individual_profile_food" class="form-control" value="">
@@ -633,6 +846,22 @@
 
                                             <div class="ed-head-t">
                                                 <label for="">Personality</label>
+=======
+                                                <span class="child-label-ed w-100-d">
+                                                    <label for="">Food</label>
+                                                    <input type="text" name="ed_individual_profile_food" class="form-control" value="">
+                                                </span>
+                                                &nbsp;&nbsp;&nbsp;
+                                                <span class="child-label-ed w-100-d">
+                                                    <label for="">Sports</label>
+                                                    <input type="text" name="ed_individual_profile_sports" class="form-control" value="">
+                                                </span>
+                                            </div>
+                                            
+
+                                            <div class="ed-head-t">
+                                                <label for="">Personality</label> <span>(<a href="https://www.16personalities.com/" target="_blank">Click here</a> to give your Personality Test)</span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                             </div>
 
                                             <div class="d-flex">
@@ -665,7 +894,11 @@
                                                 <span style="flex-basis: 260px"></span>
                                                 <input type="text" name="max_value_mind" class="slider-range-value-style" id="slider-range-mind2" value="50" style="width:40px; height:30px;" />%
                                             </div>
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Extroverted</span>
                                                    <span>
                                                         <div class="slider-hidden-style" id="mind-line"></div>
@@ -681,7 +914,11 @@
                                                 <span style="flex-basis: 260px"></span>
                                                 <input type="text" name="max_value_energy" class="slider-range-value-style" id="slider-range-energy2" value="50" style="width:40px; height:30px;" />%
                                             </div>
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Intuitive</span>
                                                    <span>
                                                         <div class="slider-hidden-style" id="energy-line"></div>
@@ -697,7 +934,11 @@
                                                 <span style="flex-basis: 260px"></span>
                                                 <input type="text" name="max_value_nature" class="slider-range-value-style" id="slider-range-nature2" value="50" style="width:40px; height:30px;" />%
                                             </div>
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Thinking</span>
                                                    <span>
                                                         <div class="slider-hidden-style" id="nature-line"></div>
@@ -714,7 +955,11 @@
                                                 <input type="text" name="max_value_tactics" class="slider-range-value-style" id="slider-range-tactics2" value="50" style="width:40px; height:30px;" />%
                                             </div>
 
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Judging</span>
                                                    <span>
                                                         <div class="slider-hidden-style" id="tactics-line"></div>
@@ -731,7 +976,11 @@
                                                 <input type="text" name="max_value_identity" class="slider-range-value-style" id="slider-range-identity2" value="50" style="width:40px; height:30px;" />%
                                             </div>
 
+<<<<<<< HEAD
                                             <div class="eep-status-cover d-flex">
+=======
+                                            <div class="eep-status-cover d-flex-center d-flex">
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                                 <span class="personality-lable-point">Judging</span>
                                                    <span>
                                                         <div class="slider-hidden-style" id="identity-line"></div>
@@ -748,6 +997,7 @@
                                 <div class="ed-head-t">
                                     <label for="">Software Expertise</label>
                                 </div>
+<<<<<<< HEAD
                                 <div class="range-number-style">
                                     &nbsp; &nbsp; &nbsp;
                                     <span class="slider-range-software">BASIC</span>
@@ -1278,11 +1528,416 @@
                                         <span class="form-check">
                                             <input class="form-check-input" type="radio" value="10" name="ed_software_ae" id="">
                                         </span>
+=======
+                                <div class="eep-status-cover software-mb-2 software-mb-2  d-flex">
+                                    <span class="ed-soft-icons"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <?php
+                                            $x = 1;
+                                            while($x <= 5) {
+                                              echo "<span class='form-check m-set-radio'>".$x++."</span>";
+                                            }
+                                        ?>
+                                    <span class="m-set-radio">N/A</span>
+                                </div>
+                                <div class="eep-status-cover software-mb-2 software-mb-2  d-flex">
+                                        <span class="ed-soft-icons">
+                                          <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Revit">
+                                            <img src="<?php echo base_url('assets_admin/img/software/Revit-logo.jpg'); ?>" alt="Software Logo">
+                                          </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_1 NA__software_1" type="radio" value="1" name="ed_software_revit">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_1 NA__software_1" type="radio" value="2" name="ed_software_revit">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_1 NA__software_1" type="radio" value="3" name="ed_software_revit">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_1 NA__software_1" type="radio" value="4" name="ed_software_revit">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_1 NA__software_1" type="radio" value="5" name="ed_software_revit">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input" id="NA_refresh_software_1" type="radio" value="0" name="ed_software_revit">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_1"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Navisworks">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Navisworks-logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_2 NA__software_2" type="radio" value="1" name="ed_software_navisworks">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_2 NA__software_2" type="radio" value="2" name="ed_software_navisworks">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_2 NA__software_2" type="radio" value="3" name="ed_software_navisworks">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_2 NA__software_2" type="radio" value="4" name="ed_software_navisworks">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_2 NA__software_2" type="radio" value="5" name="ed_software_navisworks">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_2" id="NA_refresh_software_2" type="radio" value="0" name="ed_software_navisworks">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_2"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="AutoCad">
+                                                <img src="<?php echo base_url('assets_admin/img/software/AutoCad-logoo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_3 NA__software_3" type="radio" value="1" name="ed_software_autocad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_3 NA__software_3" type="radio" value="2" name="ed_software_autocad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_3 NA__software_3" type="radio" value="3" name="ed_software_autocad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_3 NA__software_3" type="radio" value="4" name="ed_software_autocad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_3 NA__software_3" type="radio" value="5" name="ed_software_autocad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_3" id="NA_refresh_software_3" type="radio" value="0" name="ed_software_autocad">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_3"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Rhinoceros 3D">
+                                                <img src="<?php echo base_url('assets_admin/img/software/rhinoceros-3d-logo-G.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_4 NA__software_4" type="radio" value="1" name="ed_software_rhinoceros">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_4 NA__software_4" type="radio" value="2" name="ed_software_rhinoceros">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_4 NA__software_4" type="radio" value="3" name="ed_software_rhinoceros">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_4 NA__software_4" type="radio" value="4" name="ed_software_rhinoceros">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_4 NA__software_4" type="radio" value="5" name="ed_software_rhinoceros">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_4" id="NA_refresh_software_4" type="radio" value="0" name="ed_software_rhinoceros">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_4"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="3Ds Max Grey">
+                                                <img src="<?php echo base_url('assets_admin/img/software/3Ds-max-grey.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_5 NA__software_5" type="radio" value="1" name="ed_software_3dsmax">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_5 NA__software_5" type="radio" value="2" name="ed_software_3dsmax">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_5 NA__software_5" type="radio" value="3" name="ed_software_3dsmax">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_5 NA__software_5" type="radio" value="4" name="ed_software_3dsmax">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_5 NA__software_5" type="radio" value="5" name="ed_software_3dsmax">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_5" id="NA_refresh_software_5" type="radio" value="0" name="ed_software_3dsmax">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_5"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Icono DynMad"> 
+                                                <img src="<?php echo base_url('assets_admin/img/software/iconoDynMad.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_6 NA__software_6" type="radio" value="1" name="ed_software_iconodynmad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_6 NA__software_6" type="radio" value="2" name="ed_software_iconodynmad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_6 NA__software_6" type="radio" value="3" name="ed_software_iconodynmad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_6 NA__software_6" type="radio" value="4" name="ed_software_iconodynmad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_6 NA__software_6" type="radio" value="5" name="ed_software_iconodynmad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_6" id="NA_refresh_software_6" type="radio" value="0" name="ed_software_iconodynmad">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_6"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Enscape Loog">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Enscape-loog.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_7 NA__software_7" type="radio" value="1" name="ed_software_enscape">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_7 NA__software_7" type="radio" value="2" name="ed_software_enscape">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_7 NA__software_7" type="radio" value="3" name="ed_software_enscape">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_7 NA__software_7" type="radio" value="4" name="ed_software_enscape">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_7 NA__software_7" type="radio" value="5" name="ed_software_enscape">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_7" id="NA_refresh_software_7" type="radio" value="0" name="ed_software_enscape">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_7"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="AGACAD">
+                                                <img src="<?php echo base_url('assets_admin/img/software/AGACAD-icon-copy.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_8 NA__software_8" type="radio" value="1" name="ed_software_agacad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_8 NA__software_8" type="radio" value="2" name="ed_software_agacad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_8 NA__software_8" type="radio" value="3" name="ed_software_agacad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_8 NA__software_8" type="radio" value="4" name="ed_software_agacad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_8 NA__software_8" type="radio" value="5" name="ed_software_agacad">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_8" id="NA_refresh_software_8" type="radio" value="0" name="ed_software_agacad">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_8"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="SketchUp">
+                                                <img src="<?php echo base_url('assets_admin/img/software/SketchUp-Logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_9 NA__software_9" type="radio" value="1" name="ed_software_sketchup">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_9 NA__software_9" type="radio" value="2" name="ed_software_sketchup">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_9 NA__software_9" type="radio" value="3" name="ed_software_sketchup">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_9 NA__software_9" type="radio" value="4" name="ed_software_sketchup">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_9 NA__software_9" type="radio" value="5" name="ed_software_sketchup">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_9" id="NA_refresh_software_9" type="radio" value="0" name="ed_software_sketchup">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_9"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Microsoft Word">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Microsoft_Word-Logo.wine-edited.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_10 NA__software_10" type="radio" value="1" name="ed_software_msword">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_10 NA__software_10" type="radio" value="2" name="ed_software_msword">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_10 NA__software_10" type="radio" value="3" name="ed_software_msword">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_10 NA__software_10" type="radio" value="4" name="ed_software_msword">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_10 NA__software_10" type="radio" value="5" name="ed_software_msword">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_10" id="NA_refresh_software_10" type="radio" value="0" name="ed_software_msword">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_10"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Microsoft Excel">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Microsoft-Excel-Logo-edited.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_11 NA__software_11" type="radio" value="1" name="ed_software_msexcel">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_11 NA__software_11" type="radio" value="2" name="ed_software_msexcel">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_11 NA__software_11" type="radio" value="3" name="ed_software_msexcel">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_11 NA__software_11" type="radio" value="4" name="ed_software_msexcel">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_11 NA__software_11" type="radio" value="5" name="ed_software_msexcel">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_11" id="NA_refresh_software_11" type="radio" value="0" name="ed_software_msexcel">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_11"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Photoshop">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Photoshop-logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_12 NA__software_12" type="radio" value="1" name="ed_software_photoshop">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_12 NA__software_12" type="radio" value="2" name="ed_software_photoshop">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_12 NA__software_12" type="radio" value="3" name="ed_software_photoshop">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_12 NA__software_12" type="radio" value="4" name="ed_software_photoshop">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_12 NA__software_12" type="radio" value="5" name="ed_software_photoshop">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_12" id="NA_refresh_software_12" type="radio" value="0" name="ed_software_photoshop">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_12"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Adobe Illustrator">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Ai-logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_13 NA__software_13" type="radio" value="1" name="ed_software_ai">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_13 NA__software_13" type="radio" value="2" name="ed_software_ai">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_13 NA__software_13" type="radio" value="3" name="ed_software_ai">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_13 NA__software_13" type="radio" value="4" name="ed_software_ai">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_13 NA__software_13" type="radio" value="5" name="ed_software_ai">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_13" id="NA_refresh_software_13" type="radio" value="0" name="ed_software_ai">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_13"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Adobe InDesign">
+                                                <img src="<?php echo base_url('assets_admin/img/software/InDesign-Logo-1024x998-edited.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_14 NA__software_14" type="radio" value="1" name="ed_software_indesign">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_14 NA__software_14" type="radio" value="2" name="ed_software_indesign">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_14 NA__software_14" type="radio" value="3" name="ed_software_indesign">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_14 NA__software_14" type="radio" value="4" name="ed_software_indesign">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_14 NA__software_14" type="radio" value="5" name="ed_software_indesign">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_14" id="NA_refresh_software_14" type="radio" value="0" name="ed_software_indesign">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_14"><i class="bx bx-refresh"></i></a></span>
+                                  </div>
+                                  <div class="eep-status-cover software-mb-2 d-flex">
+                                        <span class="ed-soft-icons">
+                                            <span class="" data-bs-toggle="tooltip" data-bs-offset="0,4" data-bs-placement="right" data-bs-html="true" title="" data-bs-original-title="Adobe After Effects">
+                                                <img src="<?php echo base_url('assets_admin/img/software/Ae-logo.jpg'); ?>" alt="Software Logo">
+                                            </span>
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_15 NA__software_15" type="radio" value="1" name="ed_software_ae">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_15 NA__software_15" type="radio" value="2" name="ed_software_ae">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_15 NA__software_15" type="radio" value="3" name="ed_software_ae">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_15 NA__software_15" type="radio" value="4" name="ed_software_ae">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_15 NA__software_15" type="radio" value="5" name="ed_software_ae">
+                                        </span>
+                                        <span class="form-check">
+                                            <input class="form-check-input radio_software_15" id="NA_refresh_software_15" type="radio" value="0" name="ed_software_ae">
+                                        </span>
+                                        <span><a href="javascript:void(0)" id="refersh_software_15"><i class="bx bx-refresh"></i></a></span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                   </div>
                             </div>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </div>
+=======
+                    </div>  
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                   </div>
                 </div>
                 <span class="emp-list-addbtn2">

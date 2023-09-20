@@ -76,9 +76,15 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+<<<<<<< HEAD
 	'username' => 'u973162947_eep',
 	'password' => 'rJS]BSF#6',
 	'database' => 'u973162947_eep',
+=======
+	'username' => 'root',
+	'password' => '',
+	'database' => 'bimcap_eep',
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

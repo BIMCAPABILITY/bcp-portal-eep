@@ -27,9 +27,18 @@ class Admin extends CI_Controller {
 		$data['topper'] = $this->am->getTopPerformance();
 		$data['lowper'] = $this->am->getLowPerformance();
 		$data['performancedash'] = $this->am->PerformanceResultDashboard();
+<<<<<<< HEAD
 		$data['grateful'] = $this->am->getGratefulPerformance();
 		$data['good'] = $this->am->getGoodPerformance();
 		$data['average'] = $this->am->getAveragePerformance();
+=======
+
+		
+		$data['grateful'] = $this->am->getGratefulPerformance();
+		$data['good'] = $this->am->getGoodPerformance();
+		$data['average'] = $this->am->getAveragePerformance();
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 		$this->load->view('admin/include/header');
 		$this->load->view('admin/include/menu');
 		$this->load->view('admin/index', $data);
@@ -85,8 +94,14 @@ class Admin extends CI_Controller {
 				$data['employee_designation'] = $this->input->post('employee_designation');
 				$data['employee_doj'] = $this->input->post('employee_doj');
 				$data['employee_dot'] = $this->input->post('employee_dot');
+<<<<<<< HEAD
 				$data['emp_password'] = $this->input->post('emp_password');
 				$data['emp_level'] = $this->input->post('emp_level');
+=======
+				$data['emp_level'] = $this->input->post('emp_level');
+				// $data['emp_password'] = $this->input->post('emp_password');
+				$data['emp_password'] = password_hash($this->input->post('emp_password'), PASSWORD_DEFAULT);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 	
 				if((!empty($_FILES['employee_image']['name']))){
 					$check = uploadimgfile("employee_image",$folder="upload",$prefix="proimg_");
@@ -221,8 +236,17 @@ class Admin extends CI_Controller {
 	/*********Employee Details Page ***********/
 
 		public function showEmployeeScoreInfo($per_id){
+<<<<<<< HEAD
 			$data['per_info'] = $this->am->getEmployeesPerformanceInfo($per_id);
 			$data['emp_avg'] = $this->am->getEmployeesAVG($per_id);
+=======
+
+			$data['per_info'] = $this->em->getEmployeesPerformanceInfo($per_id);
+			$data['emp_avg'] = $this->em->getEmployeesAVG($per_id);
+
+			$goalsID = $this->em->findEMPID($per_id);
+            $data['goals'] = $this->em->getSuperEmpGoals($per_id);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 			$this->load->view('admin/include/header');
 			$this->load->view('admin/include/menu');
@@ -242,6 +266,11 @@ class Admin extends CI_Controller {
 
 	    public function showEmployeeInfo($id){
 
+<<<<<<< HEAD
+=======
+			$this->load->library('encryption');
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 			$data['empdata'] = $this->am->getEmpDetails($id);
 			$data['departments'] = $this->am->getEmpDepartment();
 			$data['per_history_check'] = $this->am->getCheckHistory($id);
@@ -260,12 +289,21 @@ class Admin extends CI_Controller {
                 $data['status'] = 0;
             }
 
+<<<<<<< HEAD
 			$goals = $this->em->getEmpGoals($id);
             if($goals){
                 $data['goal'] = $goals;
             }else{
                 $data['goal'] = 0;
             }
+=======
+			$goals = $this->am->getEmpGoals($id);
+			if($goals){
+				$data['goal'] = $goals;
+			}else{
+				$data['goal'] = 0;
+			}
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
             $experience = $this->em->getEmpExperience($id);
             if($experience){
@@ -274,13 +312,27 @@ class Admin extends CI_Controller {
                 $data['experience'] = 0;
             }
 
+<<<<<<< HEAD
             $salary = $this->em->getEmpSalary($id);
+=======
+            $salary = $this->am->getEmpSalary($id);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             if($salary){
                 $data['salary'] = $salary;
             }else{
                 $data['salary'] = 0;
             }
 
+<<<<<<< HEAD
+=======
+			$currency = $this->am->getEmpCurrency($id);
+			if($currency){
+				$data['currency'] = $currency;
+			}else{
+				$data['currency'] = 0;
+			}
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             $qualification = $this->em->getEmpQualification($id);
             if($qualification){
                 $data['qualification'] = $qualification;
@@ -328,10 +380,25 @@ class Admin extends CI_Controller {
 
         $data['empdata'] = $this->am->getEmpDetails($empID);
         $data['departments'] = $this->am->getEmpDepartment();
+<<<<<<< HEAD
         $data['empinfo'] = $this->am->getEmployeesPerformanceInfo($empID);
 
         $data['skills'] = $this->am->getEmpSkills($empID);
         $data['status'] = $this->am->getEmpStatus($empID);
+=======
+        $data['empinfo'] = $this->em->getEmployeesPerformanceInfo($empID);
+
+        $data['skills'] = $this->am->getEmpSkills($empID);
+        $data['status'] = $this->am->getEmpStatus($empID);
+
+		$goals = $this->em->getEmpGoals($empID);
+        if($goals){
+            $data['goal'] = $goals;
+        }else{
+            $data['goal'] = 0;
+        }
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         $data['experience'] = $this->am->getEmpExperience($empID);
         $data['salary'] = $this->am->getEmpSalary($empID);
         $data['qualification'] = $this->am->getEmpQualification($empID);
@@ -395,8 +462,11 @@ class Admin extends CI_Controller {
             $personal['employee_designation'] = $this->input->post('old_employee_designation');
         }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         if(!empty($_FILES['employee_image']['name'])){
 
         $upload = $this->em->get_empImg_id($id);
@@ -409,7 +479,10 @@ class Admin extends CI_Controller {
                 }
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 		
 		// Level
 
@@ -451,11 +524,39 @@ class Admin extends CI_Controller {
 
 		 // Goals
 
+<<<<<<< HEAD
          if($this->input->post('goals_description')){
             $goals['goals_type'] = $this->input->post('goals_type');
             $goals['goals_description'] = $this->input->post('goals_description');
             $this->am->updateM_EMPGoals($goals, $id);
          }
+=======
+		if($this->input->post('current_goals')){
+            $goals['current_goals'] = $this->input->post('current_goals');
+        }else{
+            $goals['current_goals'] = null;
+        }
+
+        if($this->input->post('short_term_goals')){
+            $goals['short_term_goals'] = $this->input->post('short_term_goals');
+        }else{
+            $goals['short_term_goals'] = null;
+        }
+
+        if($this->input->post('mid_term_goals')){
+            $goals['mid_term_goals'] = $this->input->post('mid_term_goals');
+        }else{
+            $goals['mid_term_goals'] = null;
+        }
+
+        if($this->input->post('long_term_goals')){
+            $goals['long_term_goals'] = $this->input->post('long_term_goals');
+        }else{
+            $goals['long_term_goals'] = null;
+        }
+
+        $this->am->updatesEMPGoals($goals, $id);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         //End Goals
 
@@ -657,7 +758,11 @@ class Admin extends CI_Controller {
 	/*********Update Employee Score Details Page ***********/
 
 	public function showEmployeeScores($id){
+<<<<<<< HEAD
 		$data['re_evaluate'] = $this->am->getEmployeesPerformanceInfo($id);
+=======
+		$data['re_evaluate'] = $this->em->getEmployeesPerformanceInfo($id);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 		$this->load->view('admin/include/header');
 		$this->load->view('admin/include/menu');
@@ -1094,7 +1199,15 @@ class Admin extends CI_Controller {
             $data['last_reviews'] = $this->em->getLastReview($lastReviewID);
 		}
 
+<<<<<<< HEAD
 		$data['perf_data'] = $this->am->getEmployeesPerformanceInfo($per_id);
+=======
+		$data['perf_data'] = $this->em->getEmployeesPerformanceInfo($per_id);
+
+		$goalsID = $this->em->findEMPID($per_id);
+		$data['goals'] = $this->em->getSuperEmpGoals($per_id);
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
 		$this->load->view('admin/include/header');
 		$this->load->view('admin/print-employee-details', $data);
@@ -1229,7 +1342,10 @@ class Admin extends CI_Controller {
 
 		$this->am->postEmployeeKnowledge($knowledge_data);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 		/* knowledge */
 
 		/* software */
@@ -1246,7 +1362,10 @@ class Admin extends CI_Controller {
 
 		$this->am->postEmployeeSoftware($software_data);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 		/* software */
 
 		/* dependability */
@@ -1351,6 +1470,7 @@ class Admin extends CI_Controller {
 
 	}
 	
+<<<<<<< HEAD
 	public function fetchGoal1(){
         $employee_id = $this->input->post('employee_id');
         $goals_hidden1 = $this->input->post('goals_hidden1');
@@ -1379,6 +1499,8 @@ class Admin extends CI_Controller {
         echo json_encode($res);
     }
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 	public function checkValidAccount(){
 		$this->form_validation->set_rules('email','Email Id','is_unique[employee_table.employee_email]');
 		if($this->form_validation->run()==FALSE){
@@ -1387,5 +1509,76 @@ class Admin extends CI_Controller {
 			echo json_encode(2);
 		}
 	}
+<<<<<<< HEAD
+=======
+
+	public function addEmployeeSalary(){
+		$this->load->library('encryption');
+		$config=[
+			'base_url' => base_url('Admin/addEmployeeSalary'),
+			'per_page' =>25,
+			'total_rows' => $this->am->num_rows_EmployeeSalary(),
+			'full_tag_open'=>"<ul class='pagination'>",
+			'full_tag_close'=>"</ul>",
+			'next_tag_open' =>"<li>",
+			'next_tag_close' =>"</li>",
+			'prev_tag_open' =>"<li>",
+			'prev_tag_close' =>"</li>",
+			'num_tag_open' =>"<li>",
+			'num_tag_close' =>"<li>",
+			'cur_tag_open' =>"<li class='active'><a>",
+			'cur_tag_close' =>"</a></li>"
+		];
+	
+		$this->pagination->initialize($config);
+		$data['salary'] = $this->am->EmployeeSalaryListData($config['per_page'],$this->uri->segment(3));
+		$data['empdata'] = $this->am->getEmpSalaryData();
+
+		$this->load->view('admin/include/header');
+		$this->load->view('admin/include/menu');
+		$this->load->view('admin/add-employee-salary', $data);
+		$this->load->view('admin/include/footer');
+	}
+
+	public function postEmployeeSalary(){
+
+		$this->load->library('encryption');
+
+		$data = array(
+			'employee_id' => $this->input->post('employee_id'),
+			'salary_currency' => $this->input->post('salary_currency'),
+			'salary_date' => $this->input->post('salary_date'),
+			'salary_amount' => $this->encryption->encrypt($this->input->post('salary_amount')),
+		);
+
+		if($this->am->uploadEmployeeSalary($data)){
+			redirect('Admin/addEmployeeSalary');
+		}else{
+			redirect('Admin/addEmployeeSalary');
+		}
+	}
+
+	public function editEmployeeSalary(){
+
+		$this->load->library('encryption');
+		$salary_id = $this->input->post('salary_id');
+		$data = array(
+			'salary_currency' => $this->input->post('salary_currency'),
+			'salary_date' => $this->input->post('salary_date'),
+			'salary_amount' => $this->encryption->encrypt($this->input->post('salary_amount')),
+		);
+
+		// echo '<pre>';
+		// print_r($salary_id);
+		// echo '</pre>';
+		// exit;
+
+		if($this->am->editEmpSalary($salary_id, $data)){
+			redirect('Admin/addEmployeeSalary');
+		}else{
+			redirect('Admin/addEmployeeSalary');
+		}
+	}
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 ?>

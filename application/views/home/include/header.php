@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Evaluation Portal</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="<?php echo base_url('assets_admin/vendor/fonts/boxicons.css'); ?>" />
+=======
+    <link rel="icon" sizes="192x192" href="<?php echo base_url('assets_admin/img/logo/favicon.png'); ?>">
+    <link rel="shortcut icon" href="<?php echo base_url('assets_admin/img/logo/favicon.png'); ?>" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="<?php echo base_url('assets_admin/img/logo/favicon.png'); ?>" type="image/x-icon"/>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     <!-- Core CSS -->
     <link rel="stylesheet" href="<?php echo base_url('assets_admin/vendor/css/core.css" class="template-customizer-core-css'); ?>" />
     <link rel="stylesheet" href="<?php echo base_url('assets_admin/vendor/css/theme-default.css" class="template-customizer-theme-css'); ?>" />

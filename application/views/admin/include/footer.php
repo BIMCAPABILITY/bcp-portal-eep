@@ -9,6 +9,10 @@
     <script src="<?php echo base_url('assets_admin/js/dashboards-analytics.js'); ?>"></script>
     <script src="<?php echo base_url('assets_admin/js/parsley.js'); ?>"></script>
     <script src="<?php echo base_url('assets_admin/js/checkbox.js'); ?>"></script>
+<<<<<<< HEAD
+=======
+    <script src="<?php echo base_url('assets_admin/js/select2.js'); ?>"></script>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
     <!-- Range -->
 
@@ -210,7 +214,11 @@
         ]);
 
         var options = {
+<<<<<<< HEAD
         title: '',
+=======
+        title: 'Company Performance Metrics',
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         is3D: true,
         slices: {
             0: { color: '#3da73d' },
@@ -1157,6 +1165,257 @@
     });
   </script>
 
+<<<<<<< HEAD
+=======
+<script>
+   $(document).ready(function () {
+
+      $("#refersh_software_1").click(function() {
+            $(".radio_software_1").prop('checked', false);
+            $(".NA__software_1").attr('disabled', false);
+            $("#NA_refresh_software_1").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_1").click(function() {
+            if($('#NA_refresh_software_1').is(":checked")) {
+                  $(".NA__software_1").attr('disabled', true);
+            } else {
+                  $(".NA__software_1").attr('disabled', false);
+            }
+      });
+
+      // ---------------------------------------------------------------
+
+      
+      $("#refersh_software_2").click(function() {
+            $(".radio_software_2").prop('checked', false);
+            $(".NA__software_2").attr('disabled', false);
+            $("#NA_refresh_software_2").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_2").click(function() {
+            if($('#NA_refresh_software_2').is(":checked")) {
+                  $(".NA__software_2").attr('disabled', true);
+            } else {
+                  $(".NA__software_2").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+      
+      $("#refersh_software_3").click(function() {
+            $(".radio_software_3").prop('checked', false);
+            $(".NA__software_3").attr('disabled', false);
+            $("#NA_refresh_software_3").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_3").click(function() {
+            if($('#NA_refresh_software_3').is(":checked")) {
+                  $(".NA__software_3").attr('disabled', true);
+            } else {
+                  $(".NA__software_3").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_4").click(function() {
+            $(".radio_software_4").prop('checked', false);
+            $(".NA__software_4").attr('disabled', false);
+            $("#NA_refresh_software_4").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_4").click(function() {
+            if($('#NA_refresh_software_4').is(":checked")) {
+                  $(".NA__software_4").attr('disabled', true);
+            } else {
+                  $(".NA__software_4").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_5").click(function() {
+            $(".radio_software_5").prop('checked', false);
+            $(".NA__software_5").attr('disabled', false);
+            $("#NA_refresh_software_5").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_5").click(function() {
+            if($('#NA_refresh_software_5').is(":checked")) {
+                  $(".NA__software_5").attr('disabled', true);
+            } else {
+                  $(".NA__software_5").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_6").click(function() {
+            $(".radio_software_6").prop('checked', false);
+            $(".NA__software_6").attr('disabled', false);
+            $("#NA_refresh_software_6").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_6").click(function() {
+            if($('#NA_refresh_software_6').is(":checked")) {
+                  $(".NA__software_6").attr('disabled', true);
+            } else {
+                  $(".NA__software_6").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_7").click(function() {
+            $(".radio_software_7").prop('checked', false);
+            $(".NA__software_7").attr('disabled', false);
+            $("#NA_refresh_software_7").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_7").click(function() {
+            if($('#NA_refresh_software_7').is(":checked")) {
+                  $(".NA__software_7").attr('disabled', true);
+            } else {
+                  $(".NA__software_7").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------\
+
+      $("#refersh_software_8").click(function() {
+            $(".radio_software_8").prop('checked', false);
+            $(".NA__software_8").attr('disabled', false);
+            $("#NA_refresh_software_8").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_8").click(function() {
+            if($('#NA_refresh_software_8').is(":checked")) {
+                  $(".NA__software_8").attr('disabled', true);
+            } else {
+                  $(".NA__software_8").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_9").click(function() {
+            $(".radio_software_9").prop('checked', false);
+            $(".NA__software_9").attr('disabled', false);
+            $("#NA_refresh_software_9").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_9").click(function() {
+            if($('#NA_refresh_software_9').is(":checked")) {
+                  $(".NA__software_9").attr('disabled', true);
+            } else {
+                  $(".NA__software_9").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_10").click(function() {
+            $(".radio_software_10").prop('checked', false);
+            $(".NA__software_10").attr('disabled', false);
+            $("#NA_refresh_software_10").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_10").click(function() {
+            if($('#NA_refresh_software_10').is(":checked")) {
+                  $(".NA__software_10").attr('disabled', true);
+            } else {
+                  $(".NA__software_10").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_11").click(function() {
+            $(".radio_software_11").prop('checked', false);
+            $(".NA__software_11").attr('disabled', false);
+            $("#NA_refresh_software_11").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_11").click(function() {
+            if($('#NA_refresh_software_11').is(":checked")) {
+                  $(".NA__software_11").attr('disabled', true);
+            } else {
+                  $(".NA__software_11").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_12").click(function() {
+            $(".radio_software_12").prop('checked', false);
+            $(".NA__software_12").attr('disabled', false);
+            $("#NA_refresh_software_12").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_12").click(function() {
+            if($('#NA_refresh_software_12').is(":checked")) {
+                  $(".NA__software_12").attr('disabled', true);
+            } else {
+                  $(".NA__software_12").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_13").click(function() {
+            $(".radio_software_13").prop('checked', false);
+            $(".NA__software_13").attr('disabled', false);
+            $("#NA_refresh_software_13").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_13").click(function() {
+            if($('#NA_refresh_software_13').is(":checked")) {
+                  $(".NA__software_13").attr('disabled', true);
+            } else {
+                  $(".NA__software_13").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      $("#refersh_software_14").click(function() {
+            $(".radio_software_14").prop('checked', false);
+            $(".NA__software_14").attr('disabled', false);
+            $("#NA_refresh_software_14").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_14").click(function() {
+            if($('#NA_refresh_software_14').is(":checked")) {
+                  $(".NA__software_14").attr('disabled', true);
+            } else {
+                  $(".NA__software_14").attr('disabled', false);
+            }
+      });
+
+      // --------------------------------------------------------------
+
+      $("#refersh_software_15").click(function() {
+            $(".radio_software_15").prop('checked', false);
+            $(".NA__software_15").attr('disabled', false);
+            $("#NA_refresh_software_15").prop('checked', false);
+      });
+
+      $("#NA_refresh_software_15").click(function() {
+            if($('#NA_refresh_software_15').is(":checked")) {
+                  $(".NA__software_15").attr('disabled', true);
+            } else {
+                  $(".NA__software_15").attr('disabled', false);
+            }
+      });
+
+      // -------------------------------------------------------------
+
+      
+   });
+</script>
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 <div class="bs-toast toast toast-placement-ex m-2 fade bg-danger top-0 end-0 edit-emp-range" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
   <div class="toast-header">
     <i class="bx bx-bell me-2"></i>

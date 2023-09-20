@@ -22,12 +22,20 @@
             </li>
 
             <li class="menu-header small text-uppercase">
+<<<<<<< HEAD
               <span class="menu-header-text">Pages</span>
+=======
+              <span class="menu-header-text">Create Profile</span>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class='bx bx-user' ></i> &nbsp;&nbsp;&nbsp;
+<<<<<<< HEAD
                 <div data-i18n="Account Settings">Employee Page</div>
+=======
+                <div data-i18n="Account Settings">Account</div>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
@@ -86,6 +94,7 @@
                       </li>
                   </ul>
                 </li>
+<<<<<<< HEAD
            
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Employee Performance</span></li>
             <li class="menu-item">
@@ -105,6 +114,23 @@
                   </a>
                 </li>
               </ul>
+=======
+
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Employee Salary</span></li>
+            <li class="menu-item">
+              <a href="<?php echo base_url('admin/add-employee-salary'); ?>" class="menu-link">
+              <i class='bx bx-dollar'></i> &nbsp;&nbsp;&nbsp;
+                <div data-i18n="Basic">Salary</div>
+              </a>
+            </li>
+           
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Employee Evaluation</span></li>
+            <li class="menu-item">
+              <a href="<?php echo base_url('admin/employees-performance-result-list'); ?>" class="menu-link">
+              <i class='bx bx-line-chart'></i> &nbsp;&nbsp;&nbsp;
+                <div data-i18n="Basic">Employee Evaluation</div>
+              </a>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             </li>
           </ul>
         </aside>
@@ -152,6 +178,15 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
+<<<<<<< HEAD
+=======
+                      <a class="dropdown-item" href="<?php echo base_url('Login/changeAdminPassword'); ?>">
+                      <i class='bx bx-wrench me-2'></i>
+                        <span class="align-middle">Change Password</span>
+                      </a>
+                    </li>
+                    <li>
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                       <a class="dropdown-item" href="<?php echo base_url('Admin/logout'); ?>">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>

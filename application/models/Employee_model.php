@@ -55,7 +55,11 @@ class Employee_model extends CI_Model {
     }
 
     public function uploadEmployeeSoftware($data){
+<<<<<<< HEAD
         return $this->db->insert('p_software_table', $data); 
+=======
+        return $this->db->insert('p_team_management_table', $data); 
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     }
 
     public function uploadEmployeeDependability($data){
@@ -94,6 +98,26 @@ class Employee_model extends CI_Model {
 
     // Edit Emp Score Data
 
+<<<<<<< HEAD
+=======
+        public function findEMPID($per_id){
+            $q = $this->db->select('employee_id')
+            ->from('employee_performance')
+            ->where('emp_performance_id', $per_id)
+            ->get();
+             return $q->row()->employee_id;
+        }
+
+        public function updateSupervisorGoals($data, $per_id){
+
+            $id = array('performance_id' => $per_id);
+            $this->db->where($id);
+            $this->db->update('emp_goals', $data);
+            return $this->db->affected_rows();
+
+        }
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         public function updateEmployeeCommunication($data, $per_id){
             $id = array('performance_id' => $per_id);
             $this->db->where($id);
@@ -115,6 +139,7 @@ class Employee_model extends CI_Model {
             return $this->db->affected_rows();
         }
 
+<<<<<<< HEAD
         public function updateEmployeeKnowledgeJob($data, $per_id){
             $id = array('performance_id' => $per_id);
             $this->db->where($id);
@@ -126,6 +151,12 @@ class Employee_model extends CI_Model {
             $id = array('performance_id' => $per_id);
             $this->db->where($id);
             $this->db->update('p_software_table', $data);
+=======
+        public function updateEmployeeTeamManagement($data, $per_id){
+            $id = array('performance_id' => $per_id);
+            $this->db->where($id);
+            $this->db->update('p_team_management_table', $data);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             return $this->db->affected_rows();
         }
 
@@ -150,6 +181,7 @@ class Employee_model extends CI_Model {
             return $this->db->affected_rows();
         }
 
+<<<<<<< HEAD
         public function updateEmployeeInitiativeProactive($data, $per_id){
             $id = array('performance_id' => $per_id);
             $this->db->where($id);
@@ -164,6 +196,8 @@ class Employee_model extends CI_Model {
             return $this->db->affected_rows();
         }
 
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         public function updateSEPerformance($data, $emp_id){
             $id = array('emp_performance_id' => $emp_id);
             $this->db->where($id);
@@ -196,6 +230,7 @@ class Employee_model extends CI_Model {
             ->from('employee_performance')
             ->where('employee_performance.emp_performance_id', $id)
             ->join('employee_table', 'employee_performance.employee_id = employee_table.main_employee_id')
+<<<<<<< HEAD
             
             ->join('p_communication_table', 'employee_performance.emp_performance_id = p_communication_table.performance_id')
             ->join('knowledge_performance', 'employee_performance.emp_performance_id = knowledge_performance.performance_id')
@@ -208,6 +243,17 @@ class Employee_model extends CI_Model {
             ->join('p_initiative_proactive_table', 'employee_performance.emp_performance_id = p_initiative_proactive_table.performance_id')
             ->join('p_creativity_problem_solving_table', 'employee_performance.emp_performance_id = p_creativity_problem_solving_table.performance_id')
 
+=======
+        
+            ->join('p_quality_table', 'employee_performance.emp_performance_id = p_quality_table.performance_id')
+            ->join('knowledge_performance', 'employee_performance.emp_performance_id = knowledge_performance.performance_id')
+            ->join('p_communication_table', 'employee_performance.emp_performance_id = p_communication_table.performance_id')
+            ->join('p_time_management_table', 'employee_performance.emp_performance_id = p_time_management_table.performance_id')
+            ->join('p_team_management_table', 'employee_performance.emp_performance_id = p_team_management_table.performance_id')
+            ->join('p_reliability_professionalism', 'employee_performance.emp_performance_id = p_reliability_professionalism.performance_id')
+            ->join('p_productivity_table', 'employee_performance.emp_performance_id = p_productivity_table.performance_id')
+            
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             ->get();
             return $q->row();
             
@@ -296,6 +342,7 @@ class Employee_model extends CI_Model {
             
             ->join('employee_table', 'employee_performance.employee_id = employee_table.main_employee_id')
             ->join('departments', 'employee_table.employee_department = departments.department_id')
+<<<<<<< HEAD
             ->join('emp_goals', 'employee_table.main_employee_id = emp_goals.employee_id')
             ->join('p_communication_table', 'employee_performance.emp_performance_id = p_communication_table.performance_id')
             ->join('knowledge_performance', 'employee_performance.emp_performance_id = knowledge_performance.performance_id')
@@ -307,6 +354,16 @@ class Employee_model extends CI_Model {
             ->join('p_productivity_table', 'employee_performance.emp_performance_id = p_productivity_table.performance_id')
             ->join('p_initiative_proactive_table', 'employee_performance.emp_performance_id = p_initiative_proactive_table.performance_id')
             ->join('p_creativity_problem_solving_table', 'employee_performance.emp_performance_id = p_creativity_problem_solving_table.performance_id')
+=======
+
+            ->join('p_quality_table', 'employee_performance.emp_performance_id = p_quality_table.performance_id')
+            ->join('knowledge_performance', 'employee_performance.emp_performance_id = knowledge_performance.performance_id')
+            ->join('p_communication_table', 'employee_performance.emp_performance_id = p_communication_table.performance_id')
+            ->join('p_time_management_table', 'employee_performance.emp_performance_id = p_time_management_table.performance_id')
+            ->join('p_team_management_table', 'employee_performance.emp_performance_id = p_team_management_table.performance_id')
+            ->join('p_reliability_professionalism', 'employee_performance.emp_performance_id = p_reliability_professionalism.performance_id')
+            ->join('p_productivity_table', 'employee_performance.emp_performance_id = p_productivity_table.performance_id')
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
             ->get();
             return $q->row();
@@ -353,7 +410,11 @@ class Employee_model extends CI_Model {
             ->join('p_knowledge_table', 'employee_performance.performance_id = p_knowledge_table.employee_id')
             ->join('p_productivity_table', 'employee_performance.performance_id = p_productivity_table.employee_id')
             ->join('p_quality_table', 'employee_performance.performance_id = p_quality_table.employee_id')
+<<<<<<< HEAD
             ->join('p_software_table', 'employee_performance.performance_id = p_software_table.employee_id')
+=======
+            ->join('p_team_management_table', 'employee_performance.performance_id = p_team_management_table.employee_id')
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             ->join('p_time_management_table', 'employee_performance.performance_id = p_time_management_table.employee_id')
             ->get();
             return $q->row();
@@ -365,6 +426,7 @@ class Employee_model extends CI_Model {
             ->where('employee_performance.emp_performance_id', $id)
             ->join('employee_table', 'employee_performance.employee_id = employee_table.main_employee_id')
             ->join('departments', 'employee_table.employee_department = departments.department_id')
+<<<<<<< HEAD
             ->join('p_communication_table', 'employee_performance.emp_performance_id = p_communication_table.performance_id')
             ->join('knowledge_performance', 'employee_performance.emp_performance_id = knowledge_performance.performance_id')
             ->join('p_creativity_problem_solving_table', 'employee_performance.emp_performance_id = p_creativity_problem_solving_table.performance_id')
@@ -375,6 +437,17 @@ class Employee_model extends CI_Model {
             ->join('p_quality_table', 'employee_performance.emp_performance_id = p_quality_table.performance_id')
             ->join('p_software_table', 'employee_performance.emp_performance_id = p_software_table.performance_id')
             ->join('p_time_management_table', 'employee_performance.emp_performance_id = p_time_management_table.performance_id')
+=======
+
+            ->join('p_quality_table', 'employee_performance.emp_performance_id = p_quality_table.performance_id')
+            ->join('knowledge_performance', 'employee_performance.emp_performance_id = knowledge_performance.performance_id')
+            ->join('p_communication_table', 'employee_performance.emp_performance_id = p_communication_table.performance_id')
+            ->join('p_time_management_table', 'employee_performance.emp_performance_id = p_time_management_table.performance_id')
+            ->join('p_team_management_table', 'employee_performance.emp_performance_id = p_team_management_table.performance_id')
+            ->join('p_reliability_professionalism', 'employee_performance.emp_performance_id = p_reliability_professionalism.performance_id')
+            ->join('p_productivity_table', 'employee_performance.emp_performance_id = p_productivity_table.performance_id')
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
             ->get();
             return $q->row();
         }
@@ -406,8 +479,13 @@ class Employee_model extends CI_Model {
             return $this->db->insert('p_knowledge_table', $data); 
         }
     
+<<<<<<< HEAD
         public function setEmployeeSoftware($data){
             return $this->db->insert('p_software_table', $data); 
+=======
+        public function setEmployeeTeam_management($data){
+            return $this->db->insert('p_team_management_table', $data); 
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         }
 
         public function setEmployeeReliabilityProfessionalism($data){
@@ -439,7 +517,11 @@ class Employee_model extends CI_Model {
 
     public function EvaluatedEmployeeList($limit, $offset){
 
+<<<<<<< HEAD
         $q = $this->db->select('communication_emp_avg, knowledge_performance_emp_avg, p_creativity_problem_solving_emp_avg, reliability_emp_avg, p_initiative_proactive_emp_avg, knowledge_emp_avg, productivity_emp_avg, quality_emp_avg, software_emp_avg, time_management_emp_avg, manager_name, total_emp_avg, submit_employee_status,submit_manager_status, employee_image, employee_first_name, employee_last_name, emp_performance_id, emp_performance_start_date, emp_performance_end_date, evaluate_date_category, employee_status')
+=======
+        $q = $this->db->select('communication_emp_avg, knowledge_performance_emp_avg, reliability_emp_avg, productivity_emp_avg, quality_emp_avg, team_management_emp_avg, time_management_emp_avg, manager_name, total_emp_avg, submit_employee_status,submit_manager_status, employee_image, employee_first_name, employee_last_name, emp_performance_id, emp_performance_start_date, emp_performance_end_date, evaluate_date_category, employee_status')
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         ->from('employee_performance')
         ->join('employee_table', 'employee_performance.employee_id = employee_table.main_employee_id')
         ->join('departments', 'employee_table.employee_department = departments.department_id')
@@ -448,6 +530,7 @@ class Employee_model extends CI_Model {
         ->join('p_communication_table', 'employee_performance.emp_performance_id = p_communication_table.performance_id')
         ->join('knowledge_performance', 'employee_performance.emp_performance_id = knowledge_performance.performance_id')
         ->join('p_quality_table', 'employee_performance.emp_performance_id = p_quality_table.performance_id')
+<<<<<<< HEAD
         ->join('p_knowledge_table', 'employee_performance.emp_performance_id = p_knowledge_table.performance_id')
         ->join('p_software_table', 'employee_performance.emp_performance_id = p_software_table.performance_id')
         ->join('p_reliability_professionalism', 'employee_performance.emp_performance_id = p_reliability_professionalism.performance_id')
@@ -455,6 +538,13 @@ class Employee_model extends CI_Model {
         ->join('p_productivity_table', 'employee_performance.emp_performance_id = p_productivity_table.performance_id')
         ->join('p_initiative_proactive_table', 'employee_performance.emp_performance_id = p_initiative_proactive_table.performance_id')
         ->join('p_creativity_problem_solving_table', 'employee_performance.emp_performance_id = p_creativity_problem_solving_table.performance_id')
+=======
+        ->join('p_team_management_table', 'employee_performance.emp_performance_id = p_team_management_table.performance_id')
+        ->join('p_reliability_professionalism', 'employee_performance.emp_performance_id = p_reliability_professionalism.performance_id')
+        ->join('p_time_management_table', 'employee_performance.emp_performance_id = p_time_management_table.performance_id')
+        ->join('p_productivity_table', 'employee_performance.emp_performance_id = p_productivity_table.performance_id')
+        
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 
         ->limit($limit, $offset)
         ->order_by('employee_performance.emp_performance_id', "DESC")
@@ -471,6 +561,7 @@ class Employee_model extends CI_Model {
     }
 
     public function checkVerifyAllScores($id){
+<<<<<<< HEAD
         $q = $this->db->select('communication_emp_avg,m_communication_emp_avg, knowledge_performance_emp_avg,m_knowledge_performance_emp_avg, quality_emp_avg,m_quality_emp_avg, knowledge_emp_avg,m_knowledge_emp_avg, software_emp_avg,m_software_emp_avg, reliability_emp_avg,m_reliability_emp_avg, time_management_emp_avg,m_time_management_emp_avg, productivity_emp_avg,m_productivity_emp_avg, p_initiative_proactive_emp_avg,m_p_initiative_proactive_emp_avg, p_creativity_problem_solving_emp_avg,m_p_creativity_problem_solving_emp_avg, submit_employee_status, submit_manager_status, manager_id, manager_name, emp_performance_start_date, emp_performance_end_date')
         ->from('employee_table')
         ->where('employee_table.main_employee_id', $id)
@@ -487,6 +578,21 @@ class Employee_model extends CI_Model {
         ->join('p_productivity_table', 'employee_performance.emp_performance_id = p_productivity_table.performance_id')
         ->join('p_initiative_proactive_table', 'employee_performance.emp_performance_id = p_initiative_proactive_table.performance_id')
         ->join('p_creativity_problem_solving_table', 'employee_performance.emp_performance_id = p_creativity_problem_solving_table.performance_id')
+=======
+        $q = $this->db->select('*')
+        ->from('employee_table')
+        ->where('employee_table.main_employee_id', $id)
+        ->join('employee_performance', 'employee_table.main_employee_id = employee_performance.employee_id')
+        ->join('departments', 'employee_table.employee_department = departments.department_id')
+        
+        ->join('p_communication_table', 'employee_performance.emp_performance_id = p_communication_table.performance_id')
+        ->join('knowledge_performance', 'employee_performance.emp_performance_id = knowledge_performance.performance_id')
+        ->join('p_quality_table', 'employee_performance.emp_performance_id = p_quality_table.performance_id')
+        ->join('p_team_management_table', 'employee_performance.emp_performance_id = p_team_management_table.performance_id')
+        ->join('p_reliability_professionalism', 'employee_performance.emp_performance_id = p_reliability_professionalism.performance_id')
+        ->join('p_time_management_table', 'employee_performance.emp_performance_id = p_time_management_table.performance_id')
+        ->join('p_productivity_table', 'employee_performance.emp_performance_id = p_productivity_table.performance_id')
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         
         ->order_by('employee_performance.emp_performance_id', "DESC")
         ->get();
@@ -538,8 +644,12 @@ class Employee_model extends CI_Model {
     }
 
     public function postEMPGoals($data){
+<<<<<<< HEAD
         $data['emp_goals_post_date'] = date("d-m-Y H:i:s");
         return $this->db->insert('emp_goals', $data); 
+=======
+        return $this->db->insert('employee_d_goals', $data); 
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
     }
 
     public function postEMPExperience($data){
@@ -590,10 +700,17 @@ class Employee_model extends CI_Model {
         return $q->row();
     }
 
+<<<<<<< HEAD
     public function getEmpGoals($ID){
         $q = $this->db->select('*')
         ->from('emp_goals')
         ->where('employee_id', $ID)
+=======
+    public function getEmpGoals($id){
+        $q = $this->db->select('*')
+        ->from('employee_d_goals')
+        ->where('employee_id', $id)
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         ->get();
         return $q->row();
     }
@@ -608,7 +725,19 @@ class Employee_model extends CI_Model {
 
     public function getEmpSalary($ID){
         $q = $this->db->select('*')
+<<<<<<< HEAD
         ->from('employee_d_salary_history')
+=======
+        ->from('employee_salary')
+        ->where('employee_id', $ID)
+        ->get();
+        return $q->result();
+    }
+
+    public function getEmpCurrency($ID){
+        $q = $this->db->select('salary_currency')
+        ->from('employee_salary')
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         ->where('employee_id', $ID)
         ->get();
         return $q->row();
@@ -672,7 +801,11 @@ class Employee_model extends CI_Model {
     public function updateEMPGoals($data, $id){
         $id = array('employee_id' => $id);
         $this->db->where($id);
+<<<<<<< HEAD
         $this->db->update('emp_goals', $data);
+=======
+        $this->db->update('employee_d_goals', $data);
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         return $this->db->affected_rows();
     }
 
@@ -789,5 +922,49 @@ class Employee_model extends CI_Model {
         ->get();
         return $q->row();
     }
+<<<<<<< HEAD
+=======
+
+    public function employeesProfileListData($limit, $offset){
+        $q = $this->db->select('*')
+        ->from('employee_table')
+        ->join('departments', 'employee_table.employee_department = departments.department_id')
+        ->limit($limit, $offset)
+        ->order_by('main_employee_id', "DESC")
+        ->get();
+        return $q->result();
+    }
+
+    public function num_rows_ProfileList(){
+        $q = $this->db->select('*')
+        ->from('employee_table')
+        ->get();
+        return $q->num_rows();
+    }
+
+    public function getSuperEmpGoals($per_id){
+
+        $whereArray = array(
+            "performance_id" => $per_id
+        );
+
+        $q = $this->db->select('*')
+        ->from('emp_goals')
+        ->where($whereArray)
+        ->get();
+        return $q->row();
+    }
+
+    public function setEmployeeGoals($data){
+        return $this->db->insert('emp_goals', $data); 
+    }
+
+    public function updateEMPGoalsEvalu($goals, $perf_id){
+        $id = array('performance_id' => $perf_id);
+        $this->db->where($id);
+        $this->db->update('emp_goals', $goals);
+        return $this->db->affected_rows();
+    }
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
 }
 ?>

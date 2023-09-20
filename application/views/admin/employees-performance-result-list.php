@@ -2,6 +2,7 @@
     <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold "><a href="<?php echo base_url('Admin'); ?>"><i class='bx bx-left-arrow-alt'></i> BACK</a></h4>
     <h4 class="fw-bold py-1 mb-2"><span class="text-muted fw-light"> Dashboard / </span> Employee Performance List</h4>
+<<<<<<< HEAD
         <section class="color_indicators_sec">
             <span>
                 <img src="<?php echo base_url('assets_admin/icons/danger.png'); ?>" alt=""> &nbsp;<b>ASSESSMENT < 2</b> &nbsp;&nbsp;
@@ -9,6 +10,8 @@
                 <img src="<?php echo base_url('assets_admin/icons/success.png'); ?>" alt=""> &nbsp;<b>ASSESSMENT > 3</b> &nbsp;&nbsp;
              </span>
         </section>
+=======
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
         <div class="card">
             <div class="table-responsive text-nowrap">
                 <table class="table">
@@ -47,6 +50,7 @@
 
                         <td>
                             <?php 
+<<<<<<< HEAD
                                 if(($data->evaluate_date_category)==30){
                                 $period  = 'Monthly';
                                 }elseif(($data->evaluate_date_category)==90){
@@ -56,6 +60,14 @@
                                 }
                                 elseif(($data->evaluate_date_category)==365){
                                 $period  = 'Yearly';
+=======
+                                if(($data->evaluate_date_category)==90){
+                                $period  = 'Mid-Probation';
+                                }elseif(($data->evaluate_date_category)==182){
+                                $period  = 'Regularization';
+                                }elseif(($data->evaluate_date_category)==182){
+                                $period  = 'Bi-Annual';
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                                 }else{
                                 $period = '';
                                 }
@@ -75,9 +87,42 @@
                         </td>
 
                         <?php 
+<<<<<<< HEAD
                             $sumTotal = $data->communication_emp_avg + $data->knowledge_performance_emp_avg + $data->quality_emp_avg + $data->knowledge_emp_avg + $data->software_emp_avg + $data->reliability_emp_avg + $data->time_management_emp_avg + $data->productivity_emp_avg + $data->p_initiative_proactive_emp_avg + $data->p_creativity_problem_solving_emp_avg; 
                             $avgTotal = $sumTotal / 10;
                             $emp_finalAvg = number_format((float)$avgTotal, 2, '.', '');
+=======
+
+                            $countloop = array(
+                                "m_quality_emp_avg" => $data->quality_emp_avg,
+                                "m_knowledge_performance_emp_avg" => $data->knowledge_performance_emp_avg,
+                                "m_communication_emp_avg" => $data->communication_emp_avg,
+                                "m_time_management_emp_avg" => $data->time_management_emp_avg,
+                                "m_team_management_emp_avg" => $data->team_management_emp_avg,
+                                "m_reliability_emp_avg" => $data->reliability_emp_avg,
+                                "m_productivity_emp_avg" => $data->productivity_emp_avg
+                            );
+
+                            $allcounter = 1;
+                            $store_AVG = null;
+                            foreach($countloop as $run){
+
+                                if($run == 0){
+                                    
+                                }else{
+                                    $store_AVG = $allcounter++;
+                                }
+                            }
+
+                            if($store_AVG){
+                                $sumTotal = $data->communication_emp_avg + $data->knowledge_performance_emp_avg + $data->quality_emp_avg + $data->team_management_emp_avg + $data->reliability_emp_avg + $data->time_management_emp_avg + $data->productivity_emp_avg; 
+                                $avgTotal = $sumTotal / $store_AVG;
+                                $emp_finalAvg = number_format((float)$avgTotal, 2, '.', '');
+                            }else{
+                                $emp_finalAvg = null;
+                            }
+
+>>>>>>> 8ce454d (new update employee portal v1.1.0)
                         ?>
 
                         <?php if($emp_finalAvg <= 1): ?>
