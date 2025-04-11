@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'bcp-eep-portal-gvhyacb3h2dndfev.southeastasia-01.azurewebsites.net/';
+$config['base_url'] = 'https://bcp-eep-portal-gvhyacb3h2dndfev.southeastasia-01.azurewebsites.net/';
 
 /*
 |--------------------------------------------------------------------------
