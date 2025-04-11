@@ -92,9 +92,5 @@ $db['default'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => TRUE,
-	'options' => array(
-    MYSQLI_OPT_SSL_VERIFY_SERVER_CERT => true,
-    MYSQLI_OPT_SSL_CA => APPPATH . 'ssl/BaltimoreCyberTrustRoot.crt.pem'
-),
+	'save_queries' => TRUE
 );
