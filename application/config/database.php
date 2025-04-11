@@ -72,6 +72,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
+$options = array();
+if (defined('MYSQLI_OPT_SSL_CA')) {
+    $options[MYSQLI_OPT_SSL_CA] = '/path/to/BaltimoreCyberTrustRoot.crt.pem';
+}
 
 $db['default'] = array(
 	'dsn'	=> '',
@@ -93,7 +97,5 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE,
-	'options' => array(
-    MYSQLI_OPT_SSL_VERIFY_SERVER_CERT => true,
-    MYSQLI_OPT_SSL_CA => APPPATH . 'ssl/BaltimoreCyberTrustRoot.crt.pem'),
+	'options' => $options,
 );
