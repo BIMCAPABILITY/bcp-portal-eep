@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'bcp-portal-server.mysql.database.azure.com',
+	'hostname' => 'https://bcp-eep-portal-gvhyacb3h2dndfev.southeastasia-01.azurewebsites.net/',
 	'username' => 'bimcap_admin',
 	'password' => 'Bluedragon11',
 	'database' => 'azure_portal_database',
