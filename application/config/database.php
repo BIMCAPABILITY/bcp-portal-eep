@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'      => '',
 	'hostname' => 'bcp-portal-server.mysql.database.azure.com',
-	'username' => 'bimcap_admin',
+	'username' => 'bimcap_admin@bcp-portal-server',
 	'password' => 'Bluedragon11',
 	'database' => 'azure_portal_database',
 	'dbdriver' => 'mysqli',
@@ -89,13 +89,14 @@ $db['default'] = array(
 	'char_set' => 'utf8',
 	'dbcollat' => 'utf8_general_ci',
 	'swap_pre' => '',
-	'encrypt' => TRUE,
+	'encrypt' => FALSE,
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE,
 	'options' => array(
-        MYSQLI_OPT_SSL_VERIFY_SERVER_CERT => true,
-        MYSQLI_OPT_SSL_CA => realpath(APPPATH . 'ssl/BaltimoreCyberTrustRoot.crt.pem')
-    )
+		MYSQLI_INIT_COMMAND => "SET NAMES utf8",
+		MYSQLI_OPT_SSL_VERIFY_SERVER_CERT => true,
+		MYSQLI_OPT_SSL_CA => realpath(APPPATH . 'ssl/BaltimoreCyberTrustRoot.crt.pem')
+	)
 );
