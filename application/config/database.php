@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'employee_portal',
+	'hostname' => 'bcp-portal-server.mysql.database.azure.com',
+	'username' => 'bimcap_admin@bcp-portal-server',
+	'password' => 'Bluedragon11',
+	'database' => 'azure_portal_database',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
